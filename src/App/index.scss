@@ -1,0 +1,60 @@
+header {
+    background-color: #ffffff;
+    padding: 10px;
+    color: rgb(6 85 215);
+    height: 50px;
+    box-shadow: rgb(213 221 225) 0px 4px 6px;
+    background-image: url(./logo.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    padding-left: 70px;
+    background-position: 10px center;
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    left: 0;
+
+    &>h2 {
+        line-height: 30px;
+        display: inline-block;
+        font-size: 24px;
+    }
+}
+
+.content {
+    white-space: nowrap;
+
+    &>div {
+        display: inline-block;
+        vertical-align: top;
+        white-space: normal;
+        height: 100vh;
+
+        &.menu-view {
+            width: 300px;
+            height: calc(100vh - 50px);
+            position: fixed;
+            left: 0;
+            top: 50px;
+
+            &>div {
+                &>a {
+                    background-color: rgb(6 85 215);
+                    color: white;
+                    text-align: center;
+                    margin-top: .3rem;
+                    cursor: pointer;
+                    font-size: .15rem;
+                    display: block;
+                    width: 2.6rem;
+                    padding: .1rem 0;
+                }
+            }
+        }
+
+        &.content {
+            margin-left: 300px;
+            width: calc(100vw - 300px);
+        }
+    }
+}

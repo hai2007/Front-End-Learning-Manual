@@ -5,3 +5,9 @@ html {
 body {
     font-size: .16rem;
 }
+
+.warn {
+    color: rgb(199, 191, 191) !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+}

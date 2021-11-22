@@ -18,6 +18,18 @@ header {
         line-height: 30px;
         display: inline-block;
         font-size: 24px;
+
+        &>span {
+            font-size: 12px;
+            padding-left: 50px;
+            color: #000000;
+            font-weight: 200;
+
+            &>a {
+                text-decoration: underline;
+                color: #ff3100;
+            }
+        }
     }
 }
 

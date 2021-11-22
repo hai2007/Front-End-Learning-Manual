@@ -7,6 +7,52 @@
 <h4 id='fixed-canvas'>
     Canvas
 </h4>
+<p>
+    这就是一个类似你儿时上美术课的时候，用彩笔在上面涂鸦的板子。因此，你首先需要一张纸，在这里，也就是在页面准备好一个
+    <span class="important">Canvas 节点</span>，就像这样：
+</p>
+<pre ui-code='html'>
+    <canvas>非常抱歉，您的浏览器不支持canvas!</canvas>
+</pre>
+<p>
+    接着，你只需要获取这个结点：
+</p>
+<pre ui-code>
+    var canvas = document.getElementsByTagName('canvas')[0];
+</pre>
+<p>
+    画笔是画布提供的，也就是上面的那个结点，通过上面的
+    <span class="important">getContext 方法</span>
+    即可获得：
+</p>
+<pre ui-code>
+    var painter = canvas.getContext('2d');
+</pre>
+<p>
+    得到画笔以后，就可以直接绘制了，当然，在这之前，你还可以对画笔进行配置：
+</p>
+<pre ui-code>
+    painter.fillStyle = 'red';
+</pre>
+<p>
+    上面我们把笔设置成红色。
+</p>
+<p>
+    现在，我们真的要绘制了，比如我们要在(50,50)的地方写一段文字：
+</p>
+<pre ui-code>
+    painter.fillText('我是一段文字', 50, 50);
+</pre>
+<p>
+    你可以点击下面的红色按钮来查看运行效果：
+</p>
+<button ui-goto-example='canvas'>查看用例>>></button>
+<p>
+    细心的你可能会发现，我们在用css设置了画布大小以后，还用属性进行了设置。你可以试试不设置属性，不过，那样会导致绘制的内容变形或模糊，因此，一定要记得设置一下哦~
+</p>
+<p class="warn">
+    温馨提示：我们在这里并不想深入，一点点也不想，别的也是，只会点到为止，更多的是想帮助大家可以快速的学习一个新的技术。
+</p>
 <h4 id='fixed-svg'>
     SVG
 </h4>

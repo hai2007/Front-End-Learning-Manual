@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML / 标签 / Canvas</title>
+    <script src='https://cdn.jsdelivr.net/npm/@hai2007/tool@0'></script>
+    <style>
+        canvas {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas>非常抱歉，您的浏览器不支持canvas!</canvas>
+    <script>
+
+        // 获取画布结点
+        var canvas = document.getElementsByTagName('canvas')[0];
+
+        // 设置画布大小
+        canvas.setAttribute('width', tool.xhtml.getStyle(canvas, 'width'));
+        canvas.setAttribute('height', tool.xhtml.getStyle(canvas, 'height'));
+
+        // 获取画笔对象
+        var painter = canvas.getContext('2d');
+
+        // 配置画笔
+        painter.fillStyle = 'red';
+        painter.font = '20px cursive';
+
+        // 使用画笔绘画
+        painter.fillText('我是一段文字', 50, 50);
+
+    </script>
+</body>
+
+</html>

@@ -11,12 +11,13 @@ import uiBind from 'sprout-ui/nefbl/directive/ui-bind'
 import uiModel from 'sprout-ui/nefbl/directive/ui-model'
 import uiOn from 'sprout-ui/nefbl/directive/ui-on'
 import uiLazy from './directive/ui-lazy'
+import uiToggle from './directive/ui-toggle'
 
 @Module({
     declarations: [
         AppComponent,
         uiBind, uiModel, uiOn,
-        uiLazy,
+        uiLazy, uiToggle,
         search
 
     ],

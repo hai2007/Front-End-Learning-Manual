@@ -9,7 +9,7 @@ import '@hai2007/polyfill/Promise.js'
 import appModule from "./app.module"
 
 // 引入样式
-import menu from './style/menu.css'
+import menu from './style/menu.scss'
 import style from './style/style.css'
 
 // 先获取平台实例

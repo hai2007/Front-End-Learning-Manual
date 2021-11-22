@@ -9,13 +9,34 @@
         <div>
             <h2>目录</h2>
             <ul>
-                <li>
+                <li ui-bind:active='pageName=="HTML"?"yes":"no"'>
                     <h3 tag='HTML' ui-on:click='openPage'>HTML</h3>
+                    <ul>
+                        <li>
+                            <h3 tag='tag' ui-toggle ui-on:click='doScroll'>标签</h3>
+                            <ul>
+                                <li>
+                                    <h3 tag='canvas' ui-on:click='doScroll'>Canvas</h3>
+                                </li>
+                                <li>
+                                    <h3 tag='svg' ui-on:click='doScroll'>SVG</h3>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3 tag='api' ui-toggle ui-on:click='doScroll'>接口</h3>
+                            <ul>
+                                <li>
+                                    <h3 tag='postMessage' ui-on:click='doScroll'>postMessage</h3>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li>
+                <li ui-bind:active='pageName=="CSS"?"yes":"no"'>
                     <h3 tag='CSS' ui-on:click='openPage'>CSS</h3>
                 </li>
-                <li>
+                <li ui-bind:active='pageName=="JavaScript"?"yes":"no"'>
                     <h3 tag='JavaScript' ui-on:click='openPage'>JavaScript</h3>
                 </li>
             </ul>

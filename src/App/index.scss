@@ -55,11 +55,12 @@ header {
         &.content {
             margin-left: 300px;
             margin-top: 50px;
-            width: calc(100vw - 300px);
             height: calc(100vh - 50px);
-            padding:0 50px;
-            &>div{
+
+            &>div {
+                padding: 0 50px;
                 overflow: auto;
+                width: calc(100vw - 300px);
             }
         }
     }

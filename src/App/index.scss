@@ -1,9 +1,9 @@
 header {
     background-color: #ffffff;
     padding: 10px;
-    color: rgb(6 85 215);
+    color: rgb(6, 85, 215);
     height: 50px;
-    box-shadow: rgb(213 221 225) 0px 4px 6px;
+    box-shadow: rgb(213, 221, 225) 0px 4px 6px;
     background-image: url(./logo.png);
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@ header {
 
             &>div {
                 &>a {
-                    background-color: rgb(6 85 215);
+                    background-color: rgb(6, 85, 215);
                     color: white;
                     text-align: center;
                     margin-top: .3rem;

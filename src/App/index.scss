@@ -28,7 +28,7 @@ header {
         display: inline-block;
         vertical-align: top;
         white-space: normal;
-        height: 100vh;
+        height: calc(100vh - 50px);
 
         &.menu-view {
             width: 300px;
@@ -54,7 +54,13 @@ header {
 
         &.content {
             margin-left: 300px;
+            margin-top: 50px;
             width: calc(100vw - 300px);
+            height: calc(100vh - 50px);
+            padding:0 50px;
+            &>div{
+                overflow: auto;
+            }
         }
     }
 }

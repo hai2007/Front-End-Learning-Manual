@@ -1,10 +1,8 @@
 div.menu-view {
-    height: 100vh;
     white-space: nowrap;
 }
 
 div.menu-view>div {
-    height: 100vh;
     overflow: auto;
     display: inline-block;
     vertical-align: top;

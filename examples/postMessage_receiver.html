@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML / 接口 / postMessage(信息接收者)</title>
+</head>
+
+<body>
+
+    <div id="recMessage">
+        点击一下按钮试试
+    </div>
+
+    <script>
+
+        var messageEle = document.getElementById('recMessage');
+
+        // 监听 message 事件
+        window.addEventListener('message', function (e) {
+            messageEle.innerHTML = "收到消息： " + e.data;
+        });
+
+    </script>
+
+</body>
+
+</html>

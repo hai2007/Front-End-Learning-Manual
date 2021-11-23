@@ -56,9 +56,78 @@
 <h4 id='fixed-svg'>
     SVG
 </h4>
+<p>
+    你可以这样理解：html作为根结点，其中可以使用各种标签来绘制页面，而svg作为根结点的时候，其中可以使用各种标签来绘制图形。此外，svg标签本身也是作为html下的一个普通标签存在的。
+</p>
+<p>
+    下面，还是让我们来举个例子说明吧！
+</p>
+<p>
+    首先，你需要准备一个svg标签作为绘图的容器：
+</p>
+<pre ui-code='html'>
+    <svg></svg>
+</pre>
+<p>
+    接着，你就可以在此容器中使用一些特殊的标签来绘图了。比如，我们想绘制一个红色的圆：
+</p>
+<pre ui-code='html'>
+    <circle cx="150" cy="150" r="100" fill="red" />
+</pre>
+<button ui-goto-example='svg'>查看用例>>></button>
+<p>
+    由于svg相关的标签有些操作你不能直接看成普通的DOM，包括结点的创建和属性设置，因此，在使用使用中，推荐你基于
+    <a target="_blank" class='link' href="https://hai2007.gitee.io/image2d/#/course/svg-painter?fixed=top">
+        image2d / 矢图画笔
+    </a>
+    进行使用~
+</p>
 <h3 id='fixed-api'>
     接口
 </h3>
 <h4 id='fixed-postMessage'>
     postMessage
 </h4>
+<p>
+    此方法可以用于实现跨源通信等，我们来演示如何实现在两个窗口之间进行通信。
+</p>
+<p>
+    假设我们现在有两个页面：
+    <span class="important">
+        page1.html
+    </span>
+    和
+    <span class="important">
+        page2.html
+    </span>，
+    他们的关系是通过iframe关联起来的，就像这样（下面是page1.html的内容）：
+</p>
+<pre ui-code='html'>
+    <iframe id="receiver" src="./page2.html" width="300" height="100"></iframe>
+</pre>
+<p>
+    为了实现通信，首先你需要在page2.html中注册事件监听：
+</p>
+<pre ui-code>
+window.addEventListener('message', function (e) {
+    console.log(e);
+});
+</pre>
+<p>
+    确保page2.html中事件监听注册好了以后，在page1.html中首先需要获取page2.html的窗口对象：
+</p>
+<pre ui-code>
+    var targetWindow = document.getElementById('receiver').contentWindow;
+</pre>
+<p>
+    然后，直接使用其中的
+    <span class="important">postMessage</span>
+    即可发送：
+</p>
+<pre ui-code>
+    targetWindow.postMessage("你好呀！", "*");
+</pre>
+<button ui-goto-example='postMessage'>查看用例>>></button>
+<p>
+    在实际使用中，两个页面不一定需要通过iframe关联，比如使用window.location.href等也是可以的，不过有一个基本的原则要注意：发送信息的时候，一定要确保接受方已经完成了信息接受事件的注册。
+</p>

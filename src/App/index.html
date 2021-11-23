@@ -59,9 +59,18 @@
                 </li>
                 <li ui-bind:active='pageName=="JavaScript"?"yes":"no"'>
                     <h3 tag='JavaScript' ui-on:click='openPage'>JavaScript</h3>
-                </li>
-                <li ui-bind:active='pageName=="Vue2.js"?"yes":"no"'>
-                    <h3 tag='Vue2.js' ui-on:click='openPage'>Vue2.js</h3>
+                    <ul>
+                        <li>
+                            <h3 tag='object' ui-toggle ui-on:click='doScroll'>常用对象</h3>
+                            <ul>
+                                <li>
+                                    <h3 tag='ArrayBuffer_TypedArray_DataView' ui-on:click='doScroll'>
+                                        ArrayBuffer / TypedArray / DataView
+                                    </h3>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <a href="https://github.com/hai2007/Front-End-Learning-Manual" target="_blank">Fork Me On Github</a>

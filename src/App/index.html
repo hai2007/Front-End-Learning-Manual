@@ -46,9 +46,22 @@
                 </li>
                 <li ui-bind:active='pageName=="CSS"?"yes":"no"'>
                     <h3 tag='CSS' ui-on:click='openPage'>CSS</h3>
+                    <ul>
+                        <li>
+                            <h3 tag='selector' ui-toggle ui-on:click='doScroll'>选择器</h3>
+                            <ul>
+                                <li>
+                                    <h3 tag='priority' ui-on:click='doScroll'>优先级</h3>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
                 <li ui-bind:active='pageName=="JavaScript"?"yes":"no"'>
                     <h3 tag='JavaScript' ui-on:click='openPage'>JavaScript</h3>
+                </li>
+                <li ui-bind:active='pageName=="Vue2.js"?"yes":"no"'>
+                    <h3 tag='Vue2.js' ui-on:click='openPage'>Vue2.js</h3>
                 </li>
             </ul>
             <a href="https://github.com/hai2007/Front-End-Learning-Manual" target="_blank">Fork Me On Github</a>

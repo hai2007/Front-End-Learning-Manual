@@ -46,3 +46,222 @@
 <p>
     最后，还要补充一点，如果两个选择器的优先级值一样大，后出现的优先级更高。
 </p>
+<h3 id='fixed-attribute'>
+    常用属性
+</h3>
+<h4 id='fixed-transform'>
+    Transform 转换
+</h4>
+<p>
+    转换就是对一个节点元素进行缩放、旋转、位移等空间上的操作，如何定义一个转换？很简单：
+</p>
+<pre ui-code='css'>
+    transform: none | transform-functions;
+</pre>
+<p>
+    其中
+    <span class="warn">transform-functions</span>
+    表示转换函数，有很多种，比如：rotate(angle)、scale(x,y)等。不过，在有些时候，需要和别的属性进行配合，下面我们来一一举例说明。
+</p>
+<pre ui-code='css'>
+    transform-origin: x-axis y-axis z-axis;
+</pre>
+<p>
+    设置元素转换的中心点，比如旋转图片，改变图片选择依赖的旋转中心，见下面：
+</p>
+<div class="example frame">
+    <div class="example block">
+        <div class="example key">
+            <div class="info">旋转的DIV属性：</div>
+            <div>transform:rotate(-45deg);</div>
+            <div>transform-origin:50% 50%;</div>
+        </div>
+        <div class="example value">
+            <div class="_1_one_outer _box_">
+                <div class="_1_one_inner _box_"></div>
+            </div>
+        </div>
+    </div>
+    <div class="example block">
+        <div class="example key">
+            <div class="info">旋转的DIV属性：</div>
+            <div>transform:rotate(-45deg);</div>
+            <div>transform-origin:100% 0%;</div>
+        </div>
+        <div class="example value">
+            <div class="_1_two_outer _box_">
+                <div class="_1_two_inner _box_"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<pre ui-code='css'>
+    transform-style: flat | preserve-3d;
+</pre>
+<p>
+    定义里面转换的元素是在2D平面呈现还是在3D空间呈现，讲的直白些，就是这个元素里面的空间维度是二维还是三维，下面是一个直观的例子：
+</p>
+<div class="example frame">
+    <div class="example block">
+        <div class="example key">
+            <div class="info">外面div设置：</div>
+            <div>transform-style:flat;</div>
+            <div>transform: rotateX(120deg); </div>
+            <div class="info">内部div设置：</div>
+            <div>transform: rotateX(-45deg);</div>
+        </div>
+        <div class="example value">
+            <div class="_2_one_outer _box_">
+                <div class="_2_one_inner _box_"></div>
+            </div>
+        </div>
+    </div>
+    <div class="example block">
+        <div class="example key">
+            <div class="info">外面div设置：</div>
+            <div>transform-style:preserve-3d; </div>
+            <div>transform: rotateX(120deg); </div>
+            <div class="info">内部div设置：</div>
+            <div>transform: rotateX(-45deg);</div>
+        </div>
+        <div class="example value">
+            <div class="_2_two_outer _box_">
+                <div class="_2_two_inner _box_"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<pre ui-code='css'>
+    perspective: number | none;
+</pre>
+<p>
+    属性是定义3D元素距试图的距离，设置以后，其子元素会获得透视效果，需要注意的是该值只对3D转换有效，这也是很容易理解的。此外，还可以通过Transform的属性值的方式设置，二者是有一定区别的，你可以认为，前者是把整个看成一个舞台，后者是每一个都是一个舞台，下面是具体的一个例子：
+</p>
+<div class="example frame">
+    <div class="example block">
+        <div class="example key">
+            <div class="info">外面div设置：</div>
+            <div>perspective:200px; </div>
+            <div class="info">内部div设置：</div>
+            <div>transform: rotateY(45deg);</div>
+        </div>
+        <div class="example value">
+            <div class="_3_one_outer _box_">
+                <div class="_3_one_inner _box_ _bg_1_"></div>
+                <div class="_3_one_inner _box_ _bg_2_"></div>
+                <div class="_3_one_inner _box_ _bg_3_"></div>
+            </div>
+        </div>
+    </div>
+    <div class="example block">
+        <div class="example key">
+            <div class="info">内部div设置：</div>
+            <div>transform: perspective(200px) rotateY(45deg);</div>
+        </div>
+        <div class="example value">
+            <div class="_3_two_outer _box_">
+                <div class="_3_two_inner _box_ _bg_1_"></div>
+                <div class="_3_two_inner _box_ _bg_2_"></div>
+                <div class="_3_two_inner _box_ _bg_3_"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<pre ui-code='css'>
+    perspective-origin: x-axis y-axis;
+</pre>
+<p>
+    必须和perspective一起使用，只对3D转换元素有效，简单的理解就是你的眼睛看的焦点，下面用一个例子来说明：
+</p>
+<div class="example frame">
+    <div class="example block">
+        <div class="example key">
+            <div class="info">外面div设置：</div>
+            <div>perspective:300px;perspective-origin: 50% 50%;</div>
+            <div class="info">内部div设置：</div>
+            <div>transform:rotateX(45deg);</div>
+        </div>
+        <div class="example value">
+            <div class="_4_one_outer _box_">
+                <div class="_4_one_inner _box_"></div>
+            </div>
+        </div>
+    </div>
+    <div class="example block">
+        <div class="example key">
+            <div class="info">外面div设置：</div>
+            <div>perspective:300px;perspective-origin: 50% 270%;</div>
+            <div class="info">内部div设置：</div>
+            <div>transform:rotateX(45deg);</div>
+        </div>
+        <div class="example value">
+            <div class="_4_two_outer _box_">
+                <div class="_4_two_inner _box_"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    当然，还有更多方法和属性，我们这里就不展开说明了。
+</p>
+<h4 id='fixed-transitions'>
+    Transitions 过渡
+</h4>
+<p>
+    比如，你有一个元素，本来宽是100px，鼠标悬浮的时候现在变成300px，如果你什么都不做，会突然变成300px，在你鼠标悬浮的时候，而使用此属性，可以实现慢慢改变的动画效果：
+</p>
+<div class="example frame">
+    <div class="example block">
+        <div class="example key">
+            <div class="info">div设置：</div>
+            <div>width: 100px;</div>
+            <div>height: 100px; </div>
+            <div>background-color:#3ce5da;</div>
+            <div>transition-property: width background-color;</div>
+            <div>transition-duration: 3s;</div>
+            <div>transition-timing-function: linear;</div>
+            <div class="info">div悬浮设置：</div>
+            <div>width: 300px;</div>
+            <div>background-color: #7623ca;</div>
+        </div>
+        <div class="example value">
+            <div class="_5_one _box_">
+            </div>
+        </div>
+    </div>
+</div>
+<p class='warn'>
+    温馨提示：transition-duration 用于设置改变时长，请始终设置，否则时长为 0，就不会产生过渡效果。
+</p>
+<h4 id='fixed-animation'>
+    Animation 动画
+</h4>
+<p>
+    首先，我们需要定义一个动画：
+</p>
+<pre ui-code='css'>
+@keyframes move_right {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 200px;
+    }
+}
+</pre>
+<p>
+    然后，使用即可，就像下面这样：
+</p>
+<div class="example frame">
+    <div class="example block">
+        <div class="example key">
+            <div class="info">div设置：</div>
+            <div>animation: move_right 5s infinite;</div>
+        </div>
+        <div class="example value">
+            <div class="_6_one _box_">
+            </div>
+        </div>
+    </div>
+</div>

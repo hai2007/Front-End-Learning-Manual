@@ -1,20 +1,343 @@
-!function(n){function e(e){for(var t,o,i=e[0],a=e[1],l=0,u=[];l<i.length;l++)o=i[l],Object.prototype.hasOwnProperty.call(r,o)&&r[o]&&u.push(r[o][0]),r[o]=0;for(t in a)Object.prototype.hasOwnProperty.call(a,t)&&(n[t]=a[t]);for(c&&c(e);u.length;)u.shift()()}var t={},r={0:0};function o(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return n[e].call(r.exports,r,r.exports,o),r.l=!0,r.exports}o.e=function(n){var e=[],t=r[n];if(0!==t)if(t)e.push(t[2]);else{var i=new Promise((function(e,o){t=r[n]=[e,o]}));e.push(t[2]=i);var a,l=document.createElement("script");l.charset="utf-8",l.timeout=120,o.nc&&l.setAttribute("nonce",o.nc),l.src=function(n){return o.p+"build/"+n+".main@v0.1.2.js"}(n);var c=new Error;a=function(e){l.onerror=l.onload=null,clearTimeout(u);var t=r[n];if(0!==t){if(t){var o=e&&("load"===e.type?"missing":e.type),i=e&&e.target&&e.target.src;c.message="Loading chunk "+n+" failed.\n("+o+": "+i+")",c.name="ChunkLoadError",c.type=o,c.request=i,t[1](c)}r[n]=void 0}};var u=setTimeout((function(){a({type:"timeout",target:l})}),12e4);l.onerror=l.onload=a,document.head.appendChild(l)}return Promise.all(e)},o.m=n,o.c=t,o.d=function(n,e,t){o.o(n,e)||Object.defineProperty(n,e,{enumerable:!0,get:t})},o.r=function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(n,"__esModule",{value:!0})},o.t=function(n,e){if(1&e&&(n=o(n)),8&e)return n;if(4&e&&"object"==typeof n&&n&&n.__esModule)return n;var t=Object.create(null);if(o.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:n}),2&e&&"string"!=typeof n)for(var r in n)o.d(t,r,function(e){return n[e]}.bind(null,r));return t},o.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return o.d(e,"a",e),e},o.o=function(n,e){return Object.prototype.hasOwnProperty.call(n,e)},o.p="",o.oe=function(n){throw console.error(n),n};var i=window.webpackJsonp=window.webpackJsonp||[],a=i.push.bind(i);i.push=e,i=i.slice();for(var l=0;l<i.length;l++)e(i[l]);var c=a;o(o.s=6)}([function(n,e,t){(function(n){
-/*!
+/******/
+/******/  // EtcPack Bootstrap/******/  
+/******/  // （ https://etcpack.github.io/api/ ）/******/  
+/******/  /******/  
+/******/  // 记录bundle的函数源码/******/  
+/******/  window.__etcpack__bundleSrc__ = {};/******/  
+/******/  /******/  
+/******/  // 记录bundle的运行结果/******/  
+/******/  window.__etcpack__bundleObj__ = {};/******/  
+/******/  /******/  
+/******/  // 获取bundle结果/******/  
+/******/  window.__etcpack__getBundle = function (bundleName) {/******/  
+/******/  /******/  
+/******/      // 一个bundle只有第一次导入的时候需要执行/******/  
+/******/      if (!(bundleName in window.__etcpack__bundleObj__)) {/******/  
+/******/          window.__etcpack__bundleObj__[bundleName] = window.__etcpack__bundleSrc__[bundleName]();/******/  
+/******/      }/******/  
+/******/  /******/  
+/******/      // 返回需要的bundle的结果/******/  
+/******/      return window.__etcpack__bundleObj__[bundleName];/******/  
+/******/  }/******/  
+/******/  /******/  
+/******/  window.__etcpack__bundleFile__ = {};/******/  
+/******/  /******/  
+/******/  // 获取懒加载bundle结果/******/  
+/******/  window.__etcpack__getLazyBundle = function (fileName, bundleName) {/******/  
+/******/      return new Promise(function (resolve) {/******/  
+/******/  /******/  
+/******/          // 如果加载过了/******/  
+/******/          if (window.__etcpack__bundleFile__[fileName]) {/******/  
+/******/              resolve(window.__etcpack__getBundle(bundleName));/******/  
+/******/              return;/******/  
+/******/          }/******/  
+/******/  /******/  
+/******/          // 获取head标签/******/  
+/******/          var head = document.getElementsByTagName('head')[0];/******/  
+/******/  /******/  
+/******/          // 创建script/******/  
+/******/          var script = document.createElement('script');/******/  
+/******/  /******/  
+/******/          // 设置属性/******/  
+/******/          script.src = fileName;/******/  
+/******/  /******/  
+/******/          // 追加到页面/******/  
+/******/          head.appendChild(script);/******/  
+/******/  /******/  
+/******/          window.__etcpack__bundleFile__[fileName] = true;/******/  
+/******/  /******/  
+/******/          script.addEventListener('load', function () {/******/  
+/******/              resolve(window.__etcpack__getBundle(bundleName));/******/  
+/******/          }, false);/******/  
+/******/  /******/  
+/******/  /******/  
+/******/      });/******/  
+/******/  }/******/  
+/******/  
+/************************************************************************/
+/******/
+
+/*************************** [bundle] ****************************/
+// Original file:./src/main.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['0']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('1');
+var platform=__etcpack__scope_args__.platform;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('3');
+var normalize =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('4');
+var doc =__etcpack__scope_args__.default;
+ // 兼容文件
+
+__etcpack__scope_args__=window.__etcpack__getBundle('5');
+ // 引入主模块
+
+__etcpack__scope_args__=window.__etcpack__getBundle('18');
+var appModule =__etcpack__scope_args__.default;
+ // 引入样式
+
+__etcpack__scope_args__=window.__etcpack__getBundle('46');
+var menu =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('47');
+var style =__etcpack__scope_args__.default;
+ // 先获取平台实例
+
+platform({
+  // 框架管理的区域
+  el: document.getElementById('root'),
+  // 全局样式
+  styles: [normalize, style, menu, doc]
+}) // 然后启动主模块
+.bootstrap(appModule);
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/lib/nefbl.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['1']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('2');
+var Nefbl =__etcpack__scope_args__.default;
+ // 装饰器
+
+__etcpack__scope_bundle__.Module = Nefbl.Module;
+__etcpack__scope_bundle__.Component = Nefbl.Component;
+__etcpack__scope_bundle__.Directive = Nefbl.Directive; // 核心方法
+
+__etcpack__scope_bundle__.platform = Nefbl.platform;
+__etcpack__scope_bundle__.mountComponent = Nefbl.mountComponent;
+__etcpack__scope_bundle__.evalExpress = Nefbl.evalExpress;
+__etcpack__scope_bundle__.getValue = Nefbl.getValue;
+__etcpack__scope_bundle__.setValue = Nefbl.setValue; // 暴露的一些有用的方法
+
+__etcpack__scope_bundle__.ref = Nefbl.ref;
+__etcpack__scope_bundle__.reactive = Nefbl.reactive;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/nefbl/dist/nefbl.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['2']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    
+
+        var module={
+            exports:{}
+        };
+        var exports=module.exports;
+
+        /*!
  * nefbl - 新一代前端框架
  *
  * git+https://github.com/nefbl/nefbl.git
  *
  * author 你好2007 < https://hai2007.gitee.io/sweethome >
  *
- * version 0.2.4
+ * version 0.2.6
  *
  * Copyright (c) 2021-2021 hai2007 走一步，再走一步。
  * Released under the MIT license
  *
- * Date:Thu Nov 18 2021 10:26:17 GMT+0800 (中国标准时间)
+ * Date:Thu Dec 02 2021 16:51:00 GMT+0800 (中国标准时间)
  */
-!function(){"use strict";function e(n){return(e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(n){return typeof n}:function(n){return n&&"function"==typeof Symbol&&n.constructor===Symbol&&n!==Symbol.prototype?"symbol":typeof n})(n)}function t(n,e,t){return e in n?Object.defineProperty(n,e,{value:t,enumerable:!0,configurable:!0,writable:!0}):n[e]=t,n}function r(n,e){var t=Object.keys(n);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(n);e&&(r=r.filter((function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),t.push.apply(t,r)}return t}function o(n){for(var e=1;e<arguments.length;e++){var o=null!=arguments[e]?arguments[e]:{};e%2?r(Object(o),!0).forEach((function(e){t(n,e,o[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(n,Object.getOwnPropertyDescriptors(o)):r(Object(o)).forEach((function(e){Object.defineProperty(n,e,Object.getOwnPropertyDescriptor(o,e))}))}return n}function i(n,e){(null==e||e>n.length)&&(e=n.length);for(var t=0,r=new Array(e);t<e;t++)r[t]=n[t];return r}function a(n,e){var t;if("undefined"==typeof Symbol||null==n[Symbol.iterator]){if(Array.isArray(n)||(t=function(n,e){if(n){if("string"==typeof n)return i(n,e);var t=Object.prototype.toString.call(n).slice(8,-1);return"Object"===t&&n.constructor&&(t=n.constructor.name),"Map"===t||"Set"===t?Array.from(n):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?i(n,e):void 0}}(n))||e&&n&&"number"==typeof n.length){t&&(n=t);var r=0,o=function(){};return{s:o,n:function(){return r>=n.length?{done:!0}:{done:!1,value:n[r++]}},e:function(n){throw n},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var a,l=!0,c=!1;return{s:function(){t=n[Symbol.iterator]()},n:function(){var n=t.next();return l=n.done,n},e:function(n){c=!0,a=n},f:function(){try{l||null==t.return||t.return()}finally{if(c)throw a}}}}function l(n){var t=e(n);return null!=n&&("object"===t||"function"===t)}var c=Object.prototype.toString;function u(n){return null==n?void 0===n?"[object Undefined]":"[object Null]":c.call(n)}
-/*!
+(function () {
+  'use strict';
+
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
+  }
+
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  }
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it;
+
+    if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+      if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+        if (it) o = it;
+        var i = 0;
+
+        var F = function () {};
+
+        return {
+          s: F,
+          n: function () {
+            if (i >= o.length) return {
+              done: true
+            };
+            return {
+              done: false,
+              value: o[i++]
+            };
+          },
+          e: function (e) {
+            throw e;
+          },
+          f: F
+        };
+      }
+
+      throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+
+    var normalCompletion = true,
+        didErr = false,
+        err;
+    return {
+      s: function () {
+        it = o[Symbol.iterator]();
+      },
+      n: function () {
+        var step = it.next();
+        normalCompletion = step.done;
+        return step;
+      },
+      e: function (e) {
+        didErr = true;
+        err = e;
+      },
+      f: function () {
+        try {
+          if (!normalCompletion && it.return != null) it.return();
+        } finally {
+          if (didErr) throw err;
+        }
+      }
+    };
+  }
+
+  /**
+   * 判断一个值是不是Object。
+   *
+   * @param {*} value 需要判断类型的值
+   * @returns {boolean} 如果是Object返回true，否则返回false
+   */
+  function _isObject (value) {
+    var type = _typeof(value);
+
+    return value != null && (type === 'object' || type === 'function');
+  }
+
+  var toString = Object.prototype.toString;
+  /**
+   * 获取一个值的类型字符串[object type]
+   *
+   * @param {*} value 需要返回类型的值
+   * @returns {string} 返回类型字符串
+   */
+
+  function getType (value) {
+    if (value == null) {
+      return value === undefined ? '[object Undefined]' : '[object Null]';
+    }
+
+    return toString.call(value);
+  }
+
+  /**
+   * 判断一个值是不是Function。
+   *
+   * @param {*} value 需要判断类型的值
+   * @returns {boolean} 如果是Function返回true，否则返回false
+   */
+
+  function _isFunction (value) {
+    if (!_isObject(value)) {
+      return false;
+    }
+
+    var type = getType(value);
+    return type === '[object Function]' || type === '[object AsyncFunction]' || type === '[object GeneratorFunction]' || type === '[object Proxy]';
+  }
+
+  /*!
    * 💡 - 值类型判断方法
    * https://github.com/hai2007/tool.js/blob/master/type.js
    *
@@ -23,8 +346,523 @@
    * Copyright (c) 2020-present hai2007 走一步，再走一步。
    * Released under the MIT license
    */
-var s=l,f=function(n){var t=e(n);return"string"===t||"object"===t&&null!=n&&!Array.isArray(n)&&"[object String]"===u(n)},d=function(n){if(!l(n))return!1;var e=u(n);return"[object Function]"===e||"[object AsyncFunction]"===e||"[object GeneratorFunction]"===e||"[object Proxy]"===e},p=function(n){return Array.isArray(n)};var _={blankReg:new RegExp("[\\x20\\t\\r\\n\\f]"),blanksReg:/^[\x20\t\r\n\f]{0,}$/,identifier:/^[a-zA-Z_$][0-9a-zA-Z_$]{0,}$/};function h(n){var e=-1,t=null,r=!1,o="",i=["script","pre","style","code"],a=function(){return t=e++<n.length-1?n[e]:null},l=function(t){return n.substring(e,t+e>n.length?n.length:t+e)};for(a();_.blankReg.test(t)&&e<n.length-1;)a();return function(){var c=t,u={};if(null==c)return null;if(r){for(u.type="textcode",u.tagName=c;l(o.length+3)!="</"+o+">"&&e<n.length;)u.tagName+=a();return u.tagName=u.tagName.replace(/<$/,""),r=!1,u}if("\x3c!--"==l(4)){for(u.type="comment",u.tagName=c;"--\x3e"!=l(3)&&e<n.length;)u.tagName+=a();return a(),a(),a(),u.tagName=u.tagName.replace(/^<!--/,"").replace(/-$/,""),u}if("<!DOCTYPE"==l(9)){for(u.type="DOCTYPE",u.tagName=c;">"!=l(1)&&e<n.length;)u.tagName+=a();return a(),u.tagName=u.tagName.replace(/^<!DOCTYPE/,"").replace(/>$/,""),u}if("<"==c){for(var s=!1,f=null,d=null;(s||">"!=t)&&e<n.length;){var p;if(c+=a(),s)(p=l(d+1).substring(1))==f&&(s=!1);else'="'!=(p=l(2))&&"='"!=p||(f=p.replace("=",""),d=1,s=!0),'="'!=(p=l(3))&&"='"!=p||(f=p.replace("=",""),d=2,s=!0)}if(/^<\//.test(c))u.tagName=c.replace(/^<\//,"").replace(/>$/,""),u.type="endTag";else{/\/>$/.test(c)?(u.type="fullTag",c=c.replace(/\/>$/,"")):(u.type="beginTag",c=c.replace(/>$/,"")),c=c.replace(/^</,""),u.tagName="";for(var h=0;h<c.length&&" "!=c[h];h++)u.tagName+=c[h];var v=c.substring(h);_.blanksReg.test(v)?u.attrs={}:u.attrs=function(n){var e={},t=0;return n=n.trim(),function r(){for(var o="",i="";t<n.length;t++){if(_.blanksReg.test(n[t])||t==n.length-1){o+=n[t],_.blanksReg.test(o)||(e[o.trim()]=""),t+=1;break}if("="==n[t]){t+=1;var a=null,l=-1;if('"'==n.substr(t,1)||"'"==n.substr(t,1)?(a=n.substr(t,1),l=1,t+=1):'"'!=n.substr(t,2)&&"'"!=n.substr(t,2)||(a=n.substr(t,2),l=2,t+=2),null!==a)for(;t<n.length;t++){if(n.substr(t,l)==a){e[o.trim()]=i.trim(),t+=2;break}i+=n[t]}else for(;t<n.length;t++){if(_.blanksReg.test(n[t])){e[o.trim()]=i.trim(),t+=1;break}i+=n[t]}break}o+=n[t]}t<n.length&&r()}(),e}(v)}}else{for(u.type="textcode",u.tagName=t;"<"!=l(1)&&e<n.length;)u.tagName+=a();u.tagName=u.tagName.replace(/<$/,""),e-=1}return"beginTag"==u.type?i.indexOf(u.tagName.toLowerCase())>-1&&(r=!0,o=u.tagName):"endTag"==u.type&&i.indexOf(u.tagName.toLowerCase())>-1&&(r=!1),a(),u}}var v=function(n){var e=[];return n.forEach((function(t,r){if("beginTag"==t.type)e.push([r,t.tagName]);else if("endTag"==t.type)for(;e.length>0;){var o=e.pop();if(o[1]==t.tagName)break;n[o[0]].type="fullTag"}})),n};
-/*!
+
+
+  var isObject = _isObject; // 基本类型
+
+  var isFunction = _isFunction;
+  var isArray = function isArray(input) {
+    return Array.isArray(input);
+  };
+
+  /**
+   * 模块
+   */
+
+  function Module () {
+    var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var component = {},
+        directive = {};
+    var bootstrapComponent = null;
+    var exports = {
+      component: {},
+      directive: {}
+    };
+
+    if (isArray(config.declarations)) {
+      // 分析出指令和组件
+      var _iterator = _createForOfIteratorHelper(config.declarations),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var Item = _step.value;
+          var needExports = false;
+
+          if (isArray(config.exports)) {
+            // 判断是否需要暴露
+
+            /**
+             * 为什么这里暴露出去的需要从declarations中取？
+             * 因为考虑到后期改造的时候，可能新增一些需要在本模块实例化等，
+             * 这样的好处是保罗出去的和内置使用的保持一致，不会乱。
+             */
+            var _iterator2 = _createForOfIteratorHelper(config.exports),
+                _step2;
+
+            try {
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                var ExportItem = _step2.value;
+
+                if (ExportItem === Item) {
+                  needExports = true;
+                  break;
+                }
+              }
+            } catch (err) {
+              _iterator2.e(err);
+            } finally {
+              _iterator2.f();
+            }
+          } // 组件
+
+
+          if (Item.prototype.__type__ == "Component") {
+            component[Item.prototype.__selector__] = Item; // bootstrap用于标记启动组件
+
+            if (config.bootstrap === Item) {
+              bootstrapComponent = Item;
+            }
+
+            if (needExports) {
+              exports.component[Item.prototype.__selector__] = Item;
+            }
+          } // 指令
+          else if (Item.prototype.__type__ == "Directive") {
+              directive[Item.prototype.__selector__] = Item;
+
+              if (needExports) {
+                exports.directive[Item.prototype.__selector__] = Item;
+              }
+            }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+
+    if (isArray(config.imports)) {
+      // 分析导入的模块
+      var _iterator3 = _createForOfIteratorHelper(config.imports),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var module = _step3.value;
+
+          // 组件
+          for (var key in module.prototype.__exports__.component) {
+            component[key] = module.prototype.__exports__.component[key];
+          } // 指令
+
+
+          for (var _key in module.prototype.__exports__.directive) {
+            directive[_key] = module.prototype.__exports__.directive[_key];
+          }
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
+    }
+
+    return function (target) {
+      // 对象类型标记
+      target.prototype.__type__ = 'Module'; // 登记所有的指令、组件（包括依赖的模块的）
+
+      target.prototype.__component__ = component;
+      target.prototype.__directive__ = directive; // 暴露出去的
+
+      target.prototype.__exports__ = exports; // 可能还有启动组件
+
+      target.prototype.__bootstrapComponent__ = bootstrapComponent;
+    };
+  }
+
+  var $RegExp = {
+    // 空白字符:http://www.w3.org/TR/css3-selectors/#whitespace
+    blankReg: new RegExp("[\\x20\\t\\r\\n\\f]"),
+    blanksReg: /^[\x20\t\r\n\f]{0,}$/,
+    // 标志符
+    identifier: /^[a-zA-Z_$][0-9a-zA-Z_$]{0,}$/
+  };
+
+  var toString$1 = Object.prototype.toString;
+  /**
+   * 获取一个值的类型字符串[object type]
+   *
+   * @param {*} value 需要返回类型的值
+   * @returns {string} 返回类型字符串
+   */
+
+  function getType$1 (value) {
+    if (value == null) {
+      return value === undefined ? '[object Undefined]' : '[object Null]';
+    }
+
+    return toString$1.call(value);
+  }
+
+  /**
+   * 判断一个值是不是String。
+   *
+   * @param {*} value 需要判断类型的值
+   * @returns {boolean} 如果是String返回true，否则返回false
+   */
+
+  function _isString (value) {
+    var type = _typeof(value);
+
+    return type === 'string' || type === 'object' && value != null && !Array.isArray(value) && getType$1(value) === '[object String]';
+  }
+
+  var isString = _isString;
+  var isArray$1 = function isArray(input) {
+    return Array.isArray(input);
+  };
+
+  function analyseTag (attrString) {
+    var attr = {},
+        index = 0;
+    attrString = attrString.trim();
+
+    var getOneAttr = function getOneAttr() {
+      // 属性名和属性值
+      var attrName = "",
+          attrValue = ""; // 先寻找属性名
+
+      for (; index < attrString.length; index++) {
+        // 寻找属性名的时候遇到空白或结尾的时候，肯定没有属性值
+        if ($RegExp.blanksReg.test(attrString[index]) || index == attrString.length - 1) {
+          attrName += attrString[index]; // 如果属性名是空白，就不需要记录了
+
+          if (!$RegExp.blanksReg.test(attrName)) {
+            attr[attrName.trim()] = "";
+          }
+
+          index += 1;
+          break;
+        } // 如果遇到等号，说明属性名寻找结束了
+        else if (attrString[index] == '=') {
+            // 接着寻找属性值
+            index += 1; // 由于属性可能由引号包裹或直接暴露
+
+            var preCode = null,
+                preLeng = -1; // 如果是由'或者"包裹
+
+            if (attrString.substr(index, 1) == '"' || attrString.substr(index, 1) == "'") {
+              preCode = attrString.substr(index, 1);
+              preLeng = 1;
+              index += 1;
+            } // 如果是由\'或\"包裹
+            else if (attrString.substr(index, 2) == '\"' || attrString.substr(index, 2) == "\'") {
+                preCode = attrString.substr(index, 2);
+                preLeng = 2;
+                index += 2;
+              } // 开始正式寻找属性值
+            // 如果没有包裹，是直接暴露在外面的
+            // 我们寻找到空格或结尾即可
+
+
+            if (preCode !== null) {
+              for (; index < attrString.length; index++) {
+                if (attrString.substr(index, preLeng) == preCode) {
+                  attr[attrName.trim()] = attrValue.trim();
+                  index += 2;
+                  break;
+                } else {
+                  attrValue += attrString[index];
+                }
+              }
+            } // 如果是包裹的
+            // 我们确定寻找到对应的包裹闭合即可
+            else {
+                for (; index < attrString.length; index++) {
+                  if ($RegExp.blanksReg.test(attrString[index])) {
+                    attr[attrName.trim()] = attrValue.trim();
+                    index += 1;
+                    break;
+                  } else {
+                    attrValue += attrString[index];
+                  }
+                }
+              }
+
+            break;
+          } else {
+            attrName += attrString[index];
+          }
+      } // 如果还有字符串，继续解析
+
+
+      if (index < attrString.length) {
+        getOneAttr();
+      }
+    };
+
+    getOneAttr();
+    return attr;
+  }
+
+  function nextTagFun (template) {
+    var i = -1,
+        // 当前面对的字符
+    currentChar = null; // 如果前面是获取的js或css，还有pre等开始标签，比较特殊，直接寻址闭合的
+
+    var preIsSpecial = false,
+        specialCode = "";
+    var specialTag = ['script', 'pre', 'style', 'code']; // 获取下一个字符
+
+    var next = function next() {
+      currentChar = i++ < template.length - 1 ? template[i] : null;
+      return currentChar;
+    }; // 获取往后n个值
+
+
+    var nextNValue = function nextNValue(n) {
+      return template.substring(i, n + i > template.length ? template.length : n + i);
+    };
+
+    next(); // 剔除开头的空白
+
+    while ($RegExp.blankReg.test(currentChar) && i < template.length - 1) {
+      next();
+    }
+    /**
+     * 一个Tag存在哪些类型？如下：
+     * 1.<tag-name>       { tagName:'tag-name', type:'beginTag', attrs:{} }      开始标签
+     * 2.</tag-name>      { tagName:'tag-name', type:'endTag'   }                结束标签
+     * 3.<tag-name />     { tagName:'tag-name', type:'fullTag',  attrs:{} }      自闭合标签
+     * 4.text             { tagName:'text',     type:'textcode' }                文本结点
+     * 5.<!-- text -->    { tagName:'text',     type:'comment'  }                注释
+     * 6.<!DOCTYPE text>  { tagName:'text',     type:'DOCTYPE'  }                声明
+     *
+     *
+     */
+
+
+    return function () {
+      var tag = currentChar,
+          tagObj = {};
+      if (tag == null) return null;
+      /**
+       * 特殊标签内容获取
+       * ========================================
+       */
+      // 如果是获取特殊标签里面的内容
+      // 先不考虑里面包含'</XXX>'
+
+      if (preIsSpecial) {
+        tagObj.type = 'textcode';
+        tagObj.tagName = tag;
+
+        while (nextNValue(specialCode.length + 3) != '</' + specialCode + '>' && i < template.length) {
+          tagObj.tagName += next();
+        }
+
+        tagObj.tagName = tagObj.tagName.replace(/<$/, '');
+        preIsSpecial = false;
+        return tagObj;
+      }
+      /**
+       * 特殊标签获取
+       * ========================================
+       */
+      // 针对特殊的comment
+
+
+      if (nextNValue(4) == '<!--') {
+        tagObj.type = 'comment';
+        tagObj.tagName = tag;
+
+        while (nextNValue(3) != '-->' && i < template.length) {
+          tagObj.tagName += next();
+        }
+
+        next();
+        next();
+        next();
+        tagObj.tagName = tagObj.tagName.replace(/^<!--/, '').replace(/-$/, '');
+        return tagObj;
+      } // 针对特殊的doctype
+
+
+      if (nextNValue(9) == '<!DOCTYPE') {
+        tagObj.type = 'DOCTYPE';
+        tagObj.tagName = tag;
+
+        while (nextNValue(1) != '>' && i < template.length) {
+          tagObj.tagName += next();
+        }
+
+        next();
+        tagObj.tagName = tagObj.tagName.replace(/^<!DOCTYPE/, '').replace(/>$/, '');
+        return tagObj;
+      }
+      /**
+       * 普通的
+       * ========================================
+       */
+      // 如果是期望归结非文本结点
+      else if (tag == '<') {
+          // 标记是否处于属性值是字符串包裹中
+          var isAttrString = false,
+              attrLeftValue = null,
+              attrLeftLen = null; // 如果在包裹中或者没有遇到‘>’说明没有结束
+
+          while ((isAttrString || currentChar != '>') && i < template.length) {
+            tag += next(); // 如果是包裹里面，试探是否即将遇到了结束
+
+            if (isAttrString) {
+              var next23Value = nextNValue(attrLeftLen + 1).substring(1);
+
+              if (next23Value == attrLeftValue) {
+                isAttrString = false;
+              }
+            } // 如果在包裹外面，试探是否即将进入包裹
+            else {
+                var next23Value = nextNValue(2);
+
+                if (next23Value == '="' || next23Value == "='") {
+                  attrLeftValue = next23Value.replace('=', '');
+                  attrLeftLen = 1;
+                  isAttrString = true;
+                }
+
+                next23Value = nextNValue(3);
+
+                if (next23Value == '=\"' || next23Value == "=\'") {
+                  attrLeftValue = next23Value.replace('=', '');
+                  attrLeftLen = 2;
+                  isAttrString = true;
+                }
+              }
+          } // 针对特殊的结束标签
+
+
+          if (/^<\//.test(tag)) {
+            tagObj.tagName = tag.replace(/^<\//, '').replace(/>$/, '');
+            tagObj.type = 'endTag';
+          } else {
+            if (/\/>$/.test(tag)) {
+              tagObj.type = 'fullTag';
+              tag = tag.replace(/\/>$/, '');
+            } else {
+              tagObj.type = 'beginTag';
+              tag = tag.replace(/>$/, '');
+            }
+
+            tag = tag.replace(/^</, '');
+            tagObj.tagName = "";
+            var j = 0;
+
+            for (; j < tag.length; j++) {
+              if (tag[j] == ' ') break;
+              tagObj.tagName += tag[j];
+            }
+
+            var attrString = tag.substring(j);
+
+            if ($RegExp.blanksReg.test(attrString)) {
+              tagObj.attrs = {};
+            } else {
+              tagObj.attrs = analyseTag(attrString);
+            }
+          }
+        } // 如果是归结文本结点
+        // 如果文本中包含<的先忽略考虑
+        else {
+            tagObj.type = 'textcode';
+            tagObj.tagName = currentChar;
+
+            while (nextNValue(1) != '<' && i < template.length) {
+              tagObj.tagName += next();
+            }
+
+            tagObj.tagName = tagObj.tagName.replace(/<$/, '');
+            i -= 1;
+          } // 如果遇到开始script或者style、pre等特殊标签，标记开始获取特殊文本
+
+
+      if (tagObj.type == 'beginTag') {
+        if (specialTag.indexOf(tagObj.tagName.toLowerCase()) > -1) {
+          preIsSpecial = true;
+          specialCode = tagObj.tagName;
+        }
+      } // 如果遇到结束script或者style、pre等特殊标签，标记结束获取特殊文本
+      else if (tagObj.type == 'endTag') {
+          if (specialTag.indexOf(tagObj.tagName.toLowerCase()) > -1) {
+            preIsSpecial = false;
+          }
+        }
+
+      next();
+      return tagObj;
+    };
+  }
+
+  // 分析deep
+  // 我们会在这里校对那些没有结束标签的开始标签
+  // 这步结束以后，每个都是一个单独的标签
+  // 也就是不用再区分开始或闭合了
+  function analyseDeep (tagArray) {
+    // 闭合标签
+    tagArray = closeTag(tagArray);
+    var deep = 0,
+        tagDeepArray = [];
+    tagArray.forEach(function (tag) {
+      if (tag.type == 'beginTag') {
+        tagDeepArray.push({
+          type: "tag",
+          name: tag.tagName,
+          attrs: tag.attrs,
+          __deep__: ++deep,
+          __tagType__: "double"
+        });
+      } else if (tag.type == 'endTag') {
+        deep -= 1;
+      } else if (tag.type == 'textcode') {
+        // 如果是文本
+        tagDeepArray.push({
+          type: "text",
+          content: tag.tagName,
+          __deep__: deep + 1
+        });
+      } else if (tag.type == 'comment') {
+        // 如果是注释
+        tagDeepArray.push({
+          type: "comment",
+          content: tag.tagName,
+          __deep__: deep + 1
+        });
+      } else {
+        // 如果是自闭合结点
+        tagDeepArray.push({
+          type: "tag",
+          name: tag.tagName,
+          attrs: tag.attrs,
+          __deep__: deep + 1,
+          __tagType__: "single"
+        });
+      }
+    });
+    return tagDeepArray;
+  }
+
+  var closeTag = function closeTag(tagArray) {
+    var needClose = [];
+    tagArray.forEach(function (tag, i) {
+      if (tag.type == 'beginTag') {
+        needClose.push([i, tag.tagName]);
+      } else if (tag.type == 'endTag') {
+        while (needClose.length > 0) {
+          var needCloseTag = needClose.pop();
+
+          if (needCloseTag[1] == tag.tagName) {
+            break;
+          } else {
+            tagArray[needCloseTag[0]].type = 'fullTag';
+          }
+        }
+      }
+    });
+    return tagArray;
+  };
+
+  /*!
    * 🔪 - 解析xhtml为json对象返回
    * https://github.com/hai2007/algorithm.js/blob/master/xhtmlToJson.js
    *
@@ -32,8 +870,751 @@ var s=l,f=function(n){var t=e(n);return"string"===t||"object"===t&&null!=n&&!Arr
    *
    * Copyright (c) 2020-present hai2007 走一步，再走一步。
    * Released under the MIT license
-   */function g(n,e){if(!f(n))throw new Error("Template must be a String!");for(var t=h(n.trim()),r=t(),o=[];null!=r;)"textcode"==r.type&&_.blanksReg.test(r.tagName)||"DOCTYPE"==r.type||("comment"==r.type?e&&o.push(r):o.push(r)),r=t();o=function(n){n=v(n);var e=0,t=[];return n.forEach((function(n){"beginTag"==n.type?t.push({type:"tag",name:n.tagName,attrs:n.attrs,__deep__:++e,__tagType__:"double"}):"endTag"==n.type?e-=1:"textcode"==n.type?t.push({type:"text",content:n.tagName,__deep__:e+1}):"comment"==n.type?t.push({type:"comment",content:n.tagName,__deep__:e+1}):t.push({type:"tag",name:n.tagName,attrs:n.attrs,__deep__:e+1,__tagType__:"single"})})),t}(o);for(var i=[null],a=0,l=0;l<o.length;l++){var c=l,u=o[l].__deep__;o[l].childNodes=[],o[l].preNode=null,o[l].nextNode=null;var s=i[i.length-1],d=i.length>1?i[i.length-2]:null;if(u==a)o[c].preNode=s,o[s].nextNode=c,o[c].parentNode=d,o[d].childNodes.push(c),i[i.length-1]=c;else if(u>a)o[c].parentNode=s,null!=s&&o[s].childNodes.push(c),i.push(c);else{var p=i[i.length-1-(a-u)],g=i[i.length-2-(a-u)];o[c].preNode=p,null!=p&&(o[p].nextNode=c),o[c].parentNode=g,null!=g&&o[g].childNodes.push(c);for(var m=0;m<a-u;m++)i.pop();i[i.length-1]=c}a=u}return o}function m(n,e){var t=document.createElement("style"),r=document.head||document.getElementsByTagName("head")[0],o=n.join("");if(e){o=(o=o.replace(/( {0,}){/g,"{")).replace(/( {0,}),/g,",");for(var i="",a=!1,l=!1,c=!1,u=0;u<o.length;u++)":"!=o[u]||a||c||l?"{"!=o[u]||a?"}"!=o[u]||a?"/"==o[u]&&"*"==o[u+1]?a=!0:"*"==o[u]&&"/"==o[u+1]?a=!1:","!=o[u]||a||l||(c||(i+="["+e+"]"),c=!1):(l=!1,c=!1):(l=!0,c||(i+="["+e+"]")):(c=!0,i+="["+e+"]"),i+=o[u];o=i}t.innerHTML=o,t.setAttribute("type","text/css"),r.appendChild(t)}var y=0;function b(n){if(/^[_$]/.test(n))throw new Error("The beginning of _ or $ is not allowed："+n)}function w(n,e,t,r){var o=e.value,i={get:function(){return o},set:function(n){o=n,r()}};Object.defineProperty(e,"value",i),n[t]=o,Object.defineProperty(n,t,i)}function x(n,e,t,r){var o=new Proxy(e.value,{get:function(n,e){return n[e]},set:function(n,e,t){var o=Reflect.set(n,e,t);return r(),o}});e.value=o,n[t]=o}var N=["+","-","*","/","%","&","|","!","?",":","[","]","(",")",">","<","="],$=["+","-","*","/","%","&","|","!","?",":",">","<","=","<=",">=","==","===","!=","!=="];function k(n,e,t){e=e.trim();var r=-1,o=null,i=function(){return o=r++<e.length-1?e[r]:null},a=function(n){return e.substring(r,n+r>e.length?e.length:n+r)};i();for(var l=[];!(r>=e.length);)if(N.indexOf(o)>-1)if(["&","|","="].indexOf(o)>-1)if(["==="].indexOf(a(3))>-1)l.push(a(3)),r+=2,i();else{if(!(["&&","||","=="].indexOf(a(2))>-1))throw new Error("Illegal expression : "+e+"\nstep='analyseExpress',index="+r);l.push(a(2)),r+=1,i()}else["!=="].indexOf(a(3))>-1?(l.push(a(3)),r+=2,i()):[">=","<=","!="].indexOf(a(2))>-1?(l.push(a(2)),r+=1,i()):(l.push(o),i());else if(['"',"'"].indexOf(o)>-1){var c="",u=o;for(i();o!=u;){if(r>=e.length)throw new Error("String unclosed error : "+e+"\nstep='analyseExpress',index="+r);c+=o,i()}l.push(c+"@string"),i()}else if(/\d/.test(o)){var s="no";c=o;for(i();r<e.length;){if(/\d/.test(o))c+=o,"error"==s&&(s="yes");else{if("."!=o||"no"!=s)break;c+=o,s="error"}i()}"error"==s&&(c+="0"),l.push(+c)}else if(["null","true"].indexOf(a(4))>-1)l.push({null:null,true:!0}[a(4)]),r+=3,i();else if(["false"].indexOf(a(5))>-1)l.push({false:!1}[a(5)]),r+=4,i();else if(["undefined"].indexOf(a(9))>-1)l.push({undefined:void 0}[a(9)]),r+=8,i();else if(_.blankReg.test(o))do{i()}while(_.blankReg.test(o)&&r<e.length);else{var d=!1;if("."==o&&(d=!0,i()),!_.identifier.test(o))throw new Error("Illegal express : "+e+"\nstep='analyseExpress',index="+r);for(var p=1;r+p<=e.length&&_.identifier.test(a(p));)p+=1;if(d)l.push("["),l.push(a(p-1)+"@string"),l.push("]");else{var h=a(p-1),v=h in t?t[h]:n[h];l.push(f(v)?v+"@string":v)}r+=p-2,i()}for(var g=0,m=0;m<l.length;m++)["+","-"].indexOf(l[m])>-1&&(0==m||$.indexOf(l[g-1])>-1)?(l[g++]=+(l[m]+l[m+1]),m+=1):l[g++]=l[m];return l.length=g,l}var O=function(n){return"string"==typeof n?n.replace(/@string$/,""):n};function A(n){for(var e,t=0,r=0;r<n.length;r++)"!"==n[r]?n[t]=!n[++r]:n[t]=n[r],t+=1;if(1==t)return O(n[0]);for(n.length=t,t=0,r=0;r<n.length;r++)"*"==n[r]?n[t-1]=O(n[t-1])*O(n[++r]):"/"==n[r]?n[t-1]=O(n[t-1])/O(n[++r]):"%"==n[r]?n[t-1]=O(n[t-1])%O(n[++r]):n[t++]=n[r];if(1==t)return O(n[0]);for(n.length=t,t=0,r=0;r<n.length;r++)"+"==n[r]?n[t-1]="string"==typeof(e=O(n[t-1])+O(n[++r]))?e+"@string":e:"-"==n[r]?n[t-1]=O(n[t-1])-O(n[++r]):n[t++]=n[r];if(1==t)return O(n[0]);for(n.length=t,t=0,r=0;r<n.length;r++)">"==n[r]?n[t-1]=O(n[t-1])>O(n[++r]):"<"==n[r]?n[t-1]=O(n[t-1])<O(n[++r]):"<="==n[r]?n[t-1]=O(n[t-1])<=O(n[++r]):">="==n[r]?n[t-1]=O(n[t-1])>=O(n[++r]):n[t++]=n[r];if(1==t)return O(n[0]);for(n.length=t,t=0,r=0;r<n.length;r++)"=="==n[r]?n[t-1]=O(n[t-1])==O(n[++r]):"==="==n[r]?n[t-1]=O(n[t-1])===O(n[++r]):"!="==n[r]?n[t-1]=O(n[t-1])!=O(n[++r]):"!=="==n[r]?n[t-1]=O(n[t-1])!==O(n[++r]):n[t++]=n[r];if(1==t)return O(n[0]);for(n.length=t,t=0,r=0;r<n.length;r++)"&&"==n[r]?(n[t-1]=O(n[t-1])&&O(n[1+r]),r+=1):"||"==n[r]?(n[t-1]=O(n[t-1])||O(n[1+r]),r+=1):n[t++]=n[r];if(1==t)return O(n[0]);for(n.length=t,t=0,r=0;r<n.length;r++)"?"==n[r]?(n[t-1]=O(n[t-1])?O(n[r+1]):O(n[r+3]),r+=3):n[t++]=n[r];if(1==t)return O(n[0]);throw n.length=t,new Error("Unrecognized expression : ["+n.toString()+"]")}function j(n,e,t){for(var r=(e[0]in t?t[e[0]]:n[e[0]]),o=1;o<e.length;o++)try{r=r[e[o]]}catch(r){throw console.error({target:n,scope:t,expressArray:e,index:o}),r}return r}var S=function(n){for(var e=!0;e;){e=!1;for(var t=[],r=[],o=!1,i=0;i<n.length;i++)if("["==n[i]&&0!=i&&"]"!=n[i-1]){if(o){t.push("[");for(var a=0;a<r.length;a++)t.push(r[a])}else o=!0;r=[]}else if("]"==n[i]&&o){e=!0;var l=A(r),c=t[t.length-1][l];t[t.length-1]=f(c)?c+"@string":c,o=!1}else o?r.push(n[i]):t.push(n[i]);n=t}return n},T=function(n){for(var e=[],t=[],r=0;r<n.length;r++)"["==n[r]?t=[]:"]"==n[r]?e.push(A(t)):t.push(n[r]);return e};function E(n,e,t){var r,o=function n(e,t,r){if(t.indexOf("(")>-1){for(var o=[],i=[],a=0,l=0;l<t.length;l++)if("("==t[l])a>0&&i.push("("),a+=1;else if(")"==t[l]){if(a>1&&i.push(")"),0==(a-=1)){var c=A(n(e,i));o.push(f(c)?c+"@string":c),i=[]}}else a>0?i.push(t[l]):o.push(t[l]);t=o}return S(t)}(n,e);if("["!=o[0])r=[A(o)];else if("]"==o[o.length-1])r=T(o);else{var i=o.lastIndexOf("]"),a=T(o.slice(0,i+1)),l=o.slice(i+1);l.unshift(j(n,a,t)),r=[A(l)]}return r}
-/*!
+   */
+  // noIgnore为true表示不忽略任何标签
+
+  function xhtmlToJson (template, noIgnore) {
+    if (!isString(template)) throw new Error("Template must be a String!"); // 获取读取下一个标签对象
+
+    var nextTag = nextTagFun(template.trim());
+    var tag = nextTag(),
+        DomTree = [];
+
+    while (tag != null) {
+      if (tag.type == 'textcode' && $RegExp.blanksReg.test(tag.tagName)) ; else if (tag.type == 'DOCTYPE') ; else if (tag.type == 'comment') {
+        // 注释目前也默认过滤掉，除非显示声明不忽略
+        if (noIgnore) {
+          DomTree.push(tag);
+        }
+      } else {
+        tag.tagName = tag.tagName.trim();
+        DomTree.push(tag);
+      }
+
+      tag = nextTag();
+    } // 分析层次
+
+
+    DomTree = analyseDeep(DomTree);
+    /**
+     * 模仿浏览器构建的一棵树,每个结点有如下属性：
+     *
+     * 1.parentNode index  父结点
+     * 2.childNodes []     孩子结点
+     * 3.preNode    index  前一个兄弟结点
+     * 4.nextNode   index  后一个兄弟结点
+     *
+     * 5.attrs:{}          当前结点的属性
+     * 6.name              节点名称
+     * 7.type              节点类型（tag和text）
+     * 8.content           文本结点内容
+     *
+     * 需要注意的是：如果一个文本结点内容只包含回车，tab，空格等空白字符，会直接被忽视
+     */
+
+    var presNode = [null],
+        preDeep = 0;
+
+    for (var i = 0; i < DomTree.length; i++) {
+      // 当前结点
+      var currentIndex = i,
+          currentDeep = DomTree[i].__deep__;
+      DomTree[i].childNodes = [];
+      DomTree[i].preNode = null;
+      DomTree[i].nextNode = null; // 前置三个结点
+
+      var lastPre = presNode[presNode.length - 1];
+      var last2Pre = presNode.length > 1 ? presNode[presNode.length - 2] : null; // 如果遇到的是兄弟结点
+
+      if (currentDeep == preDeep) {
+        // 修改兄弟关系
+        DomTree[currentIndex].preNode = lastPre;
+        DomTree[lastPre].nextNode = currentIndex; // 修改父子关系
+
+        DomTree[currentIndex].parentNode = last2Pre;
+        DomTree[last2Pre].childNodes.push(currentIndex); // 校对presNode
+
+        presNode[presNode.length - 1] = currentIndex;
+      } // 如果是遇到了孩子
+      else if (currentDeep > preDeep) {
+          // 修改兄弟关系
+          // todo
+          // 修改父子关系
+          DomTree[currentIndex].parentNode = lastPre;
+          if (lastPre != null) DomTree[lastPre].childNodes.push(currentIndex); // 校对presNode
+
+          presNode.push(currentIndex);
+        } // 如果是遇到了祖先
+        else {
+            var preTempIndex = presNode[presNode.length - 1 - (preDeep - currentDeep)];
+            var preTemp2Index = presNode[presNode.length - 2 - (preDeep - currentDeep)]; // 修改兄弟关系
+
+            DomTree[currentIndex].preNode = preTempIndex;
+            if (preTempIndex != null) DomTree[preTempIndex].nextNode = currentIndex; // 修改父子关系
+
+            DomTree[currentIndex].parentNode = preTemp2Index;
+            if (preTemp2Index != null) DomTree[preTemp2Index].childNodes.push(currentIndex); // 校对presNode
+
+            for (var j = 0; j < preDeep - currentDeep; j++) {
+              presNode.pop();
+            }
+
+            presNode[presNode.length - 1] = currentIndex;
+          }
+
+      preDeep = currentDeep;
+    }
+
+    return DomTree;
+  }
+
+  // 在浏览器中利用style标签插入样式
+  function addStylesClient(styles, uniqueId) {
+    var styleElement = document.createElement('style');
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var style = styles.join(''); // 如果需要包裹
+
+    if (uniqueId) {
+      style = style.replace(/( {0,}){/g, "{");
+      style = style.replace(/( {0,}),/g, ",");
+      var temp = ""; // 分别表示：是否处于注释中、是否处于内容中、是否由于特殊情况在遇到{前完成了hash
+
+      var isSpecial = false,
+          isContent = false,
+          hadComplete = false;
+
+      for (var i = 0; i < style.length; i++) {
+        if (style[i] == ':' && !isSpecial && !hadComplete && !isContent) {
+          hadComplete = true;
+          temp += "[" + uniqueId + "]";
+        } else if (style[i] == '{' && !isSpecial) {
+          isContent = true;
+          if (!hadComplete) temp += "[" + uniqueId + "]";
+        } else if (style[i] == '}' && !isSpecial) {
+          isContent = false;
+          hadComplete = false;
+        } else if (style[i] == '/' && style[i + 1] == '*') {
+          isSpecial = true;
+        } else if (style[i] == '*' && style[i + 1] == '/') {
+          isSpecial = false;
+        } else if (style[i] == ',' && !isSpecial && !isContent) {
+          if (!hadComplete) temp += "[" + uniqueId + "]";
+          hadComplete = false;
+        }
+
+        temp += style[i];
+      }
+
+      style = temp;
+    }
+
+    styleElement.innerHTML = style;
+    styleElement.setAttribute('type', 'text/css');
+    head.appendChild(styleElement);
+  }
+
+  /**
+   * 组件
+   */
+
+  var index = 0;
+  function Component (config) {
+    var uniqueId = null; // 加载css
+
+    if (isArray(config.styles)) {
+      uniqueId = "nefbl-scoped-" + index++;
+      addStylesClient(config.styles, uniqueId);
+    }
+
+    var template = xhtmlToJson("<nefbl-component>" + config.template + "</nefbl-component>");
+    return function (target) {
+      // 对象类型标记
+      target.prototype.__type__ = 'Component'; // 登记选择器
+
+      target.prototype.__selector__ = config.selector; // 登记模板对象
+
+      target.prototype.__template__ = template; // 记录唯一标识
+
+      target.prototype.__uniqueId__ = uniqueId;
+    };
+  }
+
+  /**
+   * 指令
+   */
+  function Directive (config) {
+    return function (target) {
+      // 对象类型标记
+      target.prototype.__type__ = 'Directive'; // 登记选择器
+
+      target.prototype.__selector__ = config.selector;
+    };
+  }
+
+  // 判断是否是合法的方法或数据key
+  function isValidKey (key) {
+    // 判断是不是_或者$开头的
+    // 这两个内部预留了
+    if (/^[_$]/.test(key)) {
+      throw new Error('The beginning of _ or $ is not allowed：' + key);
+    }
+  }
+
+  function watcher (component, data, key, doback) {
+    // 记录值
+    var value = data.value;
+    var getter_setter = {
+      get: function get() {
+        return value;
+      },
+      set: function set(newValue) {
+        value = newValue; // 回调通知组件更新
+
+        doback();
+      }
+    }; // setter和getter添加监听
+
+    Object.defineProperty(data, 'value', getter_setter); // 组件实例新增属性
+
+    component[key] = value;
+    Object.defineProperty(component, key, getter_setter);
+  }
+
+  function proxy (component, data, key, doback) {
+    var proxy = new Proxy(data.value, {
+      get: function get(_target, _key) {
+        return _target[_key];
+      },
+      set: function set(_target, _key, _value) {
+        var flag = Reflect.set(_target, _key, _value); // 回调通知组件更新
+
+        doback();
+        return flag;
+      }
+    });
+    data.value = proxy;
+    component[key] = proxy;
+  }
+
+  // 后续我们的任务就是对这个数组进行归约即可(归约交付给别的地方，这里不继续处理)
+
+  /**
+   * 例如：
+   *  target={
+   *      a:{
+   *              value:9
+   *         },
+   *      b:7,
+   *      flag:'no'
+   *  }
+   *  express= "a.value>10 && b< 11 ||flag=='yes'"
+   * 变成数组以后应该是：
+   *
+   * // 比如最后的yes@value表示这是一个最终的值，不需要再计算了
+   * ['a','[@value','value@value',']@value','>@value','10@value','&&@value','b','<@value','||@value','flag','==@value','yes@value']
+   *
+   * 然后，进一步解析得到：
+   * [{value:9},'[','value',']','>',10,'&&',7,'<','||','no','==','yes']
+   *
+   * (当然，我们实际运算的时候，可能和这里不完全一致，这里只是为了方便解释我们的主体思想)
+   *
+   * 然后我们返回上面的结果即可！
+   */
+  // 除了上述原因，统一前置处理还有一个好处就是：
+  // 可以提前对部分语法错误进行报错，方便定位调试
+  // 因为后续的操作越来越复杂，错误越提前越容易定位
+
+  var specialCode1 = ['+', '-', '*', '/', '%', '&', '|', '!', '?', ':', '[', ']', '(', ")", '>', '<', '='];
+  var specialCode2 = ['+', '-', '*', '/', '%', '&', '|', '!', '?', ':', '>', '<', '=', '<=', '>=', '==', '===', '!=', '!=='];
+  function analyseExpress (target, express, scope) {
+    // 剔除开头和结尾的空白
+    express = express.trim();
+    var i = -1,
+        // 当前面对的字符
+    currentChar = null; // 获取下一个字符
+
+    var next = function next() {
+      currentChar = i++ < express.length - 1 ? express[i] : null;
+      return currentChar;
+    }; // 获取往后n个值
+
+
+    var nextNValue = function nextNValue(n) {
+      return express.substring(i, n + i > express.length ? express.length : n + i);
+    };
+
+    next();
+    var expressArray = [];
+
+    while (true) {
+      if (i >= express.length) break; // 先匹配普通的符号
+      // + - * / %
+      // && || !
+      // ? :
+      // [ ] ( )
+      // > < >= <= == === != !==
+      // 如果是&或者|比较特殊
+
+      if (specialCode1.indexOf(currentChar) > -1) {
+        // 对于特殊的符号
+        if (['&', '|', '='].indexOf(currentChar) > -1) {
+          if (['==='].indexOf(nextNValue(3)) > -1) {
+            expressArray.push(nextNValue(3));
+            i += 2;
+            next();
+          } else if (['&&', '||', '=='].indexOf(nextNValue(2)) > -1) {
+            expressArray.push(nextNValue(2));
+            i += 1;
+            next();
+          } else {
+            throw new Error("Illegal expression : " + express + "\nstep='analyseExpress',index=" + i);
+          }
+        } else {
+          // 拦截部分比较特殊的
+          if (['!=='].indexOf(nextNValue(3)) > -1) {
+            expressArray.push(nextNValue(3));
+            i += 2;
+            next();
+          } else if (['>=', '<=', '!='].indexOf(nextNValue(2)) > -1) {
+            expressArray.push(nextNValue(2));
+            i += 1;
+            next();
+          } // 普通的单一的
+          else {
+              expressArray.push(currentChar);
+              next();
+            }
+        }
+      } // 如果是字符串
+      else if (['"', "'"].indexOf(currentChar) > -1) {
+          var temp = "",
+              beginTag = currentChar;
+          next(); // 如果没有遇到结束标签
+          // 目前没有考虑 '\'' 这种带转义字符的情况，当然，'\"'这种是支持的
+          // 后续如果希望支持，优化这里即可
+
+          while (currentChar != beginTag) {
+            if (i >= express.length) {
+              // 如果还没有遇到结束标识就结束了，属于字符串未闭合错误
+              throw new Error("String unclosed error : " + express + "\nstep='analyseExpress',index=" + i);
+            } // 继续拼接
+
+
+            temp += currentChar;
+            next();
+          }
+
+          expressArray.push(temp + "@string");
+          next();
+        } // 如果是数字
+        else if (/\d/.test(currentChar)) {
+            var dotFlag = 'no'; // no表示还没有匹配到.，如果已经匹配到了，标识为yes，如果匹配到了.，可是后面还没有遇到数组，标识为error
+
+            var temp = currentChar;
+            next();
+
+            while (i < express.length) {
+              if (/\d/.test(currentChar)) {
+                temp += currentChar;
+                if (dotFlag == 'error') dotFlag = 'yes';
+              } else if ('.' == currentChar && dotFlag == 'no') {
+                temp += currentChar;
+                dotFlag = 'error';
+              } else {
+                break;
+              }
+
+              next();
+            } // 如果小数点后面没有数字，辅助添加一个0
+
+
+            if (dotFlag == 'error') temp += "0";
+            expressArray.push(+temp);
+          } // 如果是特殊符号
+          // 也就是类似null、undefined等
+          else if (['null', 'true'].indexOf(nextNValue(4)) > -1) {
+              expressArray.push({
+                "null": null,
+                "true": true
+              }[nextNValue(4)]);
+              i += 3;
+              next();
+            } else if (['false'].indexOf(nextNValue(5)) > -1) {
+              expressArray.push({
+                'false': false
+              }[nextNValue(5)]);
+              i += 4;
+              next();
+            } else if (['undefined'].indexOf(nextNValue(9)) > -1) {
+              expressArray.push({
+                "undefined": undefined
+              }[nextNValue(9)]);
+              i += 8;
+              next();
+            } // 如果是空格
+            else if ($RegExp.blankReg.test(currentChar)) {
+                do {
+                  next();
+                } while ($RegExp.blankReg.test(currentChar) && i < express.length);
+              } else {
+                var dot = false; // 对于开头有.进行特殊捕获，因为有.意味着这个值应该可以变成['key']的形式
+                // 这是为了和[key]进行区分，例如：
+                // .key 等价于 ['key'] 翻译成这里就是 ['[','key',']']
+                // 可是[key]就不一样了，翻译成这里以后应该是 ['[','这个值取决当前对象和scope',']']
+                // 如果这里不进行特殊处理，后续区分需要额外的标记，浪费资源
+
+                if (currentChar == '.') {
+                  dot = true;
+                  next();
+                } // 如果是标志符
+
+                /**
+                 *  命名一个标识符时需要遵守如下的规则：
+                 *  1.标识符中可以含有字母 、数字 、下划线_ 、$符号
+                 *  2.标识符不能以数字开头
+                 */
+                // 当然，是不是关键字等我们就不校对了，因为没有太大的实际意义
+                // 也就是类似flag等局部变量
+
+
+                if ($RegExp.identifier.test(currentChar)) {
+                  var len = 1;
+
+                  while (i + len <= express.length && $RegExp.identifier.test(nextNValue(len))) {
+                    len += 1;
+                  }
+
+                  if (dot) {
+                    expressArray.push('[');
+                    expressArray.push(nextNValue(len - 1) + '@string');
+                    expressArray.push(']');
+                  } else {
+                    var tempKey = nextNValue(len - 1); // 如果不是有前置.，那就是需要求解了
+
+                    var tempValue = tempKey in scope ? scope[tempKey] : target[tempKey];
+                    expressArray.push(isString(tempValue) ? tempValue + "@string" : tempValue);
+                  }
+
+                  i += len - 2;
+                  next();
+                } // 都不是，那就是错误
+                else {
+                    throw new Error("Illegal express : " + express + "\nstep='analyseExpress',index=" + i);
+                  }
+              }
+    } // 实际情况是，对于-1等特殊数字，可能存在误把1前面的-号作为运算符的错误，这里拦截校对一下
+
+
+    var length = 0;
+
+    for (var j = 0; j < expressArray.length; j++) {
+      if (["+", "-"].indexOf(expressArray[j]) > -1 && ( // 如果前面的也是运算符或开头，这个应该就不应该是运算符了
+      j == 0 || specialCode2.indexOf(expressArray[length - 1]) > -1)) {
+        expressArray[length++] = +(expressArray[j] + expressArray[j + 1]);
+        j += 1;
+      } else {
+        expressArray[length++] = expressArray[j];
+      }
+    }
+
+    expressArray.length = length;
+    return expressArray;
+  }
+
+  var getExpressValue = function getExpressValue(value) {
+    // 这里是计算的内部，不需要考虑那么复杂的类型
+    if (typeof value == 'string') return value.replace(/@string$/, '');
+    return value;
+  };
+
+  var setExpressValue = function setExpressValue(value) {
+    if (typeof value == 'string') return value + "@string";
+    return value;
+  };
+
+  function evalValue (expressArray) {
+    // 采用按照优先级顺序归约的思想进行
+    // 需要明白，这里不会出现括号
+    // （小括号或者中括号，当然，也不会有函数，这里只会有最简单的表达式）
+    // 这也是我们可以如此归约的前提
+    // + - * / %
+    // && || !
+    // ? :
+    // > < >= <= == === != !==
+    // !
+    // 因为合并以后数组长度一定越来越短，我们直接复用以前的数组即可
+    var length = 0,
+        i = 0;
+
+    for (; i < expressArray.length; i++) {
+      if (expressArray[i] == '!') {
+        // 由于是逻辑运算符，如果是字符串，最后的@string是否去掉已经没有意义了
+        expressArray[length] = !expressArray[++i];
+      } else expressArray[length] = expressArray[i];
+
+      length += 1;
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length; // * / %
+
+    length = 0;
+
+    for (i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '*') {
+        // 假设不知道一定正确，主要是为了节约效率，是否提供错误提示，再议
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) * getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '/') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) / getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '%') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) % getExpressValue(expressArray[++i]);
+      } else {
+        // 上面不会导致数组增长
+        expressArray[length++] = expressArray[i];
+      }
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length; // + -
+
+    length = 0;
+
+    for (i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '+') {
+        expressArray[length - 1] = setExpressValue(getExpressValue(expressArray[length - 1]) + getExpressValue(expressArray[++i]));
+      } else if (expressArray[i] == '-') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) - getExpressValue(expressArray[++i]);
+      } else expressArray[length++] = expressArray[i];
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length; // > < >= <=
+
+    length = 0;
+
+    for (i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '>') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) > getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '<') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) < getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '<=') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) <= getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '>=') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) >= getExpressValue(expressArray[++i]);
+      } else expressArray[length++] = expressArray[i];
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length; // == === != !==
+
+    length = 0;
+
+    for (i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '==') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) == getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '===') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) === getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '!=') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) != getExpressValue(expressArray[++i]);
+      } else if (expressArray[i] == '!==') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) !== getExpressValue(expressArray[++i]);
+      } else expressArray[length++] = expressArray[i];
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length; // && ||
+
+    length = 0;
+
+    for (i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '&&') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) && getExpressValue(expressArray[1 + i]);
+        i += 1;
+      } else if (expressArray[i] == '||') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) || getExpressValue(expressArray[1 + i]);
+        i += 1;
+      } else expressArray[length++] = expressArray[i];
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length; // ?:
+
+    length = 0;
+
+    for (i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '?') {
+        expressArray[length - 1] = getExpressValue(expressArray[length - 1]) ? getExpressValue(expressArray[i + 1]) : getExpressValue(expressArray[i + 3]);
+        i += 3;
+      } else expressArray[length++] = expressArray[i];
+    }
+
+    if (length == 1) return getExpressValue(expressArray[0]);
+    expressArray.length = length;
+    throw new Error('Unrecognized expression : [' + expressArray.toString() + "]");
+  }
+
+  function calcValue (target, expressArray, scope) {
+    var value = expressArray[0] in scope ? scope[expressArray[0]] : target[expressArray[0]];
+
+    for (var i = 1; i < expressArray.length; i++) {
+      try {
+        value = value[expressArray[i]];
+      } catch (e) {
+        console.error({
+          target: target,
+          scope: scope,
+          expressArray: expressArray,
+          index: i
+        });
+        throw e;
+      }
+    }
+
+    return value;
+  }
+
+  var doit1 = function doit1(target, expressArray, scope) {
+    // 先消小括号
+    // 其实也就是归约小括号
+    if (expressArray.indexOf('(') > -1) {
+      var newExpressArray = [],
+          temp = [],
+          // 0表示还没有遇到左边的小括号
+      // 1表示遇到了一个，以此类推，遇到一个右边的会减1
+      flag = 0;
+
+      for (var i = 0; i < expressArray.length; i++) {
+        if (expressArray[i] == '(') {
+          if (flag > 0) {
+            // 说明这个应该是需要计算的括号里面的括号
+            temp.push('(');
+          }
+
+          flag += 1;
+        } else if (expressArray[i] == ')') {
+          if (flag > 1) temp.push(')');
+          flag -= 1; // 为0说明主的小括号归约结束了
+
+          if (flag == 0) {
+            var _value = evalValue(doit1(target, temp));
+
+            newExpressArray.push(isString(_value) ? _value + '@string' : _value);
+            temp = [];
+          }
+        } else {
+          if (flag > 0) temp.push(expressArray[i]);else newExpressArray.push(expressArray[i]);
+        }
+      }
+
+      expressArray = newExpressArray;
+    } // 去掉小括号以后，调用中括号去掉方法
+
+
+    return doit2(expressArray);
+  }; // 中括号嵌套去掉方法
+
+
+  var doit2 = function doit2(expressArray) {
+    var hadMore = true;
+
+    while (hadMore) {
+      hadMore = false;
+      var newExpressArray = [],
+          temp = [],
+          // 如果为true表示当前在试探寻找归约最小单元的结束
+      flag = false; // 开始寻找里面需要归约的最小单元（也就是可以立刻获取值的）
+
+      for (var i = 0; i < expressArray.length; i++) {
+        // 这说明这是一个需要归约的
+        // 不过不一定是最小单元
+        // 遇到了，先记下了
+        if (expressArray[i] == '[' && i != 0 && expressArray[i - 1] != ']') {
+          if (flag) {
+            // 如果之前已经遇到了，说明之前保存的是错误的，需要同步会主数组
+            newExpressArray.push('[');
+
+            for (var j = 0; j < temp.length; j++) {
+              newExpressArray.push(temp[j]);
+            }
+          } else {
+            // 如果之前没有遇到，修改标记即可
+            flag = true;
+          }
+
+          temp = [];
+        } // 如果遇到了结束，这说明当前暂存的就是最小归结单元
+        // 计算后放回主数组
+        else if (expressArray[i] == ']' && flag) {
+            hadMore = true; // 计算
+
+            var tempValue = evalValue(temp);
+            var _value = newExpressArray[newExpressArray.length - 1][tempValue];
+            newExpressArray[newExpressArray.length - 1] = isString(_value) ? _value + "@string" : _value; // 状态恢复
+
+            flag = false;
+          } else {
+            if (flag) {
+              temp.push(expressArray[i]);
+            } else {
+              newExpressArray.push(expressArray[i]);
+            }
+          }
+      }
+
+      expressArray = newExpressArray;
+    }
+
+    return expressArray;
+  }; // 路径
+  // ["[",express,"]","[",express"]","[",express,"]"]
+  // 变成
+  // [express][express][express]
+
+
+  var doit3 = function doit3(expressArray) {
+    var newExpressArray = [],
+        temp = [];
+
+    for (var i = 0; i < expressArray.length; i++) {
+      if (expressArray[i] == '[') {
+        temp = [];
+      } else if (expressArray[i] == ']') {
+        newExpressArray.push(evalValue(temp));
+      } else {
+        temp.push(expressArray[i]);
+      }
+    }
+
+    return newExpressArray;
+  }; // 获取路径数组(核心是归约的思想)
+
+
+  function toPath(target, expressArray, scope) {
+    var newExpressArray = doit1(target, expressArray); // 其实无法就三类
+    // 第一类：[express][express][express]express
+    // 第二类：express
+    // 第三类：[express][express][express]
+
+    var path; // 第二类
+
+    if (newExpressArray[0] != '[') {
+      path = [evalValue(newExpressArray)];
+    } // 第三类
+    else if (newExpressArray[newExpressArray.length - 1] == ']') {
+        path = doit3(newExpressArray);
+      } // 第一类
+      else {
+          var lastIndex = newExpressArray.lastIndexOf(']');
+          var tempPath = doit3(newExpressArray.slice(0, lastIndex + 1));
+          var tempArray = newExpressArray.slice(lastIndex + 1);
+          tempArray.unshift(calcValue(target, tempPath, scope));
+          path = [evalValue(tempArray)];
+        }
+
+    return path;
+  }
+
+  /*!
    * 🔪 - 设置或获取指定对象上字符串表达式对应的值
    * https://github.com/hai2007/algorithm.js/blob/master/value.js
    *
@@ -41,42 +1622,1376 @@ var s=l,f=function(n){var t=e(n);return"string"===t||"object"===t&&null!=n&&!Arr
    *
    * Copyright (c) 2020-present hai2007 走一步，再走一步。
    * Released under the MIT license
-   */var P=function(n,e,t){arguments.length<3&&(t={});var r=k(n,e,t),o=E(n,r,t);if(o.length>1)throw new Error("Illegal expression : "+e+"\nstep='evalExpress',path="+o+",expressArray="+r);return o[0]};function D(n,e,t){var r=new e,o=!1,i=function(){o||(o=!0,setTimeout((function(){d(r.$beforeUpdate)&&r.$beforeUpdate();var n,e=a(r.__directives);try{for(e.s();!(n=e.n()).done;){var t=n.value;d(t.instance.$update)&&t.instance.$update(t.el,{type:t.type,exp:t.exp,value:t.exp?P(r,t.exp):void 0,target:r})}}catch(n){e.e(n)}finally{e.f()}d(r.$updated)&&r.$updated(),o=!1}),0))};if(d(r.$setup)){var l=r.$setup();for(var c in l)b(c),"ref"==l[c].type?w(r,l[c],c,i):"reactive"==l[c].type?x(r,l[c],c,i):d(l[c])&&(r[c]=l[c])}r.__children=[],r.__directives=[];var u=r.__template__;return function n(e,o){var i=u[e],l=null;if("tag"==i.type)if(i.name in t.__component__)r.__children.push(D(o,t.__component__[i.name],t));else{for(var c in l=document.createElement(i.name),i.attrs){var s=(c+":").split(":");s[0]in t.__directive__?function(){var n=new t.__directive__[s[0]],e=s[1],o=i.attrs[c];d(n.$inserted)&&setTimeout((function(){n.$inserted(l,{type:e,exp:o,value:o?P(r,o):void 0,target:r})})),r.__directives.push({instance:n,el:l,type:e,exp:o})}():l.setAttribute(c,i.attrs[c])}null!=r.__uniqueId__&&l.setAttribute(r.__uniqueId__,"");var f,p=a(i.childNodes);try{for(p.s();!(f=p.n()).done;){n(f.value,l)}}catch(n){p.e(n)}finally{p.f()}}else"text"==i.type&&((l=document.createTextNode("")).textContent=i.content.replace(/↵/g,"\n").replace(/\&lt;/g,"<").replace(/\&gt;/g,">").replace(/\&amp;/g,"&"));null!=l&&o.appendChild(l)}(0,n),d(r.$mounted)&&r.$mounted(),r}function M(n){return{value:n,type:"ref"}}var C={Module:function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e={},t={},r=null,o={component:{},directive:{}};if(p(n.declarations)){var i,l=a(n.declarations);try{for(l.s();!(i=l.n()).done;){var c=i.value,u=!1;if(p(n.exports)){var s,f=a(n.exports);try{for(f.s();!(s=f.n()).done;){var d=s.value;if(d===c){u=!0;break}}}catch(n){f.e(n)}finally{f.f()}}"Component"==c.prototype.__type__?(e[c.prototype.__selector__]=c,n.bootstrap===c&&(r=c),u&&(o.component[c.prototype.__selector__]=c)):"Directive"==c.prototype.__type__&&(t[c.prototype.__selector__]=c,u&&(o.directive[c.prototype.__selector__]=c))}}catch(n){l.e(n)}finally{l.f()}}if(p(n.imports)){var _,h=a(n.imports);try{for(h.s();!(_=h.n()).done;){var v=_.value;for(var g in v.prototype.__exports__.component)e[g]=v.prototype.__exports__.component[g];for(var m in v.prototype.__exports__.directive)t[m]=v.prototype.__exports__.directive[m]}}catch(n){h.e(n)}finally{h.f()}}return function(n){n.prototype.__type__="Module",n.prototype.__component__=e,n.prototype.__directive__=t,n.prototype.__exports__=o,n.prototype.__bootstrapComponent__=r}},Component:function(n){var e=null;p(n.styles)&&(e="nefbl-scoped-"+y++,m(n.styles,e));var t=g("<nefbl-component>"+n.template+"</nefbl-component>");return function(r){r.prototype.__type__="Component",r.prototype.__selector__=n.selector,r.prototype.__template__=t,r.prototype.__uniqueId__=e}},Directive:function(n){return function(e){e.prototype.__type__="Directive",e.prototype.__selector__=n.selector}},platform:function(n){return m(n.styles||[]),{bootstrap:function(e){var t=new e,r=o(o({},t.__component__),t.__directive__);for(var i in r)r[i].prototype._module=t;return{rootComponent:D(n.el,t.__bootstrapComponent__,t),module:t}}}},mountComponent:D,evalExpress:P,getValue:function(n,e,t){arguments.length<3&&(t={});var r=k(n,e,t),o=E(n,r,t);return j(n,o,t)},setValue:function(n,e,t,r){arguments.length<3&&(r={});for(var o=k(n,e,r),i=E(n,o,r),a=n,l=0;l<i.length-1;l++)i[l]in a||(a[i[l]]=p(a)?[]:{}),a=a[i[l]];return a[i[i.length-1]]=t,n},ref:M,reactive:function(n){return s(n)?{value:n,type:"reactive"}:M(n)}};"object"===e(n)&&"object"===e(n.exports)?n.exports=C:window.Nefbl=C}()}).call(this,t(4)(n))},function(n,e,t){"use strict";t.r(e),t.d(e,"__extends",(function(){return o})),t.d(e,"__assign",(function(){return i})),t.d(e,"__rest",(function(){return a})),t.d(e,"__decorate",(function(){return l})),t.d(e,"__param",(function(){return c})),t.d(e,"__metadata",(function(){return u})),t.d(e,"__awaiter",(function(){return s})),t.d(e,"__generator",(function(){return f})),t.d(e,"__createBinding",(function(){return d})),t.d(e,"__exportStar",(function(){return p})),t.d(e,"__values",(function(){return _})),t.d(e,"__read",(function(){return h})),t.d(e,"__spread",(function(){return v})),t.d(e,"__spreadArrays",(function(){return g})),t.d(e,"__spreadArray",(function(){return m})),t.d(e,"__await",(function(){return y})),t.d(e,"__asyncGenerator",(function(){return b})),t.d(e,"__asyncDelegator",(function(){return w})),t.d(e,"__asyncValues",(function(){return x})),t.d(e,"__makeTemplateObject",(function(){return N})),t.d(e,"__importStar",(function(){return k})),t.d(e,"__importDefault",(function(){return O})),t.d(e,"__classPrivateFieldGet",(function(){return A})),t.d(e,"__classPrivateFieldSet",(function(){return j}));
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
+   */
+  /**
+   * express举例子：
+   *
+   * [00]  ["a"].b[c]
+   * [01]  a
+   * [02]  [0]['value-index'][index+1]
+   *
+   * 如果是getValue,express还可以包含运算符：
+   *  + - * / %  数值运算符
+   *  && || !    逻辑运算符
+   *
+   * [03]  flag+10
+   * [04]  a.b[index+1]-10
+   * [05]  (a+b)/10-c[d]
+   * [06]  [((a+b)-c)*f]+d
+   *
+   * [07]  !flag
+   * [08]  (a>0 && b<=1) || !flag
+   * [09]  '(flag)' == "("+temp+")"
+   * [10]  a>10?"flag1":"flag2"
+   *
+   */
+  // 解析一段表达式
 
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
+  var evalExpress = function evalExpress(target, express, scope) {
+    if (arguments.length < 3) scope = {};
+    var expressArray = analyseExpress(target, express, scope);
+    var path = toPath(target, expressArray, scope); // 如果不是表达式
 
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-var r=function(n,e){return(r=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,e){n.__proto__=e}||function(n,e){for(var t in e)Object.prototype.hasOwnProperty.call(e,t)&&(n[t]=e[t])})(n,e)};function o(n,e){if("function"!=typeof e&&null!==e)throw new TypeError("Class extends value "+String(e)+" is not a constructor or null");function t(){this.constructor=n}r(n,e),n.prototype=null===e?Object.create(e):(t.prototype=e.prototype,new t)}var i=function(){return(i=Object.assign||function(n){for(var e,t=1,r=arguments.length;t<r;t++)for(var o in e=arguments[t])Object.prototype.hasOwnProperty.call(e,o)&&(n[o]=e[o]);return n}).apply(this,arguments)};function a(n,e){var t={};for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&e.indexOf(r)<0&&(t[r]=n[r]);if(null!=n&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(r=Object.getOwnPropertySymbols(n);o<r.length;o++)e.indexOf(r[o])<0&&Object.prototype.propertyIsEnumerable.call(n,r[o])&&(t[r[o]]=n[r[o]])}return t}function l(n,e,t,r){var o,i=arguments.length,a=i<3?e:null===r?r=Object.getOwnPropertyDescriptor(e,t):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(n,e,t,r);else for(var l=n.length-1;l>=0;l--)(o=n[l])&&(a=(i<3?o(a):i>3?o(e,t,a):o(e,t))||a);return i>3&&a&&Object.defineProperty(e,t,a),a}function c(n,e){return function(t,r){e(t,r,n)}}function u(n,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(n,e)}function s(n,e,t,r){return new(t||(t=Promise))((function(o,i){function a(n){try{c(r.next(n))}catch(n){i(n)}}function l(n){try{c(r.throw(n))}catch(n){i(n)}}function c(n){var e;n.done?o(n.value):(e=n.value,e instanceof t?e:new t((function(n){n(e)}))).then(a,l)}c((r=r.apply(n,e||[])).next())}))}function f(n,e){var t,r,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:l(0),throw:l(1),return:l(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function l(i){return function(l){return function(i){if(t)throw new TypeError("Generator is already executing.");for(;a;)try{if(t=1,r&&(o=2&i[0]?r.return:i[0]?r.throw||((o=r.return)&&o.call(r),0):r.next)&&!(o=o.call(r,i[1])).done)return o;switch(r=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,r=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=e.call(n,a)}catch(n){i=[6,n],r=0}finally{t=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,l])}}}var d=Object.create?function(n,e,t,r){void 0===r&&(r=t),Object.defineProperty(n,r,{enumerable:!0,get:function(){return e[t]}})}:function(n,e,t,r){void 0===r&&(r=t),n[r]=e[t]};function p(n,e){for(var t in n)"default"===t||Object.prototype.hasOwnProperty.call(e,t)||d(e,n,t)}function _(n){var e="function"==typeof Symbol&&Symbol.iterator,t=e&&n[e],r=0;if(t)return t.call(n);if(n&&"number"==typeof n.length)return{next:function(){return n&&r>=n.length&&(n=void 0),{value:n&&n[r++],done:!n}}};throw new TypeError(e?"Object is not iterable.":"Symbol.iterator is not defined.")}function h(n,e){var t="function"==typeof Symbol&&n[Symbol.iterator];if(!t)return n;var r,o,i=t.call(n),a=[];try{for(;(void 0===e||e-- >0)&&!(r=i.next()).done;)a.push(r.value)}catch(n){o={error:n}}finally{try{r&&!r.done&&(t=i.return)&&t.call(i)}finally{if(o)throw o.error}}return a}function v(){for(var n=[],e=0;e<arguments.length;e++)n=n.concat(h(arguments[e]));return n}function g(){for(var n=0,e=0,t=arguments.length;e<t;e++)n+=arguments[e].length;var r=Array(n),o=0;for(e=0;e<t;e++)for(var i=arguments[e],a=0,l=i.length;a<l;a++,o++)r[o]=i[a];return r}function m(n,e,t){if(t||2===arguments.length)for(var r,o=0,i=e.length;o<i;o++)!r&&o in e||(r||(r=Array.prototype.slice.call(e,0,o)),r[o]=e[o]);return n.concat(r||Array.prototype.slice.call(e))}function y(n){return this instanceof y?(this.v=n,this):new y(n)}function b(n,e,t){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var r,o=t.apply(n,e||[]),i=[];return r={},a("next"),a("throw"),a("return"),r[Symbol.asyncIterator]=function(){return this},r;function a(n){o[n]&&(r[n]=function(e){return new Promise((function(t,r){i.push([n,e,t,r])>1||l(n,e)}))})}function l(n,e){try{(t=o[n](e)).value instanceof y?Promise.resolve(t.value.v).then(c,u):s(i[0][2],t)}catch(n){s(i[0][3],n)}var t}function c(n){l("next",n)}function u(n){l("throw",n)}function s(n,e){n(e),i.shift(),i.length&&l(i[0][0],i[0][1])}}function w(n){var e,t;return e={},r("next"),r("throw",(function(n){throw n})),r("return"),e[Symbol.iterator]=function(){return this},e;function r(r,o){e[r]=n[r]?function(e){return(t=!t)?{value:y(n[r](e)),done:"return"===r}:o?o(e):e}:o}}function x(n){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var e,t=n[Symbol.asyncIterator];return t?t.call(n):(n=_(n),e={},r("next"),r("throw"),r("return"),e[Symbol.asyncIterator]=function(){return this},e);function r(t){e[t]=n[t]&&function(e){return new Promise((function(r,o){(function(n,e,t,r){Promise.resolve(r).then((function(e){n({value:e,done:t})}),e)})(r,o,(e=n[t](e)).done,e.value)}))}}}function N(n,e){return Object.defineProperty?Object.defineProperty(n,"raw",{value:e}):n.raw=e,n}var $=Object.create?function(n,e){Object.defineProperty(n,"default",{enumerable:!0,value:e})}:function(n,e){n.default=e};function k(n){if(n&&n.__esModule)return n;var e={};if(null!=n)for(var t in n)"default"!==t&&Object.prototype.hasOwnProperty.call(n,t)&&d(e,n,t);return $(e,n),e}function O(n){return n&&n.__esModule?n:{default:n}}function A(n,e,t,r){if("a"===t&&!r)throw new TypeError("Private accessor was defined without a getter");if("function"==typeof e?n!==e||!r:!e.has(n))throw new TypeError("Cannot read private member from an object whose class did not declare it");return"m"===t?r:"a"===t?r.call(n):r?r.value:e.get(n)}function j(n,e,t,r,o){if("m"===r)throw new TypeError("Private method is not writable");if("a"===r&&!o)throw new TypeError("Private accessor was defined without a setter");if("function"==typeof e?n!==e||!o:!e.has(n))throw new TypeError("Cannot write private member to an object whose class did not declare it");return"a"===r?o.call(n,t):o?o.value=t:e.set(n,t),t}},function(n,e,t){"use strict";t.r(e);
-/*!
- * 💡 - 提供常用的DOM操作方法
- * https://github.com/hai2007/tool.js/blob/master/xhtml.js
+    if (path.length > 1) throw new Error("Illegal expression : " + express + "\nstep='evalExpress',path=" + path + ",expressArray=" + expressArray);
+    return path[0];
+  }; // 获取
+
+  var getValue = function getValue(target, express, scope) {
+    if (arguments.length < 3) scope = {};
+    var expressArray = analyseExpress(target, express, scope);
+    var path = toPath(target, expressArray, scope);
+    return calcValue(target, path, scope);
+  }; // 设置
+
+  var setValue = function setValue(target, express, value, scope) {
+    if (arguments.length < 3) scope = {};
+    var expressArray = analyseExpress(target, express, scope);
+    var path = toPath(target, expressArray, scope);
+    var _target = target;
+
+    for (var i = 0; i < path.length - 1; i++) {
+      // 如果需要补充
+      if (!(path[i] in _target)) _target[path[i]] = isArray$1(_target) ? [] : {}; // 拼接下一个
+
+      _target = _target[path[i]];
+    }
+
+    _target[path[path.length - 1]] = value;
+    return target;
+  };
+
+  function toNode(tagname) {
+    if (['svg', 'circle', 'path', 'rect', 'ellipse', 'line', 'polyline', 'polygon', 'text'].indexOf(tagname) > -1) {
+      return document.createElementNS('http://www.w3.org/2000/svg', tagname);
+    } else {
+      return document.createElement(tagname);
+    }
+  }
+
+  function mountComponent(target, Component, module) {
+    var component = new Component();
+    var hadWillUpdate = false;
+
+    var observeFunction = function observeFunction() {
+      if (!hadWillUpdate) {
+        hadWillUpdate = true;
+        setTimeout(function () {
+          if (isFunction(component.$beforeUpdate)) component.$beforeUpdate(); // 触发指令
+
+          var _iterator = _createForOfIteratorHelper(component.__directives),
+              _step;
+
+          try {
+            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+              var directiveInstance = _step.value;
+
+              if (isFunction(directiveInstance.instance.$update)) {
+                directiveInstance.instance.$update(directiveInstance.el, {
+                  type: directiveInstance.type,
+                  exp: directiveInstance.exp,
+                  value: directiveInstance.exp ? evalExpress(component, directiveInstance.exp) : undefined,
+                  target: component
+                });
+              }
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+
+          if (isFunction(component.$updated)) component.$updated();
+          hadWillUpdate = false;
+        }, 0);
+      }
+    };
+
+    if (isFunction(component.$setup)) {
+      // 获取当前组件需要双向绑定的数据、方法等
+      var instance = component.$setup();
+
+      for (var key in instance) {
+        isValidKey(key); // ref
+
+        if (instance[key].type == 'ref') {
+          watcher(component, instance[key], key, observeFunction);
+        } // reactive
+        else if (instance[key].type == 'reactive') {
+            proxy(component, instance[key], key, observeFunction);
+          } // 方法
+          else if (isFunction(instance[key])) {
+              component[key] = instance[key];
+            }
+      }
+    } // 记录子组件
+
+
+    component.__children = []; // 记录指令
+
+    component.__directives = [];
+    var templateObj = component.__template__;
+
+    (function createElement(index, pEl) {
+      var vnode = templateObj[index],
+          el = null;
+
+      if (vnode.type == 'tag') {
+        // 如果是组件
+        if (vnode.name in module.__component__) {
+          // 编译子组件并登记
+          component.__children.push(mountComponent(pEl, module.__component__[vnode.name], module));
+        } // 否则就是普通的标签
+        else {
+            el = toNode(vnode.name);
+
+            for (var attrKey in vnode.attrs) {
+              var attrKeys = (attrKey + ":").split(':'); // 指令
+
+              if (attrKeys[0] in module.__directive__) {
+                (function () {
+                  var directiveInstance = new module.__directive__[attrKeys[0]]();
+                  var type = attrKeys[1];
+                  var exp = vnode.attrs[attrKey];
+
+                  if (isFunction(directiveInstance.$inserted)) {
+                    setTimeout(function () {
+                      directiveInstance.$inserted(el, {
+                        type: type,
+                        exp: exp,
+                        value: exp ? evalExpress(component, exp) : undefined,
+                        target: component
+                      });
+                    });
+                  }
+
+                  component.__directives.push({
+                    instance: directiveInstance,
+                    el: el,
+                    type: type,
+                    exp: exp
+                  });
+                })();
+              } // 普通属性
+              else {
+                  el.setAttribute(attrKey, vnode.attrs[attrKey]);
+                }
+            }
+
+            if (component.__uniqueId__ != null) {
+              // 配置唯一标识
+              el.setAttribute(component.__uniqueId__, "");
+            } // 追加孩子
+
+
+            var _iterator2 = _createForOfIteratorHelper(vnode.childNodes),
+                _step2;
+
+            try {
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                var subVnode = _step2.value;
+                createElement(subVnode, el);
+              }
+            } catch (err) {
+              _iterator2.e(err);
+            } finally {
+              _iterator2.f();
+            }
+          }
+      } else if (vnode.type == 'text') {
+        el = document.createTextNode("");
+        el.textContent = vnode.content.replace(/↵/g, '\n') // 特殊转义字符进行校对
+        .replace(/\&lt;/g, '<').replace(/\&gt;/g, '>').replace(/\&amp;/g, '&');
+      }
+
+      if (el != null) {
+        // 追加到父亲结点
+        pEl.appendChild(el);
+      }
+    })(0, target);
+
+    if (isFunction(component.$mounted)) component.$mounted();
+    return component;
+  }
+
+  function platform (options) {
+    // 样式生效
+    addStylesClient(options.styles || []); // 记录根组件
+
+    var rootComponent = null;
+    return {
+      bootstrap: function bootstrap(Module) {
+        var module = new Module(); // 在所有的指令和组件中登记所在模块
+
+        var allList = _objectSpread2(_objectSpread2({}, module.__component__), module.__directive__);
+
+        for (var key in allList) {
+          allList[key].prototype._module = module;
+        } // 通过启动组件，启动
+
+
+        rootComponent = mountComponent(options.el, module.__bootstrapComponent__, module);
+        return {
+          // 根组件
+          rootComponent: rootComponent,
+          // 当前模块对象
+          module: module
+        };
+      }
+    };
+  }
+
+  function ref (data) {
+    // 如果是定义的数据，不好监听，嵌套一层壳
+    return {
+      value: data,
+      type: 'ref'
+    };
+  }
+
+  function reactive (data) {
+    // 如果是对象
+    if (isObject(data)) {
+      return {
+        value: data,
+        type: 'reactive'
+      };
+    } // 否则，还是用ref
+    else {
+        return ref(data);
+      }
+  }
+
+  /**
+   * 整理好对象并对外暴露调用接口
+   */
+
+  var Nefbl = {
+    // 装饰器
+    Module: Module,
+    Component: Component,
+    Directive: Directive,
+    // 核心方法
+    platform: platform,
+    mountComponent: mountComponent,
+    evalExpress: evalExpress,
+    getValue: getValue,
+    setValue: setValue,
+    // 暴露的一些有用的方法
+    ref: ref,
+    reactive: reactive
+  };
+
+  if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
+    module.exports = Nefbl;
+  } else {
+    window.Nefbl = Nefbl;
+  }
+
+}());
+
+
+        __etcpack__scope_bundle__.default= module.exports;
+
+        
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/style/normalize.css
+/*****************************************************************/
+window.__etcpack__bundleSrc__['3']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "/*!\n * 👁️ - 统一不同浏览器的基础样式\n * https://github.com/hai2007/style.css/blob/master/normalize.css\n *\n * author hai2007 < https://hai2007.gitee.io/sweethome >\n *\n * Copyright (c) 2020-present hai2007 走一步，再走一步。\n * Released under the MIT license\n */\n\nhtml {\n    /* 防止iPhone在坚屏转向横屏时放大文字 */\n    -ms-text-size-adjust: 100%;\n    -webkit-text-size-adjust: 100%;\n    /* 统一行高 */\n    line-height: 1.15;\n}\n\nbutton,\ninput {\n    /* 兼容部分手机下border不显示问题 */\n    border: 1px solid #b2b2bd;\n}\n\narticle,\nfooter,\nheader,\nnav,\nsection {\n    /* 修正旧浏览器未定义的块级元素 */\n    display: block;\n}\n\ncanvas,\nsvg {\n    /* 修正旧浏览器未定义的行内块元素 */\n    display: inline-block;\n}\n\n* {\n    /* 统一不同浏览器盒子尺寸计算方法 */\n    box-sizing: border-box;\n}\n\n::-ms-clear,\n::-ms-reveal {\n    /* 去掉IE浏览器输入框叉叉和眼睛 */\n    display: none;\n}\n\nimg {\n    /* 针对火狐浏览器在img标签没有src时候的差异修复 */\n    display: inline-block;\n}\n\nhtml {\n    /* 设置默认字体为统一的安全字体 */\n    font-family: sans-serif;\n}\n\na {\n    /* 默认去掉下划线 */\n    text-decoration: none;\n}\n\nli {\n    /* 去掉前置索引 */\n    list-style-type: none;\n}\n\nul,\nol,\nli,\np,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    /* 去掉不喜欢的间距 */\n    -webkit-margin-before: 0;\n    -webkit-margin-after: 0;\n    -webkit-padding-start: 0;\n    /* 去掉不喜欢的间距，针对火狐浏览器等 */\n    margin-block-end: 0;\n    margin-block-start: 0;\n    padding-inline-start: 0;\n    /* 修改IE和其它浏览器不一致问题 */\n    padding: 0;\n    margin: 0;\n}\n\nbody {\n    /* 去掉默认的8px */\n    margin: 0;\n}\n\ntable {\n    /* 设置默认表格边框合并为一个单一的边框 */\n    border-collapse: collapse;\n}\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/style/doc-view.css
+/*****************************************************************/
+window.__etcpack__bundleSrc__['4']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= ".doc-view {\n    color: #000000;\n    padding: 15px;\n}\n\n/* 文章标题 */\n.doc-view>h2 {\n    font-size: 30px;\n    padding: 30px 0;\n}\n\n/* 一级标题 */\n.doc-view>h3 {\n    font-size: 15px;\n    line-height: 2em;\n    padding: 20px 0;\n}\n\n.doc-view>h3::before {\n    content: \"#\";\n    color: #711e32;\n}\n\n/* 二级标题 */\n.doc-view>h4 {\n    font-size: 14px;\n    line-height: 2em;\n    padding: 15px 0;\n}\n\n/* 段落 */\n.doc-view>p {\n    line-height: 1.6em;\n    text-indent: 2em;\n    color: #3c3939;\n    font-weight: 400;\n    font-size: 14px;\n    margin: 10px 0;\n}\n\n/* 表格 */\n.doc-view>table {\n    width: 100%;\n    line-height: 30px;\n}\n\n.doc-view>table>tbody>tr>* {\n    border-width: 0 1px 1px 0;\n    border-style: solid;\n    border-color: #c1bcbc;\n}\n\n.doc-view>table>*>tr>td {\n    padding-left: 1em;\n}\n\n.doc-view>table>tbody>tr>*:first-child {\n    border-width: 0 1px 1px 1px;\n}\n\n.doc-view>table>tbody>tr:nth-child(2n) {\n    background-color: #F5F5F5;\n}\n\n.doc-view>table>tbody>tr:nth-child(2n+1) {\n    background-color: #fff;\n}\n\n.doc-view>table>thead>tr {\n    background-color: #c1bcbc;\n    border: 1px solid #c1bcbc;\n    color: #fff;\n}\n\n\n/* 列表 */\n\n.doc-view ul,\n.doc-view ol {\n    font-size: 13px;\n    line-height: 2.4em;\n}\n\n.doc-view ul {\n    margin-left: 2.5em;\n}\n\n.doc-view ol {\n    margin-left: 2.5em;\n}\n\n.doc-view ul>li {\n    list-style-type: circle;\n}\n\n.doc-view ol>li {\n    list-style-type: decimal;\n}\n\n/* 重要内容 */\n\n.doc-view .important {\n    color: rgb(255, 0, 0);\n    font-weight: 800;\n    padding: 0 10px;\n}\n\n/* 可点击链接 */\n\n.doc-view .link {\n    color: rgb(59, 59, 180);\n    cursor: pointer;\n    text-decoration: underline;\n    padding: 0 10px;\n}\n\n.doc-view .link:hover {\n    color: rgb(0, 0, 255);\n    font-weight: 800;\n}\n\n/* 过时标记 */\n\n.doc-view .outdated {\n    text-decoration: line-through;\n    text-decoration-color: red;\n}\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/polyfill/Promise.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['5']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    /*!
+ * ✔️ - Promise
+ * https://github.com/hai2007/polyfill.js/blob/master/Promise.js
  *
  * author hai2007 < https://hai2007.gitee.io/sweethome >
  *
  * Copyright (c) 2021-present hai2007 走一步，再走一步。
  * Released under the MIT license
  */
-var r="http://www.w3.org/2000/svg";e.default={stopPropagation:function(n){(n=n||window.event).stopPropagation?n.stopPropagation():n.cancelBubble=!0},preventDefault:function(n){(n=n||window.event).preventDefault?n.preventDefault():n.returnValue=!1},isNode:function(n){return n&&(1===n.nodeType||9===n.nodeType||11===n.nodeType)},bind:function(n,e,t){if(n.constructor!==Array&&n.constructor!==NodeList&&n.constructor!==HTMLCollection)window.attachEvent?n.attachEvent("on"+e,t):n.addEventListener(e,t,!1);else for(var r=0;r<n.length;r++)this.bind(n[r],e,t)},unbind:function(n,e,t){if(n.constructor!==Array&&n.constructor!==NodeList&&n.constructor!==HTMLCollection)window.detachEvent?n.detachEvent("on"+e,t):n.removeEventListener(e,t,!1);else for(var r=0;r<n.length;r++)this.unbind(n[r],e,t)},find:function(n,e,t){if(!this.isNode(n))return[];for(var r=n.getElementsByTagName(t||"*"),o=[],i=0;i<r.length;i++)this.isNode(r[i])&&("function"!=typeof e||e(r[i]))&&o.push(r[i]);return o},children:function(n,e){for(var t=n.childNodes,r=[],o=0;o<t.length;o++)this.isNode(t[o])&&("function"!=typeof e||e(t[o]))&&r.push(t[o]);return r},hasClass:function(n,e,t){e.constructor!==Array&&(e=[e]);for(var r=" "+(n.getAttribute("class")||"")+" ",o=0;o<e.length;o++)if(r.indexOf(" "+e[o]+" ")>=0){if(t)return!0}else if(!t)return!1;return!0},removeClass:function(n,e){var t=(" "+(n.getAttribute("class")||"")+" ").replace(" "+e.trim()+" "," ");n.setAttribute("class",t.trim())},addClass:function(n,e){if(!this.hasClass(n,e)){var t=n.getAttribute("class")||"";n.setAttribute("class",t+" "+e)}},toNode:function(n,e){var t;if(e)t=document.createElementNS(r,"svg");else{var o="div";/^<tr[> ]/.test(n)?o="tbody":/^<th[> ]/.test(n)||/^<td[> ]/.test(n)?o="tr":(/^<thead[> ]/.test(n)||/^<tbody[> ]/.test(n))&&(o="table"),t=document.createElement(o)}t.innerHTML=n;for(var i=t.childNodes,a=0;a<i.length;a++)if(this.isNode(i[a]))return i[a]},trigger:function(n,e){if(document.createEventObject)n.fireEvent("on"+e,document.createEventObject());else{var t=document.createEvent("HTMLEvents");t.initEvent(e,!0,!1),n.dispatchEvent(t)}},getStyle:function(n,e){var t=document.defaultView&&document.defaultView.getComputedStyle?document.defaultView.getComputedStyle(n,null):n.currentStyle;return"string"==typeof e?t.getPropertyValue(e):t},offsetPosition:function(n){var e=0,t=0;for(t=n.offsetTop,e=n.offsetLeft,n=n.offsetParent;n;)t+=n.offsetTop,e+=n.offsetLeft,n=n.offsetParent;return{left:e,top:t}},mousePosition:function(n,e){var t=n.getBoundingClientRect();if(!e||!e.clientX)throw new Error("Event is necessary!");return{x:e.clientX-t.left,y:e.clientY-t.top}},remove:function(n){n.parentNode.removeChild(n)},setStyles:function(n,e){for(var t in e)n.style[t]=e[t]},size:function(n,e){var t,r;return"content"==e?(r=n.clientWidth-(this.getStyle(n,"padding-left")+"").replace("px","")-(this.getStyle(n,"padding-right")+"").replace("px",""),t=n.clientHeight-(this.getStyle(n,"padding-top")+"").replace("px","")-(this.getStyle(n,"padding-bottom")+"").replace("px","")):"padding"==e?(r=n.clientWidth,t=n.clientHeight):"border"==e?(r=n.offsetWidth,t=n.offsetHeight):"scroll"==e?(r=n.scrollWidth,t=n.scrollHeight):(r=n.offsetWidth,t=n.offsetHeight),{width:r,height:t}},append:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.appendChild(t),t},prepend:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.insertBefore(t,n.childNodes[0]),t},after:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.parentNode.insertBefore(t,n.nextSibling),t},before:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.parentNode.insertBefore(t,n),t}}},function(n,e,t){"use strict";(function(n){var t=function(){if("undefined"!=typeof window)return window;if(void 0!==n)return n;throw new Error("The current environment is not known!")}();e.a=t}).call(this,t(10))},function(n,e){n.exports=function(n){return n.webpackPolyfill||(n.deprecate=function(){},n.paths=[],n.children||(n.children=[]),Object.defineProperty(n,"loaded",{enumerable:!0,get:function(){return n.l}}),Object.defineProperty(n,"id",{enumerable:!0,get:function(){return n.i}}),n.webpackPolyfill=1),n}},function(n,e,t){"use strict";t.r(e);
+
+__etcpack__scope_args__=window.__etcpack__getBundle('6');
+var globalNAMESPACE =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('7');
+var isFunction=__etcpack__scope_args__.isFunction;
+var isObject=__etcpack__scope_args__.isObject;
+var isArray=__etcpack__scope_args__.isArray;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('17');
+var doResolve=__etcpack__scope_args__.doResolve;
+var changeState=__etcpack__scope_args__.changeState;
+var triggerEvent=__etcpack__scope_args__.triggerEvent;
+
+
+function Promise(doback) {
+
+    if (!(this instanceof Promise)) {
+
+        // 所有的报错方式和内容我们都尽力和原生的保持一致，下同
+        throw new TypeError('undefined is not a promise');
+    }
+
+    if (!(isFunction(doback))) {
+        throw new TypeError('Promise resolver ' + doback + ' is not a function');
+    }
+
+    /**
+     * 参数初始化
+     */
+
+    // 当前的值
+    this.__value = undefined;
+
+    // 记录着由于then，catch或finally登记的方法
+    // Array<onFulfilled|undefined, onRejected|undefined, callback|undefined>
+    this.__hocks = [];
+
+    // 状态
+    this.__state = 'pending';
+
+    /**
+     * 准备完毕以后，开始处理
+     */
+    doResolve(doback, this);
+}
+
+// 添加辅助方法
+Promise.prototype.$$changeState = changeState;
+Promise.prototype.$$triggerEvent = triggerEvent;
+
+/**
+ * 原型上的方法
+ */
+
+// 添加解决(fulfillment)和拒绝(rejection)回调到当前 promise,
+// 返回一个新的 promise,
+// 将以回调的返回值来resolve。
+Promise.prototype.then = function (onFulfilled, onRejected) {
+
+    this.__hocks.push([onFulfilled, onRejected, undefined]);
+
+    if (this.__state != 'pending') { this.$$triggerEvent(); }
+
+    return this;
+
+};
+
+// 添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise。
+// 当这个回调函数被调用，
+// 新 promise 将以它的返回值来resolve，
+// 否则如果当前promise 进入fulfilled状态，
+// 则以当前promise的完成结果作为新promise的完成结果。
+Promise.prototype.catch = function (onRejected) {
+
+    this.__hocks.push([undefined, onRejected, undefined]);
+
+    if (this.__state != 'pending') { this.$$triggerEvent(); }
+
+    return this;
+
+};
+
+// 添加一个事件处理回调于当前promise对象，
+// 并且在原promise对象解析完毕后，
+// 返回一个新的promise对象。
+// 回调会在当前promise运行完毕后被调用，
+// 无论当前promise的状态是完成(fulfilled)还是失败(rejected)。
+Promise.prototype.finally = function (callback) {
+
+    this.__hocks.push([undefined, undefined, callback]);
+
+    if (this.__state != 'pending') { this.$$triggerEvent(); }
+
+    return this;
+
+
+};
+
+/**
+ * 静态方法
+ */
+
+// 返回一个状态由给定value决定的Promise对象。
+// 如果该值是thenable(即，带有then方法的对象)，
+// 返回的Promise对象的最终状态由then方法执行决定；
+// 否则的话(该value为空，基本类型或者不带then方法的对象),
+// 返回的Promise对象状态为fulfilled，
+// 并且将该value传递给对应的then方法。
+// 通常而言，如果您不知道一个值是否是Promise对象，使用Promise.resolve(value) 来返回一个Promise对象,
+// 这样就能将该value以Promise对象形式使用。
+Promise.resolve = function (value) {
+
+    if (isObject(value) && value.constructor === Promise) {
+        return value;
+    }
+
+    return new Promise(function (resolve) {
+        resolve(value);
+    });
+
+};
+
+// 返回一个状态为失败的Promise对象，
+// 并将给定的失败信息传递给对应的处理方法。
+Promise.reject = function (reason) {
+
+    return new Promise(function (resolve, reject) {
+        reject(reason);
+    });
+
+};
+
+// 这个方法返回一个新的promise对象，
+// 该promise对象在iterable参数对象里所有的promise对象都成功的时候才会触发成功，
+// 一旦有任何一个iterable里面的promise对象失败则立即触发该promise对象的失败。
+// 这个新的promise对象在触发成功状态以后，
+// 会把一个包含iterable里所有promise返回值的数组作为成功回调的返回值，
+// 顺序跟iterable的顺序保持一致；
+// 如果这个新的promise对象触发了失败状态，
+// 它会把iterable里第一个触发失败的promise对象的错误信息作为它的失败错误信息。
+// Promise.all方法常被用于处理多个promise对象的状态集合.
+Promise.all = function (iterable) {
+
+    return new Promise(function (resolve, reject) {
+
+        if (!isArray(iterable)) {
+            return reject(new TypeError('undefined is not iterable (cannot read property Symbol(Symbol.iterator))'));
+        }
+
+        var resultData = Array.prototype.slice.call(iterable), num = 0;
+
+        if (resultData.length == 0) resolve([]);
+
+        var doHelp = function (index, item) {
+            if (item.__state !== "pending") {
+
+                num += 1;
+
+                if (item.__state == 'rejected') {
+
+                    // 如果遇到第一个失败的，拒绝即可
+                    reject(item.__value);
+                } else {
+
+                    resultData[index] = item.__value;
+
+                    if (num == resultData.length) {
+                        resolve(resultData);
+                    }
+                }
+
+            } else {
+                setTimeout(function () { doHelp(index, item); });
+            }
+        };
+
+        for (var i = 0; i < resultData.length; i++) {
+            doHelp(i, resultData[i]);
+        }
+
+    });
+
+};
+
+// 等到所有promises都已敲定（settled）（每个promise都已兑现（fulfilled）或已拒绝（rejected））。
+// 返回一个promise，该promise在所有promise完成后完成。并带有一个对象数组，每个对象对应每个promise的结果。
+Promise.allSettled = function (iterable) {
+
+    return new Promise(function (resolve, reject) {
+
+        if (!isArray(iterable)) {
+            return reject(new TypeError('undefined is not iterable (cannot read property Symbol(Symbol.iterator))'));
+        }
+
+        var resultData = Array.prototype.slice.call(iterable), num = 0;
+
+        if (resultData.length == 0) resolve([]);
+
+        var doHelp = function (index, item) {
+            if (item.__state !== "pending") {
+
+                num += 1;
+
+                resultData[index] = {
+                    status: item.__state
+                };
+
+                if (item.__state == 'fulfilled') {
+                    resultData[index].value = item.__value;
+                } else {
+                    resultData[index].reason = item.__value;
+                }
+
+                if (num == resultData.length) {
+                    resolve(resultData);
+                }
+
+            } else {
+                setTimeout(function () { doHelp(index, item); });
+            }
+        };
+
+        for (var i = 0; i < resultData.length; i++) {
+            doHelp(i, resultData[i]);
+        }
+
+    });
+
+};
+// 收一个Promise对象的集合，
+// 当其中的一个 promise 成功，
+// 就返回那个成功的promise的值。
+Promise.any = function (iterable) {
+
+    return new Promise(function (resolve, reject) {
+
+        if (!isArray(iterable)) {
+            return reject(new TypeError('undefined is not iterable (cannot read property Symbol(Symbol.iterator))'));
+        }
+
+        var num = 0;
+
+        if (iterable.length == 0) resolve(undefined);
+
+        var doHelp = function (index, item) {
+            if (item.__state !== "pending") {
+
+                num += 1;
+
+                if (item.__state == 'rejected') {
+
+                    if (num == iterable.length) {
+
+                        // 为了兼容性，我们放弃AggregateError
+                        return reject(new Error('All promises were rejected'));
+                    }
+
+                } else {
+
+                    // 遇到第一个成功的，标记解决即可
+                    resolve(item.__value);
+
+                }
+
+            } else {
+                setTimeout(function () { doHelp(index, item); });
+            }
+        };
+
+        for (var i = 0; i < iterable.length; i++) {
+            doHelp(i, iterable[i]);
+        }
+
+    });
+};
+
+// 当iterable参数里的任意一个子promise被成功或失败后，
+// 父promise马上也会用子promise的成功返回值或失败详情作为参数调用父promise绑定的相应句柄，
+// 并返回该promise对象。
+Promise.race = function (iterable) {
+
+    return new Promise(function (resolve, reject) {
+
+        if (!isArray(iterable)) {
+            return reject(new TypeError('undefined is not iterable (cannot read property Symbol(Symbol.iterator))'));
+        }
+
+        if (iterable.length == 0) resolve(undefined);
+
+        var doHelp = function (index, item) {
+            if (item.__state !== "pending") {
+
+                if (item.__state == 'rejected') {
+                    reject(item.__value);
+                } else {
+                    resolve(item.__value);
+                }
+
+            } else {
+                setTimeout(function () { doHelp(index, item); });
+            }
+        };
+
+        for (var i = 0; i < iterable.length; i++) {
+            doHelp(i, iterable[i]);
+        }
+
+    });
+};
+
+// 如果Promise不存在
+if (!('Promise' in globalNAMESPACE)) {
+    globalNAMESPACE['Promise'] = Promise;
+}
+
+// 由于不同浏览器对一些具体的方法兼容不一样
+// （比如一些浏览器支持Promise，可是不支持某个方法，需要对该方法进行兼容）
+// 需要进一步嗅探
+// 推迟支持
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/polyfill/.inner/globalNAMESPACE.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['6']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var globalNAMESPACE = (function () {
+
+    // 浏览器环境
+    if (typeof window !== 'undefined') return window;
+
+    // nodejs环境
+    if (typeof global !== 'undefined') return global;
+
+    throw new Error('The current environment is not known!');
+
+})();
+
+// 获取当前环境的全局变量
+__etcpack__scope_bundle__.default= globalNAMESPACE;
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/type.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['7']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('8');
+var _isObject =__etcpack__scope_args__.default;
+
+
+__etcpack__scope_args__=window.__etcpack__getBundle('9');
+var _isBoolean =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('11');
+var _isNumber =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('12');
+var _isString =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('13');
+var _isSymbol =__etcpack__scope_args__.default;
+
+
+__etcpack__scope_args__=window.__etcpack__getBundle('14');
+var _isFunction =__etcpack__scope_args__.default;
+
+
+__etcpack__scope_args__=window.__etcpack__getBundle('15');
+var _isError =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('16');
+var _isPlainObject =__etcpack__scope_args__.default;
+
+
+var domTypeHelp = function (types, value) {
+    return value !== null && typeof value === 'object' &&
+        types.indexOf(value.nodeType) > -1 &&
+        !_isPlainObject(value);
+};
+
 /*!
- * 💡 - 提供常用的DOM操作方法
- * https://github.com/hai2007/tool.js/blob/master/xhtml.js
+ * 💡 - 值类型判断方法
+ * https://github.com/hai2007/tool.js/blob/master/type.js
  *
  * author hai2007 < https://hai2007.gitee.io/sweethome >
  *
- * Copyright (c) 2021-present hai2007 走一步，再走一步。
+ * Copyright (c) 2020-present hai2007 走一步，再走一步。
  * Released under the MIT license
  */
-var r="http://www.w3.org/2000/svg";e.default={stopPropagation:function(n){(n=n||window.event).stopPropagation?n.stopPropagation():n.cancelBubble=!0},preventDefault:function(n){(n=n||window.event).preventDefault?n.preventDefault():n.returnValue=!1},isNode:function(n){return n&&(1===n.nodeType||9===n.nodeType||11===n.nodeType)},bind:function(n,e,t){if(n.constructor!==Array&&n.constructor!==NodeList&&n.constructor!==HTMLCollection)window.attachEvent?n.attachEvent("on"+e,t):n.addEventListener(e,t,!1);else for(var r=0;r<n.length;r++)this.bind(n[r],e,t)},unbind:function(n,e,t){if(n.constructor!==Array&&n.constructor!==NodeList&&n.constructor!==HTMLCollection)window.detachEvent?n.detachEvent("on"+e,t):n.removeEventListener(e,t,!1);else for(var r=0;r<n.length;r++)this.unbind(n[r],e,t)},find:function(n,e,t){if(!this.isNode(n))return[];for(var r=n.getElementsByTagName(t||"*"),o=[],i=0;i<r.length;i++)this.isNode(r[i])&&("function"!=typeof e||e(r[i]))&&o.push(r[i]);return o},children:function(n,e){for(var t=n.childNodes,r=[],o=0;o<t.length;o++)this.isNode(t[o])&&("function"!=typeof e||e(t[o]))&&r.push(t[o]);return r},hasClass:function(n,e,t){e.constructor!==Array&&(e=[e]);for(var r=" "+(n.getAttribute("class")||"")+" ",o=0;o<e.length;o++)if(r.indexOf(" "+e[o]+" ")>=0){if(t)return!0}else if(!t)return!1;return!0},removeClass:function(n,e){var t=(" "+(n.getAttribute("class")||"")+" ").replace(" "+e.trim()+" "," ");n.setAttribute("class",t.trim())},addClass:function(n,e){if(!this.hasClass(n,e)){var t=n.getAttribute("class")||"";n.setAttribute("class",t+" "+e)}},toNode:function(n,e){var t;if(e)t=document.createElementNS(r,"svg");else{var o="div";/^<tr[> ]/.test(n)?o="tbody":/^<th[> ]/.test(n)||/^<td[> ]/.test(n)?o="tr":(/^<thead[> ]/.test(n)||/^<tbody[> ]/.test(n))&&(o="table"),t=document.createElement(o)}t.innerHTML=n;for(var i=t.childNodes,a=0;a<i.length;a++)if(this.isNode(i[a]))return i[a]},trigger:function(n,e){if(document.createEventObject)n.fireEvent("on"+e,document.createEventObject());else{var t=document.createEvent("HTMLEvents");t.initEvent(e,!0,!1),n.dispatchEvent(t)}},getStyle:function(n,e){var t=document.defaultView&&document.defaultView.getComputedStyle?document.defaultView.getComputedStyle(n,null):n.currentStyle;return"string"==typeof e?t.getPropertyValue(e):t},offsetPosition:function(n){var e=0,t=0;for(t=n.offsetTop,e=n.offsetLeft,n=n.offsetParent;n;)t+=n.offsetTop,e+=n.offsetLeft,n=n.offsetParent;return{left:e,top:t}},mousePosition:function(n,e){var t=n.getBoundingClientRect();if(!e||!e.clientX)throw new Error("Event is necessary!");return{x:e.clientX-t.left,y:e.clientY-t.top}},remove:function(n){n.parentNode.removeChild(n)},setStyles:function(n,e){for(var t in e)n.style[t]=e[t]},size:function(n,e){var t,r;return"content"==e?(r=n.clientWidth-(this.getStyle(n,"padding-left")+"").replace("px","")-(this.getStyle(n,"padding-right")+"").replace("px",""),t=n.clientHeight-(this.getStyle(n,"padding-top")+"").replace("px","")-(this.getStyle(n,"padding-bottom")+"").replace("px","")):"padding"==e?(r=n.clientWidth,t=n.clientHeight):"border"==e?(r=n.offsetWidth,t=n.offsetHeight):"scroll"==e?(r=n.scrollWidth,t=n.scrollHeight):(r=n.offsetWidth,t=n.offsetHeight),{width:r,height:t}},append:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.appendChild(t),t},prepend:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.insertBefore(t,n.childNodes[0]),t},after:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.parentNode.insertBefore(t,n.nextSibling),t},before:function(n,e){var t=this.isNode(e)?e:this.toNode(e);return n.parentNode.insertBefore(t,n),t}}},function(n,e,t){n.exports=t(7)},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(0),o=t(8),i=t(9);t(41);var a=t(11),l=t(39),c=t(40);(0,r.platform)({el:document.getElementById("root"),styles:[o.default,c.default,l.default,i.default]}).bootstrap(a.default)},function(n,e,t){"use strict";t.r(e),e.default="/*!\n * 👁️ - 统一不同浏览器的基础样式\n * https://github.com/hai2007/style.css/blob/master/normalize.css\n *\n * author hai2007 < https://hai2007.gitee.io/sweethome >\n *\n * Copyright (c) 2020-present hai2007 走一步，再走一步。\n * Released under the MIT license\n */\n\nhtml {\n    /* 防止iPhone在坚屏转向横屏时放大文字 */\n    -ms-text-size-adjust: 100%;\n    -webkit-text-size-adjust: 100%;\n    /* 统一行高 */\n    line-height: 1.15;\n}\n\nbutton,\ninput {\n    /* 兼容部分手机下border不显示问题 */\n    border: 1px solid #b2b2bd;\n}\n\narticle,\nfooter,\nheader,\nnav,\nsection {\n    /* 修正旧浏览器未定义的块级元素 */\n    display: block;\n}\n\ncanvas,\nsvg {\n    /* 修正旧浏览器未定义的行内块元素 */\n    display: inline-block;\n}\n\n* {\n    /* 统一不同浏览器盒子尺寸计算方法 */\n    box-sizing: border-box;\n}\n\n::-ms-clear,\n::-ms-reveal {\n    /* 去掉IE浏览器输入框叉叉和眼睛 */\n    display: none;\n}\n\nimg {\n    /* 针对火狐浏览器在img标签没有src时候的差异修复 */\n    display: inline-block;\n}\n\nhtml {\n    /* 设置默认字体为统一的安全字体 */\n    font-family: sans-serif;\n}\n\na {\n    /* 默认去掉下划线 */\n    text-decoration: none;\n}\n\nli {\n    /* 去掉前置索引 */\n    list-style-type: none;\n}\n\nul,\nol,\nli,\np,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    /* 去掉不喜欢的间距 */\n    -webkit-margin-before: 0;\n    -webkit-margin-after: 0;\n    -webkit-padding-start: 0;\n    /* 去掉不喜欢的间距，针对火狐浏览器等 */\n    margin-block-end: 0;\n    margin-block-start: 0;\n    padding-inline-start: 0;\n    /* 修改IE和其它浏览器不一致问题 */\n    padding: 0;\n    margin: 0;\n}\n\nbody {\n    /* 去掉默认的8px */\n    margin: 0;\n}\n\ntable {\n    /* 设置默认表格边框合并为一个单一的边框 */\n    border-collapse: collapse;\n}\n"},function(n,e,t){"use strict";t.r(e),e.default='.doc-view {\n    color: #000000;\n    padding: 15px;\n}\n\n/* 文章标题 */\n.doc-view>h2 {\n    font-size: 30px;\n    padding: 30px 0;\n}\n\n/* 一级标题 */\n.doc-view>h3 {\n    font-size: 15px;\n    line-height: 2em;\n    padding: 20px 0;\n}\n\n.doc-view>h3::before {\n    content: "#";\n    color: #711e32;\n}\n\n/* 二级标题 */\n.doc-view>h4 {\n    font-size: 14px;\n    line-height: 2em;\n    padding: 15px 0;\n}\n\n/* 段落 */\n.doc-view>p {\n    line-height: 1.6em;\n    text-indent: 2em;\n    color: #3c3939;\n    font-weight: 400;\n    font-size: 14px;\n    margin: 10px 0;\n}\n\n/* 表格 */\n.doc-view>table {\n    width: 100%;\n    line-height: 30px;\n}\n\n.doc-view>table>tbody>tr>* {\n    border-width: 0 1px 1px 0;\n    border-style: solid;\n    border-color: #c1bcbc;\n}\n\n.doc-view>table>*>tr>td {\n    padding-left: 1em;\n}\n\n.doc-view>table>tbody>tr>*:first-child {\n    border-width: 0 1px 1px 1px;\n}\n\n.doc-view>table>tbody>tr:nth-child(2n) {\n    background-color: #F5F5F5;\n}\n\n.doc-view>table>tbody>tr:nth-child(2n+1) {\n    background-color: #fff;\n}\n\n.doc-view>table>thead>tr {\n    background-color: #c1bcbc;\n    border: 1px solid #c1bcbc;\n    color: #fff;\n}\n\n\n/* 列表 */\n\n.doc-view ul,\n.doc-view ol {\n    font-size: 13px;\n    line-height: 2.4em;\n}\n\n.doc-view ul {\n    margin-left: 2.5em;\n}\n\n.doc-view ol {\n    margin-left: 2.5em;\n}\n\n.doc-view ul>li {\n    list-style-type: circle;\n}\n\n.doc-view ol>li {\n    list-style-type: decimal;\n}\n\n/* 重要内容 */\n\n.doc-view .important {\n    color: rgb(255, 0, 0);\n    font-weight: 800;\n    padding: 0 10px;\n}\n\n/* 可点击链接 */\n\n.doc-view .link {\n    color: rgb(59, 59, 180);\n    cursor: pointer;\n    text-decoration: underline;\n    padding: 0 10px;\n}\n\n.doc-view .link:hover {\n    color: rgb(0, 0, 255);\n    font-weight: 800;\n}\n\n/* 过时标记 */\n\n.doc-view .outdated {\n    text-decoration: line-through;\n    text-decoration-color: red;\n}\n'},function(n,e){var t;t=function(){return this}();try{t=t||new Function("return this")()}catch(n){"object"==typeof window&&(t=window)}n.exports=t},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(12),a=t(26),l=t(30),c=t(31),u=t(32),s=t(33),f=t(34),d=t(35),p=t(37),_=function(){function n(){}return n=(0,r.__decorate)([(0,o.Module)({declarations:[i.default,l.default,c.default,u.default,s.default,f.default,d.default,p.default,a.default],imports:[],exports:[],bootstrap:i.default})],n)}();e.default=_},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(13),a=t(14),l=t(16),c=t(17),u=t(18),s=function(){function n(){}return n.prototype.$setup=function(){return{pageName:(0,o.ref)(""),currentPage:(0,o.ref)(null)}},n.prototype.$mounted=function(){var n=(0,i.default)(window.location.href);this.pageName=n.router[0]in u.default?n.router[0]:"HTML",this.loadPage(n.params.fixed)},n.prototype.loadPage=function(n){var e=this;u.default[this.pageName]().then((function(t){e.currentPage=t.default,setTimeout((function(){(0,a.default)(n)}),200)}))},n.prototype.openPage=function(n){this.pageName=n.target.getAttribute("tag"),window.location.href="#/"+this.pageName+"?fixed=top",this.loadPage("top")},n.prototype.doScroll=function(n){var e=n.target.getAttribute("tag");window.location.href="#/"+this.pageName+"?fixed="+e,(0,a.default)(e)},n=(0,r.__decorate)([(0,o.Component)({selector:"app-root",template:c.default,styles:[l.default]})],n)}();e.default=s},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(n){var e,t,r=n.split("?"),o=(r[0]+"#").split("#")[1].replace(/^\//,"").replace(/\/$/,"").split("/"),i=r[1]||"";return""==i?e={}:(t=i.split("&"),e={},t.forEach((function(n){var t=n.split("=");e[t[0]]=t[1]}))),{router:""==o[0]?[]:o,params:e}}},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(15);e.default=function(n,e){void 0===e&&(e=40);var t=document.getElementById("root-view");if(n){var o=document.getElementById("fixed-"+n);if(o){var i=o.offsetTop-e,a=t.scrollTop||0;(0,r.default)((function(n){t.scrollTop=(i-a)*n+a}),500,(function(){t.scrollTop=i}))}}else t.scrollTop=0}},function(n,e,t){"use strict";t.r(e);var r=[],o=null;
+
+__etcpack__scope_bundle__.isObject = _isObject;
+
+// 基本类型
+__etcpack__scope_bundle__.isUndefined = function (input) { return input === undefined };
+__etcpack__scope_bundle__.isNull = function (input) { return input === null };
+__etcpack__scope_bundle__.isBoolean = _isBoolean;
+__etcpack__scope_bundle__.isNumber = _isNumber;
+__etcpack__scope_bundle__.isString = _isString;
+__etcpack__scope_bundle__.isSymbol = _isSymbol;
+
+// 引用类型
+__etcpack__scope_bundle__.isFunction = _isFunction;
+__etcpack__scope_bundle__.isArray = function (input) { return Array.isArray(input) };
+__etcpack__scope_bundle__.isError = _isError;
+__etcpack__scope_bundle__.isPlainObject = _isPlainObject;
+
+// 结点类型
+__etcpack__scope_bundle__.isElement = function (input) { return domTypeHelp([1, 9, 11], input) };
+__etcpack__scope_bundle__.isAttribute = function (input) { return domTypeHelp([2], input) };
+__etcpack__scope_bundle__.isText = function (input) { return domTypeHelp([3], input) };
+__etcpack__scope_bundle__.isComment = function (input) { return domTypeHelp([8], input) };
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isObject.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['8']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    /**
+ * 判断一个值是不是Object。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是Object返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    var type = typeof value;
+    return value != null && (type === 'object' || type === 'function');
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isBoolean.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['9']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是Boolean。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是Boolean返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    return value === true || value === false ||
+        (value !== null && typeof value === 'object' && getType(value) === '[object Boolean]');
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/getType.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['10']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var toString = Object.prototype.toString;
+
+/**
+ * 获取一个值的类型字符串[object type]
+ *
+ * @param {*} value 需要返回类型的值
+ * @returns {string} 返回类型字符串
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    if (value == null) {
+        return value === undefined ? '[object Undefined]' : '[object Null]';
+    }
+    return toString.call(value);
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isNumber.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['11']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是number。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是number返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    return typeof value === 'number' || (
+        value !== null && typeof value === 'object' &&
+        getType(value) === '[object Number]'
+    );
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isString.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['12']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是String。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是String返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    var type = typeof value;
+    return type === 'string' || (type === 'object' && value != null && !Array.isArray(value) && getType(value) === '[object String]');
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isSymbol.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['13']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是symbol。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是symbol返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    var type = typeof value;
+    return type === 'symbol' || (type === 'object' && value !== null && getType(value) === '[object Symbol]');
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isFunction.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['14']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('8');
+var isObject =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是Function。
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是Function返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    if (!isObject(value)) {
+        return false;
+    }
+
+    var type = getType(value);
+    return type === '[object Function]' || type === '[object AsyncFunction]' ||
+        type === '[object GeneratorFunction]' || type === '[object Proxy]';
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isError.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['15']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('16');
+var isPlainObject =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是错误对象。
+ * `Error`, `EvalError`, `RangeError`, `ReferenceError`,`SyntaxError`, `TypeError`, or `URIError`
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是错误对象返回true，否则返回false
+ */
+__etcpack__scope_bundle__.default= function (value) {
+    if (value === null || typeof value !== 'object') {
+        return false;
+    }
+
+    var type = getType(value);
+    return type === '[object Error]' || type === '[object DOMException]' ||
+        (typeof value.message === 'string' && typeof value.name === 'string' && !isPlainObject(value));
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/.inner/type/isPlainObject.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['16']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('10');
+var getType =__etcpack__scope_args__.default;
+
+
+/**
+ * 判断一个值是不是一个朴素的'对象'
+ * 所谓"纯粹的对象"，就是该对象是通过"{}"或"new Object"创建的
+ *
+ * @param {*} value 需要判断类型的值
+ * @returns {boolean} 如果是朴素的'对象'返回true，否则返回false
+ */
+
+__etcpack__scope_bundle__.default= function (value) {
+    if (value === null || typeof value !== 'object' || getType(value) != '[object Object]') {
+        return false;
+    }
+
+    // 如果原型为null
+    if (Object.getPrototypeOf(value) === null) {
+        return true;
+    }
+
+    var proto = value;
+    while (Object.getPrototypeOf(proto) !== null) {
+        proto = Object.getPrototypeOf(proto);
+    }
+    return Object.getPrototypeOf(value) === proto;
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/polyfill/.inner/Promise/doResolve.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['17']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('7');
+var isFunction=__etcpack__scope_args__.isFunction;
+var isObject=__etcpack__scope_args__.isObject;
+
+
+__etcpack__scope_bundle__.changeState = function (data, state) {
+
+    // 更改状态
+    this.__state = state;
+    this.__value = data;
+
+    // 由于状态改变了，触发对then，finnaly，catch等的执行更新
+    this.$$triggerEvent();
+
+};
+
+__etcpack__scope_bundle__.triggerEvent = function () {
+
+    // 这个方法的任务就是把__hocks中记录的方法依次执行了
+    // 什么时候会停止？两种情况：
+    // 1.队列执行完了
+    // 2.遇到其中一个执行方法返回Promise
+
+    var currentHock = null;
+
+    // 同意状态就去寻找下一个onFulfilled
+    // 拒绝状态就去寻找下一个onRejected
+    // 数组下标0和1分别记录这两个状态，因此先根据状态确定下标即可
+    var index = this.__state == 'fulfilled' ? 0 : 1, i;
+
+    // 可能找到，可能到结尾都没有找到
+    while (this.__hocks.length > 0) {
+
+        if (isFunction(this.__hocks[0][index])) {
+            currentHock = this.__hocks.shift();
+            break;
+        }
+
+        // 对于路过的finally执行一下
+        else if (isFunction(this.__hocks[0][2])) {
+            this.__hocks[0][2]();
+        }
+
+        this.__hocks.shift();
+
+    }
+
+    // 如果找到了
+    if (currentHock !== null) {
+        var result = currentHock[index](this.__value);
+
+        // 如果是Promise
+        if (isObject(result) && result.constructor === this.constructor) {
+            for (var i = 0; i < this.__hocks.length; i++) {
+                result.__hocks.push(this.__hocks[i]);
+                if (result.__state != 'pending') result.$$triggerEvent();
+            }
+
+            this.then = function (onFulfilled, onRejected) {
+
+                result.then(onFulfilled, onRejected);
+            };
+            this.catch = function (onRejected) {
+
+                result.catch(onRejected);
+            };
+            this.finally = function (callback) {
+
+                result.finally(callback);
+            };
+
+        }
+
+        // 否则
+        else {
+
+            this.__value = result;
+            this.__state = "fulfilled";
+            this.$$triggerEvent();
+
+        }
+
+    }
+
+};
+
+__etcpack__scope_bundle__.doResolve = function (doback, that) {
+
+    // 防止重复修改状态
+    var done = false;
+
+    try {
+        doback(function (value) {
+            if (done) return; done = true;
+            that.$$changeState(value, 'fulfilled');
+
+        }, function (reason) {
+            if (done) return; done = true;
+            that.$$changeState(reason, 'rejected');
+
+        });
+    } catch (error) {
+        if (done) return; done = true;
+        that.$$changeState(error, 'rejected');
+    }
+
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/app.module.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['18']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Module=__etcpack__scope_args__.Module;
+ // 首页
+
+__etcpack__scope_args__=window.__etcpack__getBundle('19');
+var AppComponent =__etcpack__scope_args__.default;
+ // 组件
+
+__etcpack__scope_args__=window.__etcpack__getBundle('29');
+var search =__etcpack__scope_args__.default;
+ // 指令
+
+__etcpack__scope_args__=window.__etcpack__getBundle('33');
+var uiBind =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('34');
+var uiModel =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('36');
+var uiOn =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('37');
+var uiLazy =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('38');
+var uiToggle =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('39');
+var uiGotoExample =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('44');
+var uiCode =__etcpack__scope_args__.default;
+
+
+var _class = (_dec = Module({
+  declarations: [AppComponent, uiBind, uiModel, uiOn, uiLazy, uiToggle, uiGotoExample, uiCode, search],
+  imports: [],
+  exports: [],
+  bootstrap: AppComponent
+}), _dec(_class2 = function _class2() {
+  _classCallCheck(this, _class2);
+}) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/App/index.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['19']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Component=__etcpack__scope_args__.Component;
+var ref=__etcpack__scope_args__.ref;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('20');
+var urlFormat =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('21');
+var fixedScroll =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('23');
+var style =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('24');
+var template =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('25');
+var pages =__etcpack__scope_args__.default;
+
+
+var _class = (_dec = Component({
+  selector: "app-root",
+  template: template,
+  styles: [style]
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+
+    _defineProperty(this, "pageName", void 0);
+
+    _defineProperty(this, "currentPage", void 0);
+  }
+
+  _createClass(_class2, [{
+    key: "$setup",
+    value: function $setup() {
+      return {
+        pageName: ref(''),
+        currentPage: ref(null)
+      };
+    }
+  }, {
+    key: "$mounted",
+    value: function $mounted() {
+      // 地址栏信息
+      var urlObj = urlFormat(window.location.href);
+      this.pageName = urlObj.router[0] in pages ? urlObj.router[0] : "HTML";
+      this.loadPage(urlObj.params.fixed);
+    }
+  }, {
+    key: "loadPage",
+    value: function loadPage(fixedName) {
+      var _this = this;
+
+      pages[this.pageName]().then(function (data) {
+        _this.currentPage = data["default"];
+        setTimeout(function () {
+          fixedScroll(fixedName);
+        }, 200);
+      });
+    }
+  }, {
+    key: "openPage",
+    value: function openPage(e) {
+      this.pageName = e.target.getAttribute('tag');
+      window.location.href = '#/' + this.pageName + "?fixed=top";
+      this.loadPage('top');
+    }
+  }, {
+    key: "doScroll",
+    value: function doScroll(event) {
+      var fixedName = event.target.getAttribute('tag');
+      window.location.href = '#/' + this.pageName + "?fixed=" + fixedName;
+      fixedScroll(fixedName);
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/tool/urlFormat.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['20']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= function (url) {
+  var splitTemp = url.split('?');
+  var routerTemp = (splitTemp[0] + "#").split("#")[1].replace(/^\//, '').replace(/\/$/, '').split('/');
+  var paramTemp = splitTemp[1] || "";
+  var paramResult, paramArray;
+
+  if (paramTemp == "") {
+    paramResult = {};
+  } else {
+    paramArray = paramTemp.split("&"), paramResult = {};
+    paramArray.forEach(function (item) {
+      var temp = item.split("=");
+      paramResult[temp[0]] = temp[1];
+    });
+  }
+
+  var resultData = {
+    router: routerTemp[0] == '' ? [] : routerTemp,
+    params: paramResult
+  };
+  return resultData;
+}
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/tool/fixedScroll.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['21']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_args__=window.__etcpack__getBundle('22');
+var animation =__etcpack__scope_args__.default;
+
+__etcpack__scope_bundle__.default= function (fixed) {
+  var overValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 40;
+  var element = document.getElementById('root-view');
+
+  if (fixed) {
+    // 获取滚动调整结点
+    var fixedDom = document.getElementById('fixed-' + fixed);
+
+    if (fixedDom) {
+      var offsetTop = fixedDom.offsetTop - overValue;
+      var currentScrollTop = element.scrollTop || 0;
+      animation(function (deep) {
+        element.scrollTop = (offsetTop - currentScrollTop) * deep + currentScrollTop;
+      }, 500, function () {
+        element.scrollTop = offsetTop;
+      });
+    }
+  } else {
+    element.scrollTop = 0;
+  }
+}
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/tool/animation.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['22']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    //当前正在运动的动画的tick函数堆栈
+var $timers = [];
+//唯一定时器的定时间隔
+var $interval = 13;
+//指定了动画时长duration默认值
+var $speeds = 400;
+//定时器ID
+var $timerId = null;
+
 /*!
  * 💡 - 动画轮播
  * https://github.com/hai2007/tool.js/blob/master/animation.js
@@ -85,8 +3000,1058 @@ var r="http://www.w3.org/2000/svg";e.default={stopPropagation:function(n){(n=n||
  *
  * Copyright (c) 2020-present hai2007 走一步，再走一步。
  * Released under the MIT license
- */e.default=function(n,e,t){arguments.length<2&&(e=400);var i={timer:function(n,e,t){if(!n)throw new Error("Tick is required!");var o=(new Date).valueOf()+"_"+(1e3*Math.random()).toFixed(0);return r.push({id:o,createTime:new Date,tick:n,duration:e,callback:t}),i.start(),o},start:function(){o||(o=setInterval(i.tick,13))},tick:function(){var n,e,t,o,a,l,c,u=r;for((r=[]).length=0,e=0;e<u.length;e++)n=(a=u[e]).createTime,t=a.tick,l=a.duration,o=a.callback,!1,(c=(+new Date-n)/l)>=1&&!0,t(c=c>1?1:c),c<1&&a.id?r.push(a):o&&o(c);r.length<=0&&i.stop()},stop:function(){o&&(clearInterval(o),o=null)}},a=i.timer((function(e){n(e)}),e,t);return function(){var n;for(n in r)if(r[n].id==a)return void(r[n].id=void 0)}}},function(n,e,t){"use strict";t.r(e),e.default="\n header{\n\nbackground-color: #ffffff;\n\npadding: 10px;\n\ncolor: rgb(6, 85, 215);\n\nheight: 50px;\n\nbox-shadow: rgb(213, 221, 225) 0px 4px 6px;\n\nbackground-image: url(./logo.png);\n\nbackground-size: auto 100%;\n\nbackground-repeat: no-repeat;\n\npadding-left: 70px;\n\nbackground-position: 10px center;\n\nposition: fixed;\n\nwidth: 100vw;\n\ntop: 0px;\n\nleft: 0;\n\n}\n\n header>h2{\n\nline-height: 30px;\n\ndisplay: inline-block;\n\nfont-size: 24px;\n\n}\n\n header>h2>span{\n\nfont-size: 12px;\n\npadding-left: 50px;\n\ncolor: #000000;\n\nfont-weight: 200;\n\n}\n\n header>h2>span>a{\n\ntext-decoration: underline;\n\ncolor: #ff3100;\n\n}\n\n .content{\n\nwhite-space: nowrap;\n\n}\n\n .content>div{\n\ndisplay: inline-block;\n\nvertical-align: top;\n\nwhite-space: normal;\n\nheight: calc(100vh - 50px);\n\n}\n\n .content>div.menu-view{\n\nwidth: 300px;\n\nheight: calc(100vh - 50px);\n\nposition: fixed;\n\nleft: 0;\n\ntop: 50px;\n\n}\n\n .content>div.menu-view>div>a{\n\nbackground-color: rgb(6, 85, 215);\n\ncolor: white;\n\ntext-align: center;\n\nmargin-top: .3rem;\n\ncursor: pointer;\n\nfont-size: .15rem;\n\ndisplay: block;\n\nwidth: 2.6rem;\n\npadding: .1rem 0;\n\n}\n\n .content>div.content{\n\nmargin-left: 300px;\n\nmargin-top: 50px;\n\nheight: calc(100vh - 50px);\n\n}\n\n .content>div.content>div{\n\npadding: 0 50px;\n\noverflow: auto;\n\nwidth: calc(100vw - 300px);\n\n}\n"},function(n,e,t){"use strict";t.r(e),e.default="<header>\n    <h2>\n        《前端学习手册》\n        <span>\n            稍微深入一些的内容你可以进入\n            <a target=\"_blank\" href=\"https://hai2007.gitee.io/sweethome/#/notebook-list\">\n                小文档&理解\n            </a>\n            进行查看，也可以进入\n            <a target=\"_blank\" href=\"https://hai2007.github.io/programming-api/\">\n                在线API\n            </a>\n            查看常用接口~\n        </span>\n    </h2>\n    <search></search>\n</header>\n<div class=\"content\">\n    <div class=\"menu-view\">\n        <div>\n            <h2>目录</h2>\n            <ul>\n                <li ui-bind:active='pageName==\"HTML\"?\"yes\":\"no\"'>\n                    <h3 tag='HTML' ui-on:click='openPage'>HTML</h3>\n                    <ul>\n                        <li>\n                            <h3 tag='tag' ui-toggle ui-on:click='doScroll'>标签</h3>\n                            <ul>\n                                <li>\n                                    <h3 tag='canvas' ui-on:click='doScroll'>Canvas 位图画布</h3>\n                                </li>\n                                <li>\n                                    <h3 tag='svg' ui-on:click='doScroll'>SVG 矢图画布</h3>\n                                </li>\n                            </ul>\n                        </li>\n                        <li>\n                            <h3 tag='api' ui-toggle ui-on:click='doScroll'>接口</h3>\n                            <ul>\n                                <li>\n                                    <h3 tag='postMessage' ui-on:click='doScroll'>postMessage</h3>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>\n                </li>\n                <li ui-bind:active='pageName==\"CSS\"?\"yes\":\"no\"'>\n                    <h3 tag='CSS' ui-on:click='openPage'>CSS</h3>\n                    <ul>\n                        <li>\n                            <h3 tag='selector' ui-toggle ui-on:click='doScroll'>选择器</h3>\n                            <ul>\n                                <li>\n                                    <h3 tag='priority' ui-on:click='doScroll'>优先级</h3>\n                                </li>\n                            </ul>\n                        </li>\n                        <li>\n                            <h3 tag='attribute' ui-toggle ui-on:click='doScroll'>常用属性</h3>\n                            <ul>\n                                <li>\n                                    <h3 tag='transform' ui-on:click='doScroll'>Transform 转换</h3>\n                                </li>\n                                <li>\n                                    <h3 tag='transitions' ui-on:click='doScroll'>Transitions 过渡</h3>\n                                </li>\n                                <li>\n                                    <h3 tag='animation' ui-on:click='doScroll'>Animation 动画</h3>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>\n                </li>\n                <li ui-bind:active='pageName==\"JavaScript\"?\"yes\":\"no\"'>\n                    <h3 tag='JavaScript' ui-on:click='openPage'>JavaScript</h3>\n                    <ul>\n                        <li>\n                            <h3 tag='object' ui-toggle ui-on:click='doScroll'>常用对象</h3>\n                            <ul>\n                                <li>\n                                    <h3 tag='ArrayBuffer_TypedArray_DataView' ui-on:click='doScroll'>\n                                        ArrayBuffer / TypedArray / DataView\n                                    </h3>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>\n                </li>\n            </ul>\n            <a href=\"https://github.com/hai2007/Front-End-Learning-Manual\" target=\"_blank\">Fork Me On Github</a>\n        </div>\n    </div>\n    <div class=\"content\">\n        <div ui-lazy='currentPage' id='root-view'></div>\n    </div>\n</div>\n"},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={HTML:function(){return Promise.resolve().then((function(){return t(19)}))},CSS:function(){return Promise.resolve().then((function(){return t(21)}))},JavaScript:function(){return Promise.resolve().then((function(){return t(24)}))}}},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(20),a=function(){function n(){}return n=(0,r.__decorate)([(0,o.Component)({selector:"HTML",template:i.default,styles:[]})],n)}();e.default=a},function(n,e,t){"use strict";t.r(e),e.default="<h2 id='fixed-top'>\n    HTML\n</h2>\n<h3 id='fixed-tag'>\n    标签\n</h3>\n<h4 id='fixed-canvas'>\n    Canvas 位图画布\n</h4>\n<p>\n    这就是一个类似你儿时上美术课的时候，用彩笔在上面涂鸦的板子。因此，你首先需要一张纸，在这里，也就是在页面准备好一个\n    <span class=\"important\">Canvas 节点</span>，就像这样：\n</p>\n<pre ui-code='html'>\n    <canvas>非常抱歉，您的浏览器不支持canvas!</canvas>\n</pre>\n<p>\n    接着，你只需要获取这个结点：\n</p>\n<pre ui-code>\n    var canvas = document.getElementsByTagName('canvas')[0];\n</pre>\n<p>\n    画笔是画布提供的，也就是上面的那个结点，通过上面的\n    <span class=\"important\">getContext 方法</span>\n    即可获得：\n</p>\n<pre ui-code>\n    var painter = canvas.getContext('2d');\n</pre>\n<p>\n    得到画笔以后，就可以直接绘制了，当然，在这之前，你还可以对画笔进行配置：\n</p>\n<pre ui-code>\n    painter.fillStyle = 'red';\n</pre>\n<p>\n    上面我们把笔设置成红色。\n</p>\n<p>\n    现在，我们真的要绘制了，比如我们要在(50,50)的地方写一段文字：\n</p>\n<pre ui-code>\n    painter.fillText('我是一段文字', 50, 50);\n</pre>\n<p>\n    你可以点击下面的红色按钮来查看运行效果：\n</p>\n<button ui-goto-example='canvas'>查看用例>>></button>\n<p>\n    细心的你可能会发现，我们在用css设置了画布大小以后，还用属性进行了设置。你可以试试不设置属性，不过，那样会导致绘制的内容变形或模糊，因此，一定要记得设置一下哦~\n</p>\n<p class=\"warn\">\n    温馨提示：我们在这里并不想深入，一点点也不想，别的也是，只会点到为止，更多的是想帮助大家可以快速的学习一个新的技术。\n</p>\n<h4 id='fixed-svg'>\n    SVG 矢图画布\n</h4>\n<p>\n    你可以这样理解：html作为根结点，其中可以使用各种标签来绘制页面，而svg作为根结点的时候，其中可以使用各种标签来绘制图形。此外，svg标签本身也是作为html下的一个普通标签存在的。\n</p>\n<p>\n    下面，还是让我们来举个例子说明吧！\n</p>\n<p>\n    首先，你需要准备一个svg标签作为绘图的容器：\n</p>\n<pre ui-code='html'>\n    <svg></svg>\n</pre>\n<p>\n    接着，你就可以在此容器中使用一些特殊的标签来绘图了。比如，我们想绘制一个红色的圆：\n</p>\n<pre ui-code='html'>\n    <circle cx=\"150\" cy=\"150\" r=\"100\" fill=\"red\" />\n</pre>\n<button ui-goto-example='svg'>查看用例>>></button>\n<p>\n    由于svg相关的标签有些操作你不能直接看成普通的DOM，包括结点的创建和属性设置，因此，在使用使用中，推荐你基于\n    <a target=\"_blank\" class='link' href=\"https://hai2007.gitee.io/image2d/#/course/svg-painter?fixed=top\">\n        image2d / 矢图画笔\n    </a>\n    进行使用~\n</p>\n<h3 id='fixed-api'>\n    接口\n</h3>\n<h4 id='fixed-postMessage'>\n    postMessage\n</h4>\n<p>\n    此方法可以用于实现跨源通信等，我们来演示如何实现在两个窗口之间进行通信。\n</p>\n<p>\n    假设我们现在有两个页面：\n    <span class=\"important\">\n        page1.html\n    </span>\n    和\n    <span class=\"important\">\n        page2.html\n    </span>，\n    他们的关系是通过iframe关联起来的，就像这样（下面是page1.html的内容）：\n</p>\n<pre ui-code='html'>\n    <iframe id=\"receiver\" src=\"./page2.html\" width=\"300\" height=\"100\"></iframe>\n</pre>\n<p>\n    为了实现通信，首先你需要在page2.html中注册事件监听：\n</p>\n<pre ui-code>\nwindow.addEventListener('message', function (e) {\n    console.log(e);\n});\n</pre>\n<p>\n    确保page2.html中事件监听注册好了以后，在page1.html中首先需要获取page2.html的窗口对象：\n</p>\n<pre ui-code>\n    var targetWindow = document.getElementById('receiver').contentWindow;\n</pre>\n<p>\n    然后，直接使用其中的\n    <span class=\"important\">postMessage</span>\n    即可发送：\n</p>\n<pre ui-code>\n    targetWindow.postMessage(\"你好呀！\", \"*\");\n</pre>\n<button ui-goto-example='postMessage'>查看用例>>></button>\n<p>\n    在实际使用中，两个页面不一定需要通过iframe关联，比如使用window.location.href等也是可以的，不过有一个基本的原则要注意：发送信息的时候，一定要确保接受方已经完成了信息接受事件的注册。\n</p>\n"},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(22),a=t(23),l=function(){function n(){}return n=(0,r.__decorate)([(0,o.Component)({selector:"CSS",template:i.default,styles:[a.default]})],n)}();e.default=l},function(n,e,t){"use strict";t.r(e),e.default='<h2 id=\'fixed-top\'>\n    CSS\n</h2>\n<h3 id=\'fixed-selector\'>\n    选择器\n</h3>\n<h4 id=\'fixed-priority\'>\n    优先级\n</h4>\n<p>\n    如果有多个选择器选中了同一个标签，并且设置的是同一个属性，如何判断谁可以生效，取决于选择器的\n    <span class="important">优先级值</span>。下面，我们来说明如何计算这个值。\n</p>\n<p>\n    不同的选择器我们进行了5个等级的定义：\n</p>\n<ul>\n    <li>\n        第一等级：代表内联样式，如style=""，权值为 1000\n    </li>\n    <li>\n        第二等级：代表id选择器，如#content，权值为0100\n    </li>\n    <li>\n        第三等级：代表类，伪类和属性选择器，如.content，权值为0010\n    </li>\n    <li>\n        第四等级：代表标签选择器和伪元素选择器，如div、p，权值为0001\n    </li>\n    <li>\n        第五等级：通用选择器（*），子选择器（>），和相邻同胞选择器（+）等，权值为0000\n    </li>\n</ul>\n<p>\n    举个例子：\n</p>\n<pre ui-code>\n    div.page-view.top\n</pre>\n<p>\n    可以看到，一个标签选择器和两个类选择器，也就是：\n</p>\n<pre ui-code>\n    0001 + 0010 + 0010 = 0021\n</pre>\n<p>\n    最后，还要补充一点，如果两个选择器的优先级值一样大，后出现的优先级更高。\n</p>\n<h3 id=\'fixed-attribute\'>\n    常用属性\n</h3>\n<h4 id=\'fixed-transform\'>\n    Transform 转换\n</h4>\n<p>\n    转换就是对一个节点元素进行缩放、旋转、位移等空间上的操作，如何定义一个转换？很简单：\n</p>\n<pre ui-code=\'css\'>\n    transform: none | transform-functions;\n</pre>\n<p>\n    其中\n    <span class="warn">transform-functions</span>\n    表示转换函数，有很多种，比如：rotate(angle)、scale(x,y)等。不过，在有些时候，需要和别的属性进行配合，下面我们来一一举例说明。\n</p>\n<pre ui-code=\'css\'>\n    transform-origin: x-axis y-axis z-axis;\n</pre>\n<p>\n    设置元素转换的中心点，比如旋转图片，改变图片选择依赖的旋转中心，见下面：\n</p>\n<div class="example frame">\n    <div class="example block">\n        <div class="example key">\n            <div class="info">旋转的DIV属性：</div>\n            <div>transform:rotate(-45deg);</div>\n            <div>transform-origin:50% 50%;</div>\n        </div>\n        <div class="example value">\n            <div class="_1_one_outer _box_">\n                <div class="_1_one_inner _box_"></div>\n            </div>\n        </div>\n    </div>\n    <div class="example block">\n        <div class="example key">\n            <div class="info">旋转的DIV属性：</div>\n            <div>transform:rotate(-45deg);</div>\n            <div>transform-origin:100% 0%;</div>\n        </div>\n        <div class="example value">\n            <div class="_1_two_outer _box_">\n                <div class="_1_two_inner _box_"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<pre ui-code=\'css\'>\n    transform-style: flat | preserve-3d;\n</pre>\n<p>\n    定义里面转换的元素是在2D平面呈现还是在3D空间呈现，讲的直白些，就是这个元素里面的空间维度是二维还是三维，下面是一个直观的例子：\n</p>\n<div class="example frame">\n    <div class="example block">\n        <div class="example key">\n            <div class="info">外面div设置：</div>\n            <div>transform-style:flat;</div>\n            <div>transform: rotateX(120deg); </div>\n            <div class="info">内部div设置：</div>\n            <div>transform: rotateX(-45deg);</div>\n        </div>\n        <div class="example value">\n            <div class="_2_one_outer _box_">\n                <div class="_2_one_inner _box_"></div>\n            </div>\n        </div>\n    </div>\n    <div class="example block">\n        <div class="example key">\n            <div class="info">外面div设置：</div>\n            <div>transform-style:preserve-3d; </div>\n            <div>transform: rotateX(120deg); </div>\n            <div class="info">内部div设置：</div>\n            <div>transform: rotateX(-45deg);</div>\n        </div>\n        <div class="example value">\n            <div class="_2_two_outer _box_">\n                <div class="_2_two_inner _box_"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<pre ui-code=\'css\'>\n    perspective: number | none;\n</pre>\n<p>\n    属性是定义3D元素距试图的距离，设置以后，其子元素会获得透视效果，需要注意的是该值只对3D转换有效，这也是很容易理解的。此外，还可以通过Transform的属性值的方式设置，二者是有一定区别的，你可以认为，前者是把整个看成一个舞台，后者是每一个都是一个舞台，下面是具体的一个例子：\n</p>\n<div class="example frame">\n    <div class="example block">\n        <div class="example key">\n            <div class="info">外面div设置：</div>\n            <div>perspective:200px; </div>\n            <div class="info">内部div设置：</div>\n            <div>transform: rotateY(45deg);</div>\n        </div>\n        <div class="example value">\n            <div class="_3_one_outer _box_">\n                <div class="_3_one_inner _box_ _bg_1_"></div>\n                <div class="_3_one_inner _box_ _bg_2_"></div>\n                <div class="_3_one_inner _box_ _bg_3_"></div>\n            </div>\n        </div>\n    </div>\n    <div class="example block">\n        <div class="example key">\n            <div class="info">内部div设置：</div>\n            <div>transform: perspective(200px) rotateY(45deg);</div>\n        </div>\n        <div class="example value">\n            <div class="_3_two_outer _box_">\n                <div class="_3_two_inner _box_ _bg_1_"></div>\n                <div class="_3_two_inner _box_ _bg_2_"></div>\n                <div class="_3_two_inner _box_ _bg_3_"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<pre ui-code=\'css\'>\n    perspective-origin: x-axis y-axis;\n</pre>\n<p>\n    必须和perspective一起使用，只对3D转换元素有效，简单的理解就是你的眼睛看的焦点，下面用一个例子来说明：\n</p>\n<div class="example frame">\n    <div class="example block">\n        <div class="example key">\n            <div class="info">外面div设置：</div>\n            <div>perspective:300px;perspective-origin: 50% 50%;</div>\n            <div class="info">内部div设置：</div>\n            <div>transform:rotateX(45deg);</div>\n        </div>\n        <div class="example value">\n            <div class="_4_one_outer _box_">\n                <div class="_4_one_inner _box_"></div>\n            </div>\n        </div>\n    </div>\n    <div class="example block">\n        <div class="example key">\n            <div class="info">外面div设置：</div>\n            <div>perspective:300px;perspective-origin: 50% 270%;</div>\n            <div class="info">内部div设置：</div>\n            <div>transform:rotateX(45deg);</div>\n        </div>\n        <div class="example value">\n            <div class="_4_two_outer _box_">\n                <div class="_4_two_inner _box_"></div>\n            </div>\n        </div>\n    </div>\n</div>\n<p>\n    当然，还有更多方法和属性，我们这里就不展开说明了。\n</p>\n<h4 id=\'fixed-transitions\'>\n    Transitions 过渡\n</h4>\n<p>\n    比如，你有一个元素，本来宽是100px，鼠标悬浮的时候现在变成300px，如果你什么都不做，会突然变成300px，在你鼠标悬浮的时候，而使用此属性，可以实现慢慢改变的动画效果：\n</p>\n<div class="example frame">\n    <div class="example block">\n        <div class="example key">\n            <div class="info">div设置：</div>\n            <div>width: 100px;</div>\n            <div>height: 100px; </div>\n            <div>background-color:#3ce5da;</div>\n            <div>transition-property: width background-color;</div>\n            <div>transition-duration: 3s;</div>\n            <div>transition-timing-function: linear;</div>\n            <div class="info">div悬浮设置：</div>\n            <div>width: 300px;</div>\n            <div>background-color: #7623ca;</div>\n        </div>\n        <div class="example value">\n            <div class="_5_one _box_">\n            </div>\n        </div>\n    </div>\n</div>\n<p class=\'warn\'>\n    温馨提示：transition-duration 用于设置改变时长，请始终设置，否则时长为 0，就不会产生过渡效果。\n</p>\n<h4 id=\'fixed-animation\'>\n    Animation 动画\n</h4>\n<p>\n    首先，我们需要定义一个动画：\n</p>\n<pre ui-code=\'css\'>\n@keyframes move_right {\n    from {\n        left: 0px;\n    }\n\n    to {\n        left: 200px;\n    }\n}\n</pre>\n<p>\n    然后，使用即可，就像下面这样：\n</p>\n<div class="example frame">\n    <div class="example block">\n        <div class="example key">\n            <div class="info">div设置：</div>\n            <div>animation: move_right 5s infinite;</div>\n        </div>\n        <div class="example value">\n            <div class="_6_one _box_">\n            </div>\n        </div>\n    </div>\n</div>\n'},function(n,e,t){"use strict";t.r(e),e.default='\n .example.frame:after{\n\nvisibility: hidden;\n\ndisplay: block;\n\nfont-size: 0;\n\ncontent: " ";\n\nclear: both;\n\nheight: 0;\n\n}\n\n .example.block{\n\nbackground-color: #f2f2f2;\n\nmin-width: 300px;\n\nfloat: left;\n\nmargin: 20px;\n\n}\n\n .example.key{\n\npadding: 16px;\n\nfont-size: 14px;\n\ncolor: #4b4ee8;\n\n}\n\n .example.key .info{\n\ncolor: #977d16;\n\n}\n\n ._box_{\n\nwidth: 100px;\n\nheight: 100px;\n\n}\n\n ._bg_1_{\n\nbackground-color: #62c1d4;\n\n}\n\n ._bg_2_{\n\nbackground-color: #4cf36d;\n\n}\n\n ._bg_3_{\n\nbackground-color: #e745ce;\n\n}\n/*\n---------------------1\n*/\n ._1_one_outer, ._1_two_outer{\n\nbackground-color: #e8e7a4;\n\nmargin-bottom: 50px;\n\n}\n\n ._1_one_inner, ._1_two_inner{\n\ntransform: rotate(-45deg);\n\nbackground-color: #4dcfd2;\n\n}\n\n ._1_one_inner{\n\ntransform-origin: 50% 50%;\n\n}\n\n ._1_two_inner{\n\ntransform-origin: 100% 0%;\n\n}\n/*\n---------------------2\n  */\n ._2_one_outer, ._2_two_outer{\n\nbackground-color: #e8e7a4;\n\ntransform: rotateX(120deg);\n\n}\n\n ._2_one_inner, ._2_two_inner{\n\ntransform: rotateX(-45deg);\n\nbackground-color: #4dcfd2;\n\nmargin-left: 30px;\n\n}\n\n ._2_one_outer{\n\ntransform-style: flat;\n\n}\n\n ._2_two_outer{\n\ntransform-style: preserve-3d;\n\n}\n/*\n---------------------3\n  */\n ._3_one_outer, ._3_two_outer{\n\nbackground-color: #e8e7a4;\n\nwidth: 300px;\n\n}\n\n ._3_one_outer{\n\nperspective: 200px;\n\n}\n\n ._3_one_inner{\n\ntransform: rotateY(45deg);\n\n}\n\n ._3_two_inner{\n\ntransform: perspective(200px) rotateY(45deg);\n\n}\n\n ._3_one_inner, ._3_two_inner{\n\nwidth: 50px;\n\nheight: 50px;\n\ndisplay: inline-block;\n\nmargin-top: 20px;\n\nmargin-left: 26px;\n\n}\n/*\n---------------------4\n  */\n ._4_one_outer, ._4_two_outer{\n\nbackground-color: #e8e7a4;\n\nwidth: 300px;\n\n}\n\n ._4_one_inner, ._4_two_inner{\n\ntransform: rotateX(45deg);\n\nbackground-color: #4dcfd2;\n\nmargin-left: 100px;\n\n}\n\n ._4_one_outer{\n\nperspective: 300px;\n\nperspective-origin: 50% 50%;\n\n}\n\n ._4_two_outer{\n\nperspective: 300px;\n\nperspective-origin: 50% 270%;\n\n}\n/*\n---------------------5\n  */\n ._5_one{\n\nwidth: 100px;\n\nheight: 100px;\n\nbackground-color: #3ce5da;\n\ntransition-property: width background-color;\n\ntransition-duration: 3s;\n\ntransition-timing-function: linear;\n\n}\n\n ._5_one:hover{\n\nwidth: 300px;\n\nbackground-color: #7623ca;\n\n}\n/*\n---------------------6\n  */\n ._6_one{\n\nbackground-color: #3ce5da;\n\nanimation: move_right 5s infinite;\n\nposition: relative;\n\n}\n'},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(25),a=function(){function n(){}return n=(0,r.__decorate)([(0,o.Component)({selector:"JavaScript",template:i.default,styles:[]})],n)}();e.default=a},function(n,e,t){"use strict";t.r(e),e.default="<h2 id='fixed-top'>\n    JavaScript\n</h2>\n<h3 id='fixed-object'>\n    常用对象\n</h3>\n<h4 id='fixed-ArrayBuffer_TypedArray_DataView'>\n    ArrayBuffer / TypedArray / DataView\n</h4>\n<p>\n    简单的说，\n    <span class=\"important\">ArrayBuffer</span>\n    就代表了内存中的一段二进制数据，不可以直接读写，只可以通过在上面建立\n    <span class=\"important\">TypedArray视图</span>\n    或\n    <span class=\"important\">DataView视图</span>\n    来操作这段二进制数据。\n</p>\n<p>\n    TypedArray视图主要用来操作简单类型的二进制数据，DataView用来操作复杂类型的二进制数据。\n</p>\n<p>\n    为了可以操作二进制数据，首先需要创建一个ArrayBuffer对象：\n</p>\n<pre ui-code>\n    var arrayBuffer = new ArrayBuffer(length) //length代表长度，单位是字节\n</pre>\n<p>\n    对象有了以后，就可以通过那两个视图进行操作了。\n</p>\n<h5>\n    TypedArray视图\n</h5>\n<p>\n    严格意义上来说，TypedArray视图应该是一类视图的统称，具体的有如下这些：\n</p>\n<ul>\n    <li>Int8Array：8位有符号整数，长度1个字节</li>\n    <li>Uint8Array：8位无符号整数，长度1个字节</li>\n    <li>Uint8ClampedArray：8位无符号整数，长度1个字节，溢出处理不同</li>\n    <li>Int16Array：16位有符号整数，长度2个字节</li>\n    <li>Uint16Array：16位无符号整数，长度2个字节</li>\n    <li>Int32Array：32位有符号整数，长度4个字节</li>\n    <li>Uint32Array：32位无符号整数，长度4个字节</li>\n    <li>Float32Array：32位浮点数，长度4个字节</li>\n    <li>Float64Array：64位浮点数，长度8个字节</li>\n</ul>\n<p>\n    他们只是数据格式不一样，操作上都一样，我们拿Int16Array和Int8Array举例子（非常类似普通的数组）：\n</p>\n<p>\n\n</p>\n<pre ui-code>\nvar arrayBuffer = new ArrayBuffer(6);//申请6个字节的内存空间\n\nvar int8Array = new Int8Array(arrayBuffer, 0, 2);//使用了2字节的空间\nvar int16Array = new Int16Array(arrayBuffer, 2, 2);//使用了4字节的空间\n\nint8Array[0] = 1;\nint16Array[0] = 2;\nint16Array[1] = 3;\n\nconsole.log(int8Array); //Int8Array(2) [1, 0]\nconsole.log(int16Array); //Int16Array(2) [2, 3]\n</pre>\n<h5>\n    DataView\n</h5>\n<p>\n    这个就相对复杂一点了，毕竟这个是为操作复杂类型的二进制数据设计的。先看看语法：\n</p>\n<pre ui-code>\n    var dataView = new DataView(ArrayBuffer实例对象[,字节起始位置[,长度]]);\n</pre>\n<p class=\"warn\">\n    温馨提示：和TypedArray有很大区别的是，这里我们在使用的时候可能要去关注一下大端还是小端保存或读取数据。\n</p>\n<p>\n    如果说的简单点，其实DataView就是一个非常非常厉害视图，提供了很多方法，不像TypedArray视图需要建立对应视图然后读取，你可以调用DataView的实例对象上的方法就可以实现TypedArray哪些各种视图的功能。\n</p>\n<p>\n    读数据的方法包括：getInt8、getUint8、getInt16、getUint16、getInt32、getUint32、getFloat32、getFloat64。\n</p>\n<p>\n    写数据的方法包括：setInt8、setUint8、setInt16、setUint16、setInt32、setUint32、setFloat32、setFloat64。\n</p>\n<p>\n    同样的，拿setInt16/getInt16和setInt8/getInt8举例子：\n</p>\n<pre ui-code>\nvar arrayBuffer = new ArrayBuffer(6);//申请6个字节的内存空间\n\nvar dataView = new DataView(arrayBuffer);// 建立读取对象\n\ndataView.setInt8(0,1);\ndataView.setInt16(2,2);\ndataView.setInt16(4,3);\n\nconsole.log(dataView.getInt8(0)); // 1\nconsole.log(dataView.getInt16(2)); // 2\nconsole.log(dataView.getInt16(4)); // 3\n</pre>\n<p class='warn'>\n    上面的所有方法最后都可以带一个布尔值，表示是大端(false)还是小端（true）。\n</p>\n<p>\n    当然，你也可以试着运行下面这条语句：\n</p>\n<pre ui-code>\n    console.log(dataView.getInt16(0)); // 256\n</pre>\n<p>\n    为什么是256？因为你在第一个字节写入了1，第二个没有写，也就是0，而getInt16读取的是16位，也就是读取的二进制应该是：0000000100000000(2)=2<sup>8</sup>(10)=256。\n</p>\n"},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(27),a=t(28),l=t(29),c=function(){function n(){}return n.prototype.$setup=function(){return{wd:(0,o.ref)("")}},n.prototype.goSearch=function(n){13==n.keyCode&&(0,i.default)("https://hai2007.gitee.io/sweethome/#/search?wd="+encodeURIComponent(this.wd))},n=(0,r.__decorate)([(0,o.Component)({selector:"search",template:l.default,styles:[a.default]})],n)}();e.default=c},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(n){var e=document.createElement("a");e.setAttribute("href",n),e.setAttribute("target","_blank"),e.click()}},function(n,e,t){"use strict";t.r(e),e.default="\n input{\n\nheight: 30px;\n\nborder: none;\n\noutline: none;\n\npadding: 0 10px;\n\npadding-right: 35px;\n\nbackground-image: url('./image/search.svg');\n\nbackground-position: center right;\n\nbackground-repeat: no-repeat;\n\nborder-radius: 3px;\n\nbackground-color: #f3f0f0;\n\nfloat: right;\n\n}\n"},function(n,e,t){"use strict";t.r(e),e.default="<input placeholder=\"输入内容后回车查询\" ui-on:keydown='goSearch' ui-model='wd' />\n"},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(42),a=function(n,e){(0,i.isString)(e.type)&&e.type.length>0?n.getAttribute(e.type)!=e.value&&n.setAttribute(e.type,e.value):n.value==e.value&&n.textContent==e.value||(n.value=n.textContent=e.value)},l=function(){function n(){}return n.prototype.$inserted=function(n,e){a(n,e)},n.prototype.$update=function(n,e){a(n,e)},n=(0,r.__decorate)([(0,o.Directive)({selector:"ui-bind"})],n)}();e.default=l},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(5),a=function(){function n(){}return n.prototype.$inserted=function(n,e){n.value=e.value,i.default.bind(n,"input",(function(){(0,o.setValue)(e.target,"."+e.exp,n.value)}))},n.prototype.$update=function(n,e){n.value=e.value},n=(0,r.__decorate)([(0,o.Directive)({selector:"ui-model"})],n)}();e.default=a},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(5),a=function(){function n(){}return n.prototype.$inserted=function(n,e){for(var t=e.type.split("."),r={prevent:!1,stop:!1,once:!1},o=function(a){r.stop&&i.default.stopPropagation(a),r.prevent&&i.default.preventDefault(a),e.value.apply(e.target,[a]),r.once&&i.default.unbind(n,t[0],o)},a=1;a<t.length;a++)r[t[a]]=!0;i.default.bind(n,t[0],o)},n=(0,r.__decorate)([(0,o.Directive)({selector:"ui-on"})],n)}();e.default=a},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=function(){function n(){}return n.prototype.$update=function(n,e){e.value&&(n.innerHTML="",(0,o.mountComponent)(n,e.value,this._module),n.children[0].setAttribute("class","doc-view"))},n=(0,r.__decorate)([(0,o.Directive)({selector:"ui-lazy"})],n)}();e.default=i},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(2),a=function(){function n(){}return n.prototype.$inserted=function(n,e){var t=n.parentNode;t.setAttribute("active","yes"),i.default.bind(n,"click",(function(n){t.setAttribute("active","yes"==t.getAttribute("active")?"no":"yes")}))},n=(0,r.__decorate)([(0,o.Directive)({selector:"ui-toggle"})],n)}();e.default=a},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(0),i=t(2),a=t(36),l=function(){function n(){}return n.prototype.$inserted=function(n,e){i.default.setStyles(n,{margin:"10px 30px",background:"red",color:"white",padding:"5px 10px",border:"none",outline:"none",cursor:"pointer"}),i.default.bind(n,"click",(function(){a.default[e.exp]().then((function(n){localStorage.setItem("hai2007-sweethome-editor-html-code",n.default),i.default.toNode('<a target="_blank" href="/SweetHome/#/editor">打开在线代码演示页面</a>').click()}))}))},n=(0,r.__decorate)([(0,o.Directive)({selector:"ui-goto-example"})],n)}();e.default=l},function(n,e,t){"use strict";t.r(e),e.default={canvas:function(){return t.e(1).then(t.bind(null,43))},svg:function(){return t.e(3).then(t.bind(null,44))},postMessage:function(){return t.e(2).then(t.bind(null,45))}}},function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=t(1),o=t(2),i=t(38),a=t(0),l=function(){function n(){}return n.prototype.$inserted=function(n,e){var t=n.innerHTML.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&").trim(),r=new i({el:n,content:t,readonly:"editor"!=e.type,shader:[e.exp||"javascript",{insign:"#000000",css:{insign:"#000000"},javascript:{insign:"#000000"}}],color:{background:"rgb(239, 235, 234)",text:"#000000",number:"#888484",edit:"#eaeaf1",cursor:"#ff0000",select:"gray"},noLineNumber:!/\n/.test(t)}),a=o.default.prepend(n,'<span class="copy-btn" title="复制到剪切板">复制<span></span></span>');o.default.bind(a,"click",(function(){r.copy((function(){alert("复制成功")}),(function(n){console.log(n),alert("复制失败")}))})),o.default.setStyles(a,{position:"absolute",right:"10px",top:"6px",border:"none",outline:0,transition:"0.2s","font-size":"12px",cursor:"pointer","z-index":1,"line-height":"20px","background-color":"#f8f8f8",padding:"5px 10px"}),n.__owe__=r},n=(0,r.__decorate)([(0,a.Directive)({selector:"ui-code"})],n)}();e.default=l},function(n,e,t){"use strict";(function(n){
-/*!
+ */
+
+/**
+ * @param {function} doback 轮询函数，有一个形参deep，0-1，表示执行进度
+ * @param {number} duration 动画时长，可选
+ * @param {function} callback 动画结束回调，可选，有一个形参deep，0-1，表示执行进度
+ *
+ * @returns {function} 返回一个函数，调用该函数，可以提前结束动画
+ */
+__etcpack__scope_bundle__.default= function (doback, duration, callback) {
+
+    // 如果没有传递时间，使用内置默认值
+    if (arguments.length < 2) duration = $speeds;
+
+    var clock = {
+        //把tick函数推入堆栈
+        "timer": function (tick, duration, callback) {
+            if (!tick) {
+                throw new Error('Tick is required!');
+            }
+            var id = new Date().valueOf() + "_" + (Math.random() * 1000).toFixed(0);
+            $timers.push({
+                "id": id,
+                "createTime": new Date(),
+                "tick": tick,
+                "duration": duration,
+                "callback": callback
+            });
+            clock.start();
+            return id;
+        },
+
+        //开启唯一的定时器timerId
+        "start": function () {
+            if (!$timerId) {
+                $timerId = setInterval(clock.tick, $interval);
+            }
+        },
+
+        //被定时器调用，遍历timers堆栈
+        "tick": function () {
+            var createTime, flag, tick, callback, timer, duration, passTime, needStop,
+                timers = $timers;
+            $timers = [];
+            $timers.length = 0;
+            for (flag = 0; flag < timers.length; flag++) {
+                //初始化数据
+                timer = timers[flag];
+                createTime = timer.createTime;
+                tick = timer.tick;
+                duration = timer.duration;
+                callback = timer.callback;
+                needStop = false;
+
+                //执行
+                passTime = (+new Date() - createTime) / duration;
+                if (passTime >= 1) {
+                    needStop = true;
+                }
+                passTime = passTime > 1 ? 1 : passTime;
+                tick(passTime);
+                if (passTime < 1 && timer.id) {
+                    //动画没有结束再添加
+                    $timers.push(timer);
+                } else if (callback) {
+                    callback(passTime);
+                }
+            }
+            if ($timers.length <= 0) {
+                clock.stop();
+            }
+        },
+
+        //停止定时器，重置timerId=null
+        "stop": function () {
+            if ($timerId) {
+                clearInterval($timerId);
+                $timerId = null;
+            }
+        }
+    };
+
+    var id = clock.timer(function (deep) {
+        //其中deep为0-1，表示改变的程度
+        doback(deep);
+    }, duration, callback);
+
+    // 返回一个函数
+    // 用于在动画结束前结束动画
+    return function () {
+        var i;
+        for (i in $timers) {
+            if ($timers[i].id == id) {
+                $timers[i].id = undefined;
+                return;
+            }
+        }
+    };
+
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/App/index.scss
+/*****************************************************************/
+window.__etcpack__bundleSrc__['23']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "\n header{\n\nbackground-color: #ffffff;\n\npadding: 10px;\n\ncolor: rgb(6, 85, 215);\n\nheight: 50px;\n\nbox-shadow: rgb(213, 221, 225) 0px 4px 6px;\n\nbackground-image: url(./logo.png);\n\nbackground-size: auto 100%;\n\nbackground-repeat: no-repeat;\n\npadding-left: 70px;\n\nbackground-position: 10px center;\n\nposition: fixed;\n\nwidth: 100vw;\n\ntop: 0px;\n\nleft: 0;\n\n}\n\n header>h2{\n\nline-height: 30px;\n\ndisplay: inline-block;\n\nfont-size: 24px;\n\n}\n\n header>h2>span{\n\nfont-size: 12px;\n\npadding-left: 50px;\n\ncolor: #000000;\n\nfont-weight: 200;\n\n}\n\n header>h2>span>a{\n\ntext-decoration: underline;\n\ncolor: #ff3100;\n\n}\n\n .content{\n\nwhite-space: nowrap;\n\n}\n\n .content>div{\n\ndisplay: inline-block;\n\nvertical-align: top;\n\nwhite-space: normal;\n\nheight: calc(100vh - 50px);\n\n}\n\n .content>div.menu-view{\n\nwidth: 300px;\n\nheight: calc(100vh - 50px);\n\nposition: fixed;\n\nleft: 0;\n\ntop: 50px;\n\n}\n\n .content>div.menu-view>div>a{\n\nbackground-color: rgb(6, 85, 215);\n\ncolor: white;\n\ntext-align: center;\n\nmargin-top: .3rem;\n\ncursor: pointer;\n\nfont-size: .15rem;\n\ndisplay: block;\n\nwidth: 2.6rem;\n\npadding: .1rem 0;\n\n}\n\n .content>div.content{\n\nmargin-left: 300px;\n\nmargin-top: 50px;\n\nheight: calc(100vh - 50px);\n\n}\n\n .content>div.content>div{\n\npadding: 0 50px;\n\noverflow: auto;\n\nwidth: calc(100vw - 300px);\n\n}\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/App/index.html
+/*****************************************************************/
+window.__etcpack__bundleSrc__['24']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "<header>\r\n    <h2>\r\n        《前端学习手册》\r\n        <span>\r\n            稍微深入一些的内容你可以进入\r\n            <a target=\"_blank\" href=\"https://hai2007.gitee.io/sweethome/#/notebook-list\">\r\n                小文档&理解\r\n            </a>\r\n            进行查看，也可以进入\r\n            <a target=\"_blank\" href=\"https://hai2007.github.io/programming-api/\">\r\n                在线API\r\n            </a>\r\n            查看常用接口~\r\n        </span>\r\n    </h2>\r\n    <search></search>\r\n</header>\r\n<div class=\"content\">\r\n    <div class=\"menu-view\">\r\n        <div>\r\n            <h2>目录</h2>\r\n            <ul>\r\n                <li ui-bind:active='pageName==\"HTML\"?\"yes\":\"no\"'>\r\n                    <h3 tag='HTML' ui-on:click='openPage'>HTML</h3>\r\n                    <ul>\r\n                        <li>\r\n                            <h3 tag='tag' ui-toggle ui-on:click='doScroll'>标签</h3>\r\n                            <ul>\r\n                                <li>\r\n                                    <h3 tag='canvas' ui-on:click='doScroll'>Canvas 位图画布</h3>\r\n                                </li>\r\n                                <li>\r\n                                    <h3 tag='svg' ui-on:click='doScroll'>SVG 矢图画布</h3>\r\n                                </li>\r\n                            </ul>\r\n                        </li>\r\n                        <li>\r\n                            <h3 tag='api' ui-toggle ui-on:click='doScroll'>接口</h3>\r\n                            <ul>\r\n                                <li>\r\n                                    <h3 tag='postMessage' ui-on:click='doScroll'>postMessage</h3>\r\n                                </li>\r\n                            </ul>\r\n                        </li>\r\n                    </ul>\r\n                </li>\r\n                <li ui-bind:active='pageName==\"CSS\"?\"yes\":\"no\"'>\r\n                    <h3 tag='CSS' ui-on:click='openPage'>CSS</h3>\r\n                    <ul>\r\n                        <li>\r\n                            <h3 tag='selector' ui-toggle ui-on:click='doScroll'>选择器</h3>\r\n                            <ul>\r\n                                <li>\r\n                                    <h3 tag='priority' ui-on:click='doScroll'>优先级</h3>\r\n                                </li>\r\n                            </ul>\r\n                        </li>\r\n                        <li>\r\n                            <h3 tag='attribute' ui-toggle ui-on:click='doScroll'>常用属性</h3>\r\n                            <ul>\r\n                                <li>\r\n                                    <h3 tag='transform' ui-on:click='doScroll'>Transform 转换</h3>\r\n                                </li>\r\n                                <li>\r\n                                    <h3 tag='transitions' ui-on:click='doScroll'>Transitions 过渡</h3>\r\n                                </li>\r\n                                <li>\r\n                                    <h3 tag='animation' ui-on:click='doScroll'>Animation 动画</h3>\r\n                                </li>\r\n                            </ul>\r\n                        </li>\r\n                    </ul>\r\n                </li>\r\n                <li ui-bind:active='pageName==\"JavaScript\"?\"yes\":\"no\"'>\r\n                    <h3 tag='JavaScript' ui-on:click='openPage'>JavaScript</h3>\r\n                    <ul>\r\n                        <li>\r\n                            <h3 tag='object' ui-toggle ui-on:click='doScroll'>常用对象</h3>\r\n                            <ul>\r\n                                <li>\r\n                                    <h3 tag='ArrayBuffer_TypedArray_DataView' ui-on:click='doScroll'>\r\n                                        ArrayBuffer / TypedArray / DataView\r\n                                    </h3>\r\n                                </li>\r\n                            </ul>\r\n                        </li>\r\n                    </ul>\r\n                </li>\r\n            </ul>\r\n            <a href=\"https://github.com/hai2007/Front-End-Learning-Manual\" target=\"_blank\">Fork Me On Github</a>\r\n        </div>\r\n    </div>\r\n    <div class=\"content\">\r\n        <div ui-lazy='currentPage' id='root-view'></div>\r\n    </div>\r\n</div>\r\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/App/pages/lazy-load.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['25']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= {
+  "HTML": function HTML() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.2-bundle1.js','26');
+  },
+  "CSS": function CSS() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.2-bundle2.js','27');
+  },
+  "JavaScript": function JavaScript() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.2-bundle3.js','28');
+  }
+};
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/component/search/index.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['29']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Component=__etcpack__scope_args__.Component;
+var ref=__etcpack__scope_args__.ref;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('30');
+var openPage =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('31');
+var style =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('32');
+var template =__etcpack__scope_args__.default;
+
+
+var _class = (_dec = Component({
+  selector: "search",
+  template: template,
+  styles: [style]
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+
+    _defineProperty(this, "wd", void 0);
+  }
+
+  _createClass(_class2, [{
+    key: "$setup",
+    value: function $setup() {
+      return {
+        wd: ref('')
+      };
+    }
+  }, {
+    key: "goSearch",
+    value: function goSearch(event) {
+      // 如果是回车就带着数据跳转到查询界面
+      if (event.keyCode == 13) openPage("https://hai2007.gitee.io/sweethome/#/search?wd=" + encodeURIComponent(this.wd));
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/tool/openPage.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['30']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= (function (url) {
+  var aDom = document.createElement('a');
+  aDom.setAttribute('href', url);
+  aDom.setAttribute('target', '_blank');
+  aDom.click();
+});
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/component/search/index.scss
+/*****************************************************************/
+window.__etcpack__bundleSrc__['31']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "\n input{\n\nheight: 30px;\n\nborder: none;\n\noutline: none;\n\npadding: 0 10px;\n\npadding-right: 35px;\n\nbackground-image: url('./image/search.svg');\n\nbackground-position: center right;\n\nbackground-repeat: no-repeat;\n\nborder-radius: 3px;\n\nbackground-color: #f3f0f0;\n\nfloat: right;\n\n}\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/component/search/index.html
+/*****************************************************************/
+window.__etcpack__bundleSrc__['32']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "<input placeholder=\"输入内容后回车查询\" ui-on:keydown='goSearch' ui-model='wd' />\r\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-bind.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['33']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('7');
+var isString=__etcpack__scope_args__.isString;
+
+
+var update = function update(el, binding) {
+  // 如果有type表示给属性赋值
+  if (isString(binding.type) && binding.type.length > 0) {
+    if (el.getAttribute(binding.type) != binding.value) {
+      el.setAttribute(binding.type, binding.value);
+    }
+  } // 否则是设置内容或值
+  else {
+    if (el.value != binding.value || el.textContent != binding.value) {
+      el.value = el.textContent = binding.value;
+    }
+  }
+};
+
+var _class = (_dec = Directive({
+  selector: "ui-bind"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      update(el, binding);
+    }
+  }, {
+    key: "$update",
+    value: function $update(el, binding) {
+      update(el, binding);
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-model.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['34']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+var setValue=__etcpack__scope_args__.setValue;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('35');
+var xhtml =__etcpack__scope_args__.default;
+
+
+var _class = (_dec = Directive({
+  selector: "ui-model"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      el.value = binding.value;
+      xhtml.bind(el, 'input', function () {
+        setValue(binding.target, "." + binding.exp, el.value);
+      });
+    }
+  }, {
+    key: "$update",
+    value: function $update(el, binding) {
+      el.value = binding.value;
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/@hai2007/browser/xhtml.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['35']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    /*!
+ * 🌐 - 提供常用的DOM操作方法
+ * https://github.com/hai2007/browser.js/blob/master/xhtml.js
+ *
+ * author hai2007 < https://hai2007.gitee.io/sweethome >
+ *
+ * Copyright (c) 2021-present hai2007 走一步，再走一步。
+ * Released under the MIT license
+ */
+
+// 命名空间路径
+var namespace = {
+    svg: "http://www.w3.org/2000/svg",
+    xhtml: "http://www.w3.org/1999/xhtml",
+    xlink: "http://www.w3.org/1999/xlink",
+    xml: "http://www.w3.org/XML/1998/namespace",
+    xmlns: "http://www.w3.org/2000/xmlns/"
+};
+
+/**
+ * 结点操作补充
+ */
+
+__etcpack__scope_bundle__.default= {
+
+    // 阻止冒泡
+    "stopPropagation": function (event) {
+        event = event || window.event;
+        if (event.stopPropagation) { //这是其他非IE浏览器
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    },
+
+    // 阻止默认事件
+    "preventDefault": function (event) {
+        event = event || window.event;
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+
+    // 判断是否是结点
+    "isNode": function (param) {
+        return param && (param.nodeType === 1 || param.nodeType === 9 || param.nodeType === 11);
+    },
+
+    // 绑定事件
+    "bind": function (dom, eventType, callback) {
+
+        if (dom.constructor === Array || dom.constructor === NodeList || dom.constructor === HTMLCollection) {
+            for (var i = 0; i < dom.length; i++) {
+                this.bind(dom[i], eventType, callback);
+            }
+            return;
+        }
+
+        if (window.attachEvent)
+            dom.attachEvent("on" + eventType, callback);
+        else
+            dom.addEventListener(eventType, callback, false);
+    },
+    // 去掉绑定事件
+    "unbind": function (dom, eventType, handler) {
+
+        if (dom.constructor === Array || dom.constructor === NodeList || dom.constructor === HTMLCollection) {
+            for (var i = 0; i < dom.length; i++) {
+                this.unbind(dom[i], eventType, handler);
+            }
+            return;
+        }
+
+        if (window.detachEvent)
+            dom.detachEvent('on' + eventType, handler);
+        else
+            dom.removeEventListener(eventType, handler, false);
+
+    },
+
+    // 在当前上下文context上查找结点
+    // selectFun可选，返回boolean用以判断当前面对的结点是否保留
+    "find": function (context, selectFun, tagName) {
+        if (!this.isNode(context)) return [];
+        var nodes = context.getElementsByTagName(tagName || '*');
+        var result = [];
+        for (var i = 0; i < nodes.length; i++) {
+            if (this.isNode(nodes[i]) && (typeof selectFun != "function" || selectFun(nodes[i])))
+                result.push(nodes[i]);
+        }
+        return result;
+    },
+
+    // 寻找当前结点的孩子结点
+    // selectFun可选，返回boolean用以判断当前面对的结点是否保留
+    "children": function (dom, selectFun) {
+        var nodes = dom.childNodes;
+        var result = [];
+        for (var i = 0; i < nodes.length; i++) {
+            if (this.isNode(nodes[i]) && (typeof selectFun != "function" || selectFun(nodes[i])))
+                result.push(nodes[i]);
+        }
+        return result;
+    },
+
+    // 判断结点是否有指定class
+    // clazzs可以是字符串或数组字符串
+    // notStrict可选，boolean值，默认false表示结点必须包含全部class,true表示至少包含一个即可
+    "hasClass": function (dom, clazzs, notStrict) {
+        if (clazzs.constructor !== Array) clazzs = [clazzs];
+
+        var class_str = " " + (dom.getAttribute('class') || "") + " ";
+        for (var i = 0; i < clazzs.length; i++) {
+            if (class_str.indexOf(" " + clazzs[i] + " ") >= 0) {
+                if (notStrict) return true;
+            } else {
+                if (!notStrict) return false;
+            }
+        }
+        return true;
+    },
+
+    // 删除指定class
+    "removeClass": function (dom, clazz) {
+        var oldClazz = " " + (dom.getAttribute('class') || "") + " ";
+        var newClazz = oldClazz.replace(" " + clazz.trim() + " ", " ");
+        dom.setAttribute('class', newClazz.trim());
+    },
+
+    // 添加指定class
+    "addClass": function (dom, clazz) {
+        if (this.hasClass(dom, clazz)) return;
+        var oldClazz = dom.getAttribute('class') || "";
+        dom.setAttribute('class', oldClazz + " " + clazz);
+    },
+
+    // 字符串变成结点
+    // isSvg可选，boolean值，默认false表示结点是html，为true表示svg类型
+    "toNode": function (template, isSvg) {
+        var frame;
+
+        // html和svg上下文不一样
+        if (isSvg) frame = document.createElementNS(namespace.svg, 'svg');
+        else {
+
+            var frameTagName = 'div';
+
+            // 大部分的标签可以直接使用div作为容器
+            // 部分特殊的需要特殊的容器标签
+
+            if (/^<tr[> ]/.test(template)) {
+
+                frameTagName = "tbody";
+
+            } else if (/^<th[> ]/.test(template) || /^<td[> ]/.test(template)) {
+
+                frameTagName = "tr";
+
+            } else if (/^<thead[> ]/.test(template) || /^<tbody[> ]/.test(template)) {
+
+                frameTagName = "table";
+
+            }
+
+            frame = document.createElement(frameTagName);
+        }
+
+        // 低版本浏览器svg没有innerHTML，考虑是vue框架中，没有补充
+        frame.innerHTML = template;
+
+        var childNodes = frame.childNodes;
+        for (var i = 0; i < childNodes.length; i++) {
+            if (this.isNode(childNodes[i])) return childNodes[i];
+        }
+    },
+
+    // 主动触发事件
+    "trigger": function (dom, eventType) {
+
+        //创建event的对象实例。
+        if (document.createEventObject) {
+            // IE浏览器支持fireEvent方法
+            dom.fireEvent('on' + eventType, document.createEventObject());
+        }
+
+        // 其他标准浏览器使用dispatchEvent方法
+        else {
+            var _event = document.createEvent('HTMLEvents');
+            // 3个参数：事件类型，是否冒泡，是否阻止浏览器的默认行为
+            _event.initEvent(eventType, true, false);
+            dom.dispatchEvent(_event);
+        }
+
+    },
+
+    // 获取样式
+    "getStyle": function (dom, name) {
+        // 获取结点的全部样式
+        var allStyle = document.defaultView && document.defaultView.getComputedStyle ?
+            document.defaultView.getComputedStyle(dom, null) :
+            dom.currentStyle;
+
+        // 如果没有指定属性名称，返回全部样式
+        return typeof name === 'string' ?
+            allStyle.getPropertyValue(name) :
+            allStyle;
+    },
+
+    // 获取元素位置
+    "offsetPosition": function (dom) {
+        var left = 0;
+        var top = 0;
+        top = dom.offsetTop;
+        left = dom.offsetLeft;
+        dom = dom.offsetParent;
+        while (dom) {
+            top += dom.offsetTop;
+            left += dom.offsetLeft;
+            dom = dom.offsetParent;
+        }
+        return {
+            "left": left,
+            "top": top
+        };
+    },
+
+    // 获取鼠标相对元素位置
+    "mousePosition": function (dom, event) {
+        var bounding = dom.getBoundingClientRect();
+        if (!event || !event.clientX)
+            throw new Error('Event is necessary!');
+        return {
+            "x": event.clientX - bounding.left,
+            "y": event.clientY - bounding.top
+        };
+    },
+
+    // 删除结点
+    "remove": function (dom) {
+        dom.parentNode.removeChild(dom);
+    },
+
+    // 设置多个样式
+    "setStyles": function (dom, styles) {
+        for (var key in styles)
+            dom.style[key] = styles[key];
+    },
+
+    // 获取元素大小
+    "size": function (dom, type) {
+        var elemHeight, elemWidth;
+        if (type == 'content') { //内容
+            elemWidth = dom.clientWidth - ((this.getStyle(dom, 'padding-left') + "").replace('px', '')) - ((this.getStyle(dom, 'padding-right') + "").replace('px', ''));
+            elemHeight = dom.clientHeight - ((this.getStyle(dom, 'padding-top') + "").replace('px', '')) - ((this.getStyle(dom, 'padding-bottom') + "").replace('px', ''));
+        } else if (type == 'padding') { //内容+内边距
+            elemWidth = dom.clientWidth;
+            elemHeight = dom.clientHeight;
+        } else if (type == 'border') { //内容+内边距+边框
+            elemWidth = dom.offsetWidth;
+            elemHeight = dom.offsetHeight;
+        } else if (type == 'scroll') { //滚动的宽（不包括border）
+            elemWidth = dom.scrollWidth;
+            elemHeight = dom.scrollHeight;
+        } else {
+            elemWidth = dom.offsetWidth;
+            elemHeight = dom.offsetHeight;
+        }
+        return {
+            width: elemWidth,
+            height: elemHeight
+        };
+    },
+
+    // 在被选元素内部的结尾插入内容
+    "append": function (el, template) {
+        var node = this.isNode(template) ? template : this.toNode(template);
+        el.appendChild(node);
+        return node;
+    },
+
+    // 在被选元素内部的开头插入内容
+    "prepend": function (el, template) {
+        var node = this.isNode(template) ? template : this.toNode(template);
+        el.insertBefore(node, el.childNodes[0]);
+        return node;
+    },
+
+    // 在被选元素之后插入内容
+    "after": function (el, template) {
+        var node = this.isNode(template) ? template : this.toNode(template);
+        el.parentNode.insertBefore(node, el.nextSibling);
+        return node;
+    },
+
+    // 在被选元素之前插入内容
+    "before": function (el, template) {
+        var node = this.isNode(template) ? template : this.toNode(template);
+        el.parentNode.insertBefore(node, el);
+        return node;
+    }
+
+};
+
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/sprout-ui/nefbl/directive/ui-on.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['36']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('35');
+var xhtml =__etcpack__scope_args__.default;
+
+/**
+ * [可以使用的修饰符]
+ * .prevent 阻止默认事件
+ * .stop    阻止冒泡
+ * .once    只执行一次
+ */
+
+var _class = (_dec = Directive({
+  selector: "ui-on"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      var types = binding.type.split('.'),
+          modifier = {
+        "prevent": false,
+        "stop": false,
+        "once": false
+      },
+          callback = function callback(event) {
+        if (modifier.stop) xhtml.stopPropagation(event);
+        if (modifier.prevent) xhtml.preventDefault(event);
+        binding.value.apply(binding.target, [event]);
+
+        if (modifier.once) {
+          xhtml.unbind(el, types[0], callback);
+        }
+      };
+
+      for (var i = 1; i < types.length; i++) {
+        modifier[types[i]] = true;
+      }
+
+      xhtml.bind(el, types[0], callback);
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/directive/ui-lazy.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['37']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+var mountComponent=__etcpack__scope_args__.mountComponent;
+
+
+var _class = (_dec = Directive({
+  selector: "ui-lazy"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$update",
+    value: function $update(el, binding) {
+      if (binding.value) {
+        el.innerHTML = "";
+        mountComponent(el, binding.value, this['_module']);
+        el.children[0].setAttribute('class', 'doc-view');
+      }
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/directive/ui-toggle.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['38']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('35');
+var xhtml =__etcpack__scope_args__.default;
+
+
+var _class = (_dec = Directive({
+  selector: "ui-toggle"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      var _el = el.parentNode;
+
+      _el.setAttribute('active', 'yes');
+
+      xhtml.bind(el, 'click', function (event) {
+        _el.setAttribute('active', _el.getAttribute('active') == 'yes' ? 'no' : 'yes');
+      });
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/directive/ui-goto-example.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['39']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('35');
+var xhtml =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('40');
+var examples =__etcpack__scope_args__.default;
+
+
+var _class = (_dec = Directive({
+  selector: "ui-goto-example"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      // 设置按钮样式
+      xhtml.setStyles(el, {
+        margin: "10px 30px",
+        background: "red",
+        color: "white",
+        padding: "5px 10px",
+        border: "none",
+        outline: "none",
+        cursor: "pointer"
+      }); // 绑定点击事件
+
+      xhtml.bind(el, 'click', function () {
+        examples[binding.exp]().then(function (data) {
+          localStorage.setItem('hai2007-sweethome-editor-html-code', data["default"]);
+          xhtml.toNode('<a target="_blank" href="/SweetHome/#/editor">打开在线代码演示页面</a>').click();
+        });
+      });
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./examples/lazy-load.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['40']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= {
+  "canvas": function canvas() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.2-bundle4.js','41');
+  },
+  "svg": function svg() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.2-bundle5.js','42');
+  },
+  "postMessage": function postMessage() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.2-bundle6.js','43');
+  }
+};
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/directive/ui-code.ts
+/*****************************************************************/
+window.__etcpack__bundleSrc__['44']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    var _dec, _class2;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+__etcpack__scope_args__=window.__etcpack__getBundle('35');
+var xhtml =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('45');
+var OpenWebEditor =__etcpack__scope_args__.default;
+
+__etcpack__scope_args__=window.__etcpack__getBundle('1');
+var Directive=__etcpack__scope_args__.Directive;
+
+
+var _class = (_dec = Directive({
+  selector: "ui-code"
+}), _dec(_class2 = /*#__PURE__*/function () {
+  function _class2() {
+    _classCallCheck(this, _class2);
+  }
+
+  _createClass(_class2, [{
+    key: "$inserted",
+    value: function $inserted(el, binding) {
+      var code = el.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
+      var owe = new OpenWebEditor({
+        // 编辑器挂载点
+        el: el,
+        // 初始化文本
+        content: code,
+        // 是否只读
+        readonly: binding.type != 'editor',
+        // 着色语言
+        shader: [binding.exp || 'javascript', {
+          insign: "#000000",
+          "css": {
+            insign: "#000000"
+          },
+          "javascript": {
+            insign: "#000000"
+          }
+        }],
+        // 设置颜色
+        color: {
+          background: "rgb(239, 235, 234)",
+
+          /*编辑器背景*/
+          text: "#000000",
+
+          /*文本颜色*/
+          number: "#888484",
+
+          /*行号颜色*/
+          edit: "#eaeaf1",
+
+          /*编辑行背景色*/
+          cursor: "#ff0000",
+
+          /*光标颜色*/
+          select: "gray"
+          /*选择背景*/
+
+        },
+        // 是否隐藏行号
+        // 如果只有一行，就不显示行号(编辑界面一定显示)
+        noLineNumber: !/\n/.test(code)
+      }); // 添加复制按钮
+
+      var btnNode = xhtml.prepend(el, '<span class="copy-btn" title="复制到剪切板">复制<span></span></span>');
+      xhtml.bind(btnNode, 'click', function () {
+        owe.copy(function () {
+          alert('复制成功');
+        }, function (error) {
+          console.log(error);
+          alert('复制失败');
+        });
+      });
+      xhtml.setStyles(btnNode, {
+        position: "absolute",
+        right: "10px",
+        top: "6px",
+        border: "none",
+        outline: 0,
+        transition: "0.2s",
+        "font-size": "12px",
+        cursor: "pointer",
+        "z-index": 1,
+        "line-height": '20px',
+        "background-color": "#f8f8f8",
+        "padding": "5px 10px"
+      });
+      el.__owe__ = owe;
+    }
+  }]);
+
+  return _class2;
+}()) || _class2);
+
+__etcpack__scope_bundle__.default=_class;
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./node_modules/open-web-editor/dist/open-web-editor.min.js
+/*****************************************************************/
+window.__etcpack__bundleSrc__['45']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    
+
+        var module={
+            exports:{}
+        };
+        var exports=module.exports;
+
+        /*!
 * Open Web Editor - ✍️ An Editor Used on the Browser Side.
 * git+https://github.com/hai2007/Open-Web-Editor.git
 *
@@ -99,14 +4064,36 @@ var r="http://www.w3.org/2000/svg";e.default={stopPropagation:function(n){(n=n||
 *
 * Date:Tue Jul 20 2021 13:18:11 GMT+0800 (中国标准时间)
 */
-function e(n){return function(n){if(Array.isArray(n))return t(n)}(n)||function(n){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(n))return Array.from(n)}(n)||function(n,e){if(!n)return;if("string"==typeof n)return t(n,e);var r=Object.prototype.toString.call(n).slice(8,-1);"Object"===r&&n.constructor&&(r=n.constructor.name);if("Map"===r||"Set"===r)return Array.from(n);if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return t(n,e)}(n)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function t(n,e){(null==e||e>n.length)&&(e=n.length);for(var t=0,r=new Array(e);t<e;t++)r[t]=n[t];return r}function r(n){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(n){return typeof n}:function(n){return n&&"function"==typeof Symbol&&n.constructor===Symbol&&n!==Symbol.prototype?"symbol":typeof n})(n)}!function(){var t=Object.prototype.toString;function o(n){return null==n?void 0===n?"[object Undefined]":"[object Null]":t.call(n)}var i=function(n,e){return null!==e&&"object"===r(e)&&n.indexOf(e.nodeType)>-1&&!function(n){if(null===n||"object"!==r(n)||"[object Object]"!=o(n))return!1;if(null===Object.getPrototypeOf(n))return!0;for(var e=n;null!==Object.getPrototypeOf(e);)e=Object.getPrototypeOf(e);return Object.getPrototypeOf(n)===e}(e)},a=function(n){var e=r(n);return"string"===e||"object"===e&&null!=n&&!Array.isArray(n)&&"[object String]"===o(n)},l=function(n){if(!function(n){var e=r(n);return null!=n&&("object"===e||"function"===e)}(n))return!1;var e=o(n);return"[object Function]"===e||"[object AsyncFunction]"===e||"[object GeneratorFunction]"===e||"[object Proxy]"===e},c=function(n){return i([1,9,11],n)},u={stopPropagation:function(n){(n=n||window.event).stopPropagation?n.stopPropagation():n.cancelBubble=!0},preventDefault:function(n){(n=n||window.event).preventDefault?n.preventDefault():n.returnValue=!1},bind:function(n,e,t){window.attachEvent?n.attachEvent("on"+e,t):n.addEventListener(e,t,!1)},trigger:function(n,e){var t;document.createEventObject?(t=document.createEventObject(),n.fireEvent("on"+e,t)):((t=document.createEvent("HTMLEvents")).initEvent(e,!0,!1),n.dispatchEvent(t))},toNode:function(n){var e=document.createElement("div");e.innerHTML=n;for(var t=e.childNodes,r=0;r<t.length;r++)if(c(t[r]))return t[r];return null},appendTo:function(n,e){var t=c(e)?e:this.toNode(e);return n.appendChild(t),t},prependTo:function(n,e){var t=c(e)?e:this.toNode(e);return n.insertBefore(t,n.childNodes[0]),t},remove:function(n){n.parentNode.removeChild(n)},after:function(n,e){var t=c(e)?e:this.toNode(e);return n.parentNode.insertBefore(t,n.nextSibling),t},css:function(n,e){for(var t in e)n.style[t]=e[t]},attr:function(n,e){for(var t in e)n.setAttribute(t,e[t])},position:function(n,e){e=e||window.event;var t=n.getBoundingClientRect();if(!e||!e.clientX)throw new Error("Event is necessary!");return{x:e.clientX-t.left+n.scrollLeft,y:e.clientY-t.top+n.scrollTop}},copy:function n(e,t,r){var o=this.appendTo(document.body,"<textarea>"+e+"</textarea>");o.select();try{window.document.execCommand("copy",!1,null)?l(t)&&t():l(r)&&r()}catch(n){l(r)&&r(n)}document.body.removeChild(o)}};function s(n){return{leftNum:n.__leftNum,lineNum:n.__lineNum,x:n.__cursorLeft,y:n.__cursorTop,lineHeight:21}}var f={48:[0,")"],49:[1,"!"],50:[2,"@"],51:[3,"#"],52:[4,"$"],53:[5,"%"],54:[6,"^"],55:[7,"&"],56:[8,"*"],57:[9,"("],96:[0,0],97:1,98:2,99:3,100:4,101:5,102:6,103:7,104:8,105:9,106:"*",107:"+",109:"-",110:".",111:"/",65:["a","A"],66:["b","B"],67:["c","C"],68:["d","D"],69:["e","E"],70:["f","F"],71:["g","G"],72:["h","H"],73:["i","I"],74:["j","J"],75:["k","K"],76:["l","L"],77:["m","M"],78:["n","N"],79:["o","O"],80:["p","P"],81:["q","Q"],82:["r","R"],83:["s","S"],84:["t","T"],85:["u","U"],86:["v","V"],87:["w","W"],88:["x","X"],89:["y","Y"],90:["z","Z"],37:"left",38:"up",39:"right",40:"down",33:"page up",34:"page down",35:"end",36:"home",16:"shift",17:"ctrl",18:"alt",91:"command",92:"command",93:"command",9:"tab",20:"caps lock",32:"spacebar",8:"backspace",13:"enter",27:"esc",46:"delete",45:"insert",144:"number lock",145:"scroll lock",12:"clear",19:"pause",112:"f1",113:"f2",114:"f3",115:"f4",116:"f5",117:"f6",118:"f7",119:"f8",120:"f9",121:"f10",122:"f11",123:"f12",189:["-","_"],187:["=","+"],219:["[","{"],221:["]","}"],220:["\\","|"],186:[";",":"],222:["'",'"'],188:[",","<"],190:[".",">"],191:["/","?"],192:["`","~"]},d=["shift","ctrl","alt"];function p(n){var e=(n=n||window.event).keyCode||n.which,t=f[e]||e;if(t){t.constructor!==Array&&(t=[t,t]);var r=t[0],o=n.shiftKey?"shift+":"",i=n.altKey?"alt+":"",a="",l=(n.ctrlKey?"ctrl+":"")+o+i;d.indexOf(t[0])>=0&&(t[0]=t[1]="");var c=n.code=="Key"+n.key&&!o;return a=l+(""==l&&c?t[1]:t[0]),""==t[0]&&(a=a.replace(/\+$/,"")),""==a?r:a}}var _=function(n,e){if(n.length!=e.length)return!1;for(var t=0;t<n.length;t++)if(n[t].content!=e[t].content||n[t].color!=e[t].color)return!1;return!0};function h(n,e){for(var t=[],r=0,o=function(e){return n.substring(r,e+r>n.length?n.length:e+r)},i="",a="tag",l=function(){""!=i&&t.push({color:{tag:e.selector,attr:e.attrKey,string:e.attrValue}[a],content:i}),i=""};;)if("/*"==o(2)){for(l();"*/"!==o(2)&&r<n.length;)i+=n[r++];t.push({color:e.annotation,content:i+o(2)}),r+=2,i=""}else if(["'",'"'].indexOf(o(1))>-1){var c=o(1);l();do{i+=n[r++]}while(o(1)!=c&&r<n.length);o(1)!=c?c="":r+=1,t.push({color:e.attrValue,content:i+c}),i=""}else if([":","{","}",";"].indexOf(o(1))>-1)l(),t.push({color:e.insign,content:o(1)}),i="",a="{"==o(1)||";"==o(1)?"attr":"}"==o(1)?"tag":"string",r+=1;else{if(r>=n.length){l();break}i+=n[r++]}return t}var v=["abstract","arguments","boolean","break","byte","case","catch","char","class","const","continue","debugger","default","delete","do","double","else","enum","eval","export","extends","false","final","finally","float","for","function","goto","if","implements","import","in","instanceof","int","interface","let","long","native","new","null","package","private","protected","public","return","short","static","super","switch","synchronized","this","throw","throws","transient","true","try","typeof","var","void","volatile","while","with","yield"];function g(n,e){for(var t=[],r=0,o=function(e){return n.substring(r,e+r>n.length?n.length:e+r)},i="",a=function(){""!=i&&("("==i[0]&&(t.push({color:e.insign,content:"("}),i=i.substr(1)),t.push({color:e.text,content:i})),i=""};;)if("/*"==o(2)){for(a();"*/"!==o(2)&&r<n.length;)i+=n[r++];t.push({color:e.annotation,content:i+o(2)}),r+=2,i=""}else if("//"==o(2)){for(a();"\n"!==o(1)&&r<n.length;)i+=n[r++];t.push({color:e.annotation,content:i}),i=""}else if(["'",'"',"`"].indexOf(o(1))>-1){var l=o(1);a();do{i+=n[r++]}while(o(1)!=l&&r<n.length);o(1)!=l?l="":r+=1,t.push({color:e.string,content:i+l}),i=""}else if("("==o(1)&&(" "==i[0]||r-i.length-1>=0&&" "==n[r-i.length-1]))t.push({color:e.funName,content:i}),r+=1,i="(";else if("("==o(1))t.push({color:e.execName,content:i}),r+=1,i="(";else if([";","{","}","(",")",".","\n","=","+",">","<","[","]","-","*","/","^","*","!"].indexOf(o(1))>-1)a(),t.push({color:e.insign,content:o(1)}),i="",r+=1;else if(" "==o(1)&&v.indexOf(i.trim())>-1)t.push({color:e.key,content:i+" "}),i="",r+=1;else{if(r>=n.length){a();break}i+=n[r++]}return t}function m(n,e){for(var t=[],r=0,o=function(e){return n.substring(r,e+r>n.length?n.length:e+r)},i="",a=function(){""!=i&&t.push({color:e.text,content:i}),i=""},l=function(){var a=" ";'"'==o(1)&&(a='"'),"'"==o(1)&&(a="'");do{i+=n[r++]}while(o(1)!=a&&r<n.length);" "!=a&&r<n.length&&(i+=a,r+=1),t.push({color:e.attrValue,content:i}),i=""};;)if("\x3c!--"==o(4)){for(a();"--\x3e"!==o(3)&&r<n.length;)i+=n[r++];t.push({color:e.annotation,content:i+o(3)}),r+=3,i=""}else if("</"==o(2)){for(a(),t.push({color:e.insign,content:"</"}),r+=2;">"!==o(1)&&r<n.length;)i+=n[r++];""!=i&&(t.push({color:e.node,content:i}),i="",r<n.length&&(t.push({color:e.insign,content:">"}),r+=1))}else if("<"==o(1)&&"< "!=o(2)){var c="";for(a(),t.push({color:e.insign,content:"<"}),r+=1;">"!=o(1)&&" "!=o(1)&&r<n.length;)i+=n[r++];if(""!=i&&("style"!=i&&"script"!=i||(c="</"+i+">"),t.push({color:e.node,content:i}),i="",r<n.length))for(;r<n.length;){if(">"==o(1)){a(),t.push({color:e.insign,content:">"}),r+=1;break}if(" "!=o(1))if(a(),'"'!=o(1)&&"'"!=o(1)){for(;"="!=o(1)&&">"!=o(1)&&r<n.length&&" "!=o(1);)i+=n[r++];""!=i?(t.push({color:e.attrKey,content:i}),i="","="==o(1)&&(t.push({color:e.insign,content:"="}),(r+=1)<n.length&&" "!=o(1)&&">"!=o(1)&&l())):i+=n[r++]}else"="==o(1)?(t.push({color:e.insign,content:"="}),r+=1):r<n.length&&" "!=o(1)&&">"!=o(1)&&l();else i+=n[r++]}if(""!=c){for(var u,s=r,f=i;o(c.length)!=c&&r<n.length;)i+=n[r++];r<n.length?({"style>":h,"script>":g}[u=c.replace(/<\//,"")](i,{"style>":e._css,"script>":e._javascript}[u]).forEach((function(n){t.push(n)})),i=""):(i=f,r=s)}}else{if(r>=n.length){a();break}i+=n[r++]}return t}var y=function(n,e){var t;for(t in e)try{n[t]=e[t]}catch(n){throw new Error("Illegal property value！")}return n},b={text:"#000000",annotation:"#6a9955",insign:"#ffffff",node:"#1e50b3",attrKey:"#1e83b1",attrValue:"#ac4c1e"},w={annotation:"#6a9955",insign:"#ffffff",selector:"#1e50b3",attrKey:"#1e83b1",attrValue:"#ac4c1e"},x={text:"#000000",annotation:"#6a9955",insign:"#ffffff",key:"#ff0000",string:"#ac4c1e",funName:"#1e50b3",execName:"#1e83b1"};function N(n,e){var t,r;if(e=e||{},"html"==n)e._css=y(w,e.css),e._javascript=y(x,e.javascript),r=y(b,e),t=m;else if("css"==n)r=y(w,e),t=h;else{if("javascript"!=n)throw new Error("Language not supported:"+n+",The languages available include: html、css、javascript!");r=y(x,e),t=g}return function(n){return function(n){var e=[[]],t=0;return n.forEach((function(n){var r,o=n.content.split(/\n/);for(e[t].push({color:n.color,content:o[0]}),r=1;r<o.length;r++)t+=1,e.push([]),e[t].push({color:n.color,content:o[r]})})),e}(t(n,r))}}var $=function n(t){var r=this;if(!(this instanceof n))throw new Error("Open-Web-Editor is a constructor and should be called with the `new` keyword");if(!c(t.el))throw new Error("options.el is not a element!");this._el=t.el,this._el.owe_terminal="none",t.color=t.color||{},this._colorBackground=t.color.background||"#d6d6e4",this._colorText=t.color.text||"#000000",this._colorNumber=t.color.number||"#888484",this._colorEdit=t.color.edit||"#eaeaf1",this._colorCursor=t.color.cursor||"#ff0000",this._colorSelect=t.color.select||"#6c6cf1",this._fontFamily=t["font-family"]||"新宋体",this._fontWeight=t["font-weight"]||600,this._tabSpace=t.tabSpace||4,this._readonly=t.readonly||!1,this._noLineNumber=t.noLineNumber||!1,this._contentArray=a(t.content)?(this.$$filterText(t.content)+"").split("\n"):[""],this.$shader=l(t.shader)?t.shader:function(n){return Array.isArray(n)}(t.shader)?N.apply(void 0,e(t.shader)):function(){var n=[];return r._contentArray.forEach((function(e){n.push([{content:e,color:r._colorText}])})),n},this.$format=l(t.format)?t.format:function(n){return n},this.$input=l(t.input)?t.input:null,this.$$initDom(),this.__needUpdate=!0,this.__lineNum=this._contentArray.length-1,this.__leftNum=this._contentArray[this.__lineNum].length,this.__cursor1=this.__cursor2={leftNum:0,lineNum:0},this.__formatData=this.$$diff(this.$shader(this._contentArray.join("\n"))),this.$$initView(),this.$$updateView(),this.$$bindEvent(),this.__updated__=function(){},this.updated=function(n){r.__updated__=n},this.valueOf=function(n){return(n||""==n)&&(r._contentArray=null,r.__focusDOM.value=n,u.trigger(r.__focusDOM,"input"),r.__focusDOM.focus()),r._contentArray.join("\n")},this.input=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,t=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0;0!=e&&(0!=t&&(r._contentArray[r.__lineNum]=r._contentArray[r.__lineNum].substring(0,r.__leftNum+e)+r._contentArray[r.__lineNum].substring(r.__leftNum+e+t)),r.__leftNum+=e),r.__focusDOM.value=n,u.trigger(r.__focusDOM,"input"),r.__focusDOM.focus()},this.format=function(){r._contentArray=r.$format(r._contentArray.join("\n"),r._tabSpace).split("\n"),r.__lineNum=r._contentArray.length-1,r.__leftNum=r._contentArray[r.__lineNum].length,r.__formatData=r.$$diff(r.$shader(r._contentArray.join("\n"))),r.$$updateView(),r.$$initView()},this.copy=function(n,e){u.copy(r.valueOf(),n,e)}};$.prototype.$$textWidth=function(n){return this.__helpCalcDOM.innerText=n,this.__helpCalcDOM.offsetWidth},$.prototype.$$bestLeftNum=function(n,e){arguments.length<2&&(e=e||this.__lineNum);var t=this._contentArray[e];if(n<=40)return 0;if(n-40>=this.$$textWidth(t))return t.length;for(var r=n-40,o=1;o<t.length;o++){var i=Math.abs(n-40-this.$$textWidth(t.substr(0,o)));if(i>r)break;r=i}return o-1},$.prototype.$$calcCanvasXY=function(n,e){return{x:this.$$textWidth(this._contentArray[e].substr(0,n)),y:21*e}},$.prototype.$$selectIsNotBlank=function(){return this.__cursor1.lineNum!=this.__cursor2.lineNum||this.__cursor1.leftNum!=this.__cursor2.leftNum},$.prototype.$$filterText=function(n){for(var e="",t=0;t<this._tabSpace;t++)e+=" ";return n.replace(/\t/g,e)},$.prototype.$$toTemplate=function(n,e,t){var r=this,o="";return o+="<div style='min-width: fit-content;white-space: nowrap;line-height:21px;height:21px;'>",o+="<em style='"+(t?"font-size:0;":"")+"color:"+this._colorNumber+";user-select: none;display:inline-block;font-style:normal;width:35px;text-align:right;margin-right:5px;'>"+(e+1)+"</em>",n.forEach((function(n){var e=n.content;e=(e=(e=e.replace(/\&/g,"&amp;")).replace(/</g,"&lt;")).replace(/>/g,"&gt;"),o+="<span style='user-select: none;font-weight:"+r._fontWeight+";white-space: pre;color:"+n.color+"'>"+e+"</span>"})),o+"</div>"},$.prototype.$$initDom=function(){var n=this;this._el.innerHTML="",u.css(this._el,{"font-size":"12px",position:"relative",cursor:"text","font-family":this._fontFamily,background:this._colorBackground,overflow:"auto"}),u.bind(this._el,"click",(function(){setTimeout((function(){n.__focusDOM.focus()}))})),this.__helpCalcDOM=u.appendTo(this._el,"<span></span>"),u.css(this.__helpCalcDOM,{position:"absolute","z-index":"-1","white-space":"pre",top:0,left:0,color:"rgba(0,0,0,0)","font-weight":this._fontWeight}),this.__helpInputDOM=u.appendTo(this._el,"<div></div>"),u.css(this.__helpInputDOM,{position:"absolute","z-index":1}),u.bind(this.__helpInputDOM,"click",(function(e){u.stopPropagation(e),u.preventDefault(e),n.__focusDOM.focus()})),this.__focusDOM=u.appendTo(this._el,"<textarea></textarea>"),u.css(this.__focusDOM,{position:"absolute",width:"6px","margin-top":"3px",height:"15px","line-height":"15px",resize:"none",overflow:"hidden",padding:"0",outline:"none",border:"none",background:"rgba(0,0,0,0)",color:this._colorCursor}),u.attr(this.__focusDOM,{wrap:"off",autocorrect:"off",autocapitalize:"off",spellcheck:"false"}),this._readonly&&u.attr(this.__focusDOM,{readonly:!0}),this.__showDOM=u.appendTo(this._el,"<div></div>"),u.css(this.__showDOM,{padding:"10px 0"}),this.__selectCanvas=u.appendTo(this._el,"<canvas></canvas>"),u.css(this.__selectCanvas,{position:"absolute",left:"40px",top:"10px",opacity:"0.5"}),this.$$updateCanvasSize(1,1)},$.prototype.$$initView=function(){u.css(this.__focusDOM,{left:40+this.$$textWidth(this._contentArray[this.__lineNum])+"px",top:10+21*this.__lineNum+"px"})},$.prototype.$$updateView=function(){var n=this;if(this.__diff&&this.__diff.beginNum+this.__diff.endNum>10){for(var e=this.__showDOM.childNodes,t=e.length-this.__diff.endNum-1;t>=this.__diff.beginNum;t--)u.remove(e[t]);if(this.__diff.beginNum>0)for(var r=this.__formatData.length-1-this.__diff.endNum;r>=this.__diff.beginNum;r--)u.after(e[this.__diff.beginNum-1],this.$$toTemplate(this.__formatData[r],r,this._noLineNumber));else for(var o=this.__formatData.length-this.__diff.endNum-1;o>=0;o--)u.prependTo(this.__showDOM,this.$$toTemplate(this.__formatData[o],o,this._noLineNumber));e=this.__showDOM.childNodes;for(var i=this.__diff.beginNum;i<this.__formatData.length;i++)e[i].getElementsByTagName("em")[0].innerText=i+1}else if("not update"!=this.__diff){var a="";this.__formatData.forEach((function(e,t){a+=n.$$toTemplate(e,t,n._noLineNumber)})),this.__showDOM.innerHTML=a}this.__diff="not update";var l=this.__showDOM.childNodes[this.__lineNum];!this._readonly&&this.__lineDom&&(this.__lineDom.style.backgroundColor="rgba(0, 0, 0, 0)",l.style.backgroundColor=this._colorEdit),this.__lineDom=l},$.prototype.$$updateSelectView=function(){var n=this,e=this.__selectCanvas.getContext("2d");e.fillStyle=this._colorSelect,e.clearRect(0,0,this.__selectCanvas.scrollWidth,this.__selectCanvas.scrollHeight);var t=function(t,r,o){var i=n.$$calcCanvasXY(t,o),a=n.$$calcCanvasXY(r,o);t==r&&0==t?e.fillRect(i.x,i.y,5,21):e.fillRect(i.x,i.y,a.x-i.x,21)};if(this.__cursor1.lineNum!=this.__cursor2.lineNum||this.__cursor1.leftNum!=this.__cursor2.leftNum)if(e.beginPath(),this.__cursor1.lineNum==this.__cursor2.lineNum)t(this.__cursor1.leftNum,this.__cursor2.leftNum,this.__cursor1.lineNum);else{var r,o;this.__cursor1.lineNum<this.__cursor2.lineNum?(r=this.__cursor1,o=this.__cursor2):(r=this.__cursor2,o=this.__cursor1),t(r.leftNum,this._contentArray[r.lineNum].length,r.lineNum),t(0,o.leftNum,o.lineNum);for(var i=r.lineNum+1;i<o.lineNum;i++)t(0,this._contentArray[i].length,i)}},$.prototype.$$updateCursorPosition=function(){this.__cursorTop=21*this.__lineNum+10,this.__cursorLeft=40+this.$$textWidth(this._contentArray[this.__lineNum].substring(0,this.__leftNum)),u.css(this.__focusDOM,{top:this.__cursorTop+"px",left:this.__cursorLeft+"px"})},$.prototype.$$updateCanvasSize=function(n,e){arguments.length<2&&(n=this._el.scrollWidth-40,e=this._el.scrollHeight-10),u.css(this.__selectCanvas,{width:n+"px",height:e+"px"}),u.attr(this.__selectCanvas,{width:n,height:e})},$.prototype.$$cancelSelect=function(){this.$$updateCanvasSize(1,1),this.__cursor1={leftNum:0,lineNum:0},this.__cursor2={leftNum:0,lineNum:0}},$.prototype.$$deleteSelect=function(){var n=this.__cursor2,e=this.__cursor1;(this.__cursor1.lineNum<this.__cursor2.lineNum||this.__cursor1.lineNum==this.__cursor2.lineNum&&this.__cursor1.leftNum<this.__cursor2.leftNum)&&(n=this.__cursor1,e=this.__cursor2);var t=this._contentArray[n.lineNum].substr(0,n.leftNum)+this._contentArray[e.lineNum].substr(e.leftNum);this._contentArray.splice(n.lineNum,e.lineNum-n.lineNum+1,t),this.__leftNum=this.__cursor1.leftNum=this.__cursor2.leftNum=n.leftNum,this.__lineNum=this.__cursor1.lineNum=this.__cursor2.lineNum=n.lineNum,this.$$cancelSelect()},$.prototype.$$bindEvent=function(){var n=this,t=!1,r=function(e){var t=u.position(n._el,e),r=Math.round((t.y-20.5)/21);return r<0&&(r=0),r>=n._contentArray.length&&(r=n._contentArray.length-1),{leftNum:n.$$bestLeftNum(t.x,r),lineNum:r}},o=function(){var e=n.__cursor2,t=n.__cursor1;if(n.__cursor1.lineNum<n.__cursor2.lineNum)e=n.__cursor1,t=n.__cursor2;else if(n.__cursor1.lineNum==n.__cursor2.lineNum)return n.__cursor1.leftNum<n.__cursor2.leftNum&&(e=n.__cursor1,t=n.__cursor2),n._contentArray[e.lineNum].substring(e.leftNum,t.leftNum);var r="";r+=n._contentArray[e.lineNum].substr(e.leftNum)+"\n";for(var o=e.lineNum+1;o<t.lineNum;o++)r+=n._contentArray[o]+"\n";return r+=n._contentArray[t.lineNum].substr(0,t.leftNum)};u.bind(this._el,"mousedown",(function(e){t=!0,n.__cursor2=n.__cursor1=r(e),n.$$updateCanvasSize(),n.$$updateSelectView()})),u.bind(this._el,"mousemove",(function(e){t&&(n.__cursor2=r(e),n.$$updateSelectView())})),u.bind(this._el,"mouseup",(function(){return t=!1})),u.bind(this._el,"click",(function(e){n.__helpInputDOM.innerHTML="";var t=u.position(n._el,e),r=Math.round((t.y-20.5)/21);r<0||r>=n._contentArray.length||(n.__lineNum=r,n.__leftNum=n.$$bestLeftNum(t.x),n.$$updateCursorPosition(),n.$$updateView())}));var i=function(t){if(t=t||n.__focusDOM.value,t=n.$$filterText(t),n.__focusDOM.value="",n.$$selectIsNotBlank()&&n.$$deleteSelect(),/^\n$/.test(t))n.__leftNum>=n._contentArray[n.__lineNum].length?n._contentArray.splice(n.__lineNum+1,0,""):(n._contentArray.splice(n.__lineNum+1,0,n._contentArray[n.__lineNum].substring(n.__leftNum)),n._contentArray[n.__lineNum]=n._contentArray[n.__lineNum].substring(0,n.__leftNum)),n.__lineNum+=1,n.__leftNum=0;else{var r=t.split(/\n/);if(null==n._contentArray)n._contentArray=r,n.__lineNum=n._contentArray.length-1,n.__leftNum=n._contentArray[n.__lineNum].length;else if(r.length<=1)n._contentArray[n.__lineNum]=n._contentArray[n.__lineNum].substring(0,n.__leftNum)+t+n._contentArray[n.__lineNum].substring(n.__leftNum),n.__leftNum+=t.length;else{var o,i=n._contentArray[n.__lineNum].substring(0,n.__leftNum),a=n._contentArray[n.__lineNum].substring(n.__leftNum);r[0]=i+r[0],r[r.length-1]+=a,(o=n._contentArray).splice.apply(o,[n.__lineNum,1].concat(e(r))),n.__lineNum+=r.length-1,n.__leftNum=r[r.length-1].length-a.length}}n.__formatData=n.$$diff(n.$shader(n._contentArray.join("\n"))),n.$$updateCursorPosition(),n.$$updateView(),n.__updated__()};u.bind(this.__focusDOM,"compositionstart",(function(){n.__needUpdate=!1,n.__focusDOM.style.color="rgba(0,0,0,0)",n.__focusDOM.style.borderLeft="1px solid "+n._colorCursor})),u.bind(this.__focusDOM,"compositionend",(function(){n.__needUpdate=!0,n.__focusDOM.style.color=n._colorCursor,n.__focusDOM.style.borderLeft="none",i(),null!=n.$input&&(n.__helpInputEvent=n.$input(n.__helpInputDOM,s(n),n._contentArray)||{})})),u.bind(this.__focusDOM,"input",(function(){n.__needUpdate&&(i(),null!=n.$input&&(n.__helpInputEvent=n.$input(n.__helpInputDOM,s(n),n._contentArray)||{}))}));var a=!1;u.bind(this._el,"keyup",(function(n){"command"==p(n)&&(a=!1)})),u.bind(this._el,"keydown",(function(e){var t=p(e);if("command"==t&&(a=!0),a&&["a","c","x"].indexOf(t)>-1&&(t="ctrl+"+t),""!=n.__helpInputDOM.innerHTML){var r=n.__helpInputEvent[t];if(l(r)){if(!r())return}else n.__helpInputDOM.innerHTML=""}if(!(n._readonly&&["ctrl+a","ctrl+c"].indexOf(t)<0))switch(t){case"ctrl+a":n.__cursor1={leftNum:0,lineNum:0},n.__cursor2={lineNum:n._contentArray.length-1,leftNum:n._contentArray[n._contentArray.length-1].length},n.$$updateSelectView();break;case"ctrl+c":n.$$selectIsNotBlank()&&(u.copy(o()),n.__focusDOM.focus());break;case"ctrl+x":n.$$selectIsNotBlank()&&(u.copy(o()),n.__focusDOM.focus(),n.$$deleteSelect(),n.__formatData=n.$$diff(n.$shader(n._contentArray.join("\n"))),n.$$updateCursorPosition(),n.$$updateView(),n.$$cancelSelect(),n.__updated__());break;case"tab":u.stopPropagation(e),u.preventDefault(e);for(var c="",s=0;s<n._tabSpace;s++)c+=" ";if(n.$$selectIsNotBlank()){var f=n.__cursor1.lineNum,d=n.__cursor2.lineNum;f>d&&(f=n.__cursor2.lineNum,d=n.__cursor1.lineNum);for(var _=f;_<=d;_++)n._contentArray[_]=c+n._contentArray[_];n.__cursor1.leftNum+=n._tabSpace,n.__cursor2.leftNum+=n._tabSpace,n.__leftNum+=n._tabSpace,n.__formatData=n.$$diff(n.$shader(n._contentArray.join("\n"))),n.$$updateCursorPosition(),n.$$updateView(),n.$$updateCanvasSize(),n.$$updateSelectView(),n.__updated__()}else i(c);break;case"up":if(n.__lineNum<=0)return;n.__lineNum-=1,n.__leftNum=n.$$bestLeftNum(n.$$textWidth(n._contentArray[n.__lineNum+1].substr(0,n.__leftNum))+40),n.$$updateCursorPosition(),n.$$updateView(),n.$$cancelSelect(),n._el.scrollTop-=21;break;case"down":if(n.__lineNum>=n._contentArray.length-1)return;n.__lineNum+=1,n.__leftNum=n.$$bestLeftNum(n.$$textWidth(n._contentArray[n.__lineNum-1].substr(0,n.__leftNum))+40),n.$$updateCursorPosition(),n.$$updateView(),n.$$cancelSelect(),n._el.scrollTop+=21;break;case"left":if(n.__leftNum<=0){if(n.__lineNum<=0)return;n.__lineNum-=1,n.__leftNum=n._contentArray[n.__lineNum].length}else n.__leftNum-=1;n.$$updateCursorPosition(),n.$$cancelSelect();break;case"right":if(n.__leftNum>=n._contentArray[n.__lineNum].length){if(n.__lineNum>=n._contentArray.length-1)return;n.__lineNum+=1,n.__leftNum=0}else n.__leftNum+=1;n.$$updateCursorPosition(),n.$$cancelSelect();break;case"backspace":if(n.$$selectIsNotBlank())n.$$deleteSelect();else if(n.__leftNum<=0){if(n.__lineNum<=0)return;n.__lineNum-=1,n.__leftNum=n._contentArray[n.__lineNum].length,n._contentArray[n.__lineNum]+=n._contentArray[n.__lineNum+1],n._contentArray.splice(n.__lineNum+1,1)}else n.__leftNum-=1,n._contentArray[n.__lineNum]=n._contentArray[n.__lineNum].substring(0,n.__leftNum)+n._contentArray[n.__lineNum].substring(n.__leftNum+1);n.__formatData=n.$$diff(n.$shader(n._contentArray.join("\n"))),n.$$updateCursorPosition(),n.$$updateView(),n.$$cancelSelect(),n.__updated__()}}))},$.prototype.$$diff=function(n){var e=this.__formatData;if(e){for(var t=0,r=0;r<e.length&&r<n.length&&_(e[r],n[r]);r++)t+=1;for(var o=0,i=1;i<=e.length&&i<=n.length&&_(e[e.length-i],n[n.length-i]);i++)o+=1;var a=Math.min(e.length,n.length);t+o>=a&&(o=a-t-1)<0&&(o=0),this.__diff={beginNum:t,endNum:o}}return n},"object"===r(n)&&"object"===r(n.exports)?n.exports=$:window.OpenWebEditor=$}()}).call(this,t(4)(n))},function(n,e,t){"use strict";t.r(e),e.default='\n div.menu-view{\n\nwhite-space: nowrap;\n\nuser-select: none;\n\n}\n\n div.menu-view>div{\n\noverflow: auto;\n\ndisplay: inline-block;\n\nvertical-align: top;\n\nwhite-space: normal;\n\n}\n\n div.menu-view>div:first-child{\n\nwidth: 2.8rem;\n\npadding: .2rem;\n\n}\n\n div.menu-view>div:first-child li{\n\npadding-left: 1em;\n\n}\n\n div.menu-view>div:first-child li[active]{\n\nbackground-repeat: no-repeat;\n\nbackground-position: -4px 6px;\n\nbackground-size: 20px auto;\n\n}\n\n div.menu-view>div:first-child li[active="yes"]{\n\nbackground-image: url(\'./image/open.png\');\n\n}\n\n div.menu-view>div:first-child li[active="no"]{\n\nbackground-image: url(\'./image/close.png\');\n\n}\n\n div.menu-view>div:first-child li[active="no"]>ul{\n\ndisplay: none;\n\n}\n\n div.menu-view>div:first-child h2{\n\npadding: 10px 0;\n\nfont-size: .16rem;\n\n}\n\n div.menu-view>div:first-child h3{\n\nfont-weight: 400;\n\nfont-size: .14rem;\n\ncolor: #304455;\n\ncursor: pointer;\n\ndisplay: inline-block;\n\nmargin: .07rem 0;\n\nheight: 1.2em;\n\n}\n\n div.menu-view>div:first-child h3:hover{\n\nborder-bottom: 2px solid #2396b9;\n\n}\n'},function(n,e,t){"use strict";t.r(e),e.default="html {\n    font-size: 100px;\n}\n\nbody {\n    font-size: .16rem;\n}\n\n.warn {\n    color: rgb(199, 191, 191) !important;\n    font-size: 12px !important;\n    font-weight: 800 !important;\n}\n\nh5 {\n    color: #f44336;\n    text-decoration: underline;\n}\n\n/* animation演示例子使用 */\n@keyframes move_right {\n    from {\n        left: 0px;\n    }\n\n    to {\n        left: 200px;\n    }\n}\n"},function(n,e,t){"use strict";t.r(e);var r=t(3),o=function(n){var e=typeof n;return null!=n&&("object"===e||"function"===e)},i=Object.prototype.toString,a=function(n){return null==n?void 0===n?"[object Undefined]":"[object Null]":i.call(n)},l=o,c=function(n){if(!o(n))return!1;var e=a(n);return"[object Function]"===e||"[object AsyncFunction]"===e||"[object GeneratorFunction]"===e||"[object Proxy]"===e},u=function(n){return Array.isArray(n)};
-/*!
- * ✔️ - Promise
- * https://github.com/hai2007/polyfill.js/blob/master/Promise.js
- *
- * author hai2007 < https://hai2007.gitee.io/sweethome >
- *
- * Copyright (c) 2021-present hai2007 走一步，再走一步。
- * Released under the MIT license
- */
-function s(n){if(!(this instanceof s))throw new TypeError("undefined is not a promise");if(!c(n))throw new TypeError("Promise resolver "+n+" is not a function");this.__value=void 0,this.__hocks=[],this.__state="pending",function(n,e){var t=!1;try{n((function(n){t||(t=!0,e.$$changeState(n,"fulfilled"))}),(function(n){t||(t=!0,e.$$changeState(n,"rejected"))}))}catch(n){if(t)return;t=!0,e.$$changeState(n,"rejected")}}(n,this)}s.prototype.$$changeState=function(n,e){this.__state=e,this.__value=n,this.$$triggerEvent()},s.prototype.$$triggerEvent=function(){for(var n=null,e="fulfilled"==this.__state?0:1;this.__hocks.length>0;){if(c(this.__hocks[0][e])){n=this.__hocks.shift();break}c(this.__hocks[0][2])&&this.__hocks[0][2](),this.__hocks.shift()}if(null!==n){var t=n[e](this.__value);if(l(t)&&t.constructor===this.constructor){for(var r=0;r<this.__hocks.length;r++)t.__hocks.push(this.__hocks[r]),"pending"!=t.__state&&t.$$triggerEvent();this.then=function(n,e){t.then(n,e)},this.catch=function(n){t.catch(n)},this.finally=function(n){t.finally(n)}}else this.__value=t,this.__state="fulfilled",this.$$triggerEvent()}},s.prototype.then=function(n,e){return this.__hocks.push([n,e,void 0]),"pending"!=this.__state&&this.$$triggerEvent(),this},s.prototype.catch=function(n){return this.__hocks.push([void 0,n,void 0]),"pending"!=this.__state&&this.$$triggerEvent(),this},s.prototype.finally=function(n){return this.__hocks.push([void 0,void 0,n]),"pending"!=this.__state&&this.$$triggerEvent(),this},s.resolve=function(n){return l(n)&&n.constructor===s?n:new s((function(e){e(n)}))},s.reject=function(n){return new s((function(e,t){t(n)}))},s.all=function(n){return new s((function(e,t){if(!u(n))return t(new TypeError("undefined is not iterable (cannot read property Symbol(Symbol.iterator))"));var r=Array.prototype.slice.call(n),o=0;0==r.length&&e([]);for(var i=function(n,a){"pending"!==a.__state?(o+=1,"rejected"==a.__state?t(a.__value):(r[n]=a.__value,o==r.length&&e(r))):setTimeout((function(){i(n,a)}))},a=0;a<r.length;a++)i(a,r[a])}))},s.allSettled=function(n){return new s((function(e,t){if(!u(n))return t(new TypeError("undefined is not iterable (cannot read property Symbol(Symbol.iterator))"));var r=Array.prototype.slice.call(n),o=0;0==r.length&&e([]);for(var i=function(n,t){"pending"!==t.__state?(o+=1,r[n]={status:t.__state},"fulfilled"==t.__state?r[n].value=t.__value:r[n].reason=t.__value,o==r.length&&e(r)):setTimeout((function(){i(n,t)}))},a=0;a<r.length;a++)i(a,r[a])}))},s.any=function(n){return new s((function(e,t){if(!u(n))return t(new TypeError("undefined is not iterable (cannot read property Symbol(Symbol.iterator))"));var r=0;0==n.length&&e(void 0);for(var o=function(i,a){if("pending"!==a.__state)if(r+=1,"rejected"==a.__state){if(r==n.length)return t(new Error("All promises were rejected"))}else e(a.__value);else setTimeout((function(){o(i,a)}))},i=0;i<n.length;i++)o(i,n[i])}))},s.race=function(n){return new s((function(e,t){if(!u(n))return t(new TypeError("undefined is not iterable (cannot read property Symbol(Symbol.iterator))"));0==n.length&&e(void 0);for(var r=function(n,o){"pending"!==o.__state?"rejected"==o.__state?t(o.__value):e(o.__value):setTimeout((function(){r(n,o)}))},o=0;o<n.length;o++)r(o,n[o])}))},"Promise"in r.a||(r.a.Promise=s)},function(n,e,t){"use strict";t.r(e),t.d(e,"isObject",(function(){return c})),t.d(e,"isUndefined",(function(){return u})),t.d(e,"isNull",(function(){return s})),t.d(e,"isBoolean",(function(){return f})),t.d(e,"isNumber",(function(){return d})),t.d(e,"isString",(function(){return p})),t.d(e,"isSymbol",(function(){return _})),t.d(e,"isFunction",(function(){return h})),t.d(e,"isArray",(function(){return v})),t.d(e,"isError",(function(){return g})),t.d(e,"isPlainObject",(function(){return m})),t.d(e,"isElement",(function(){return y})),t.d(e,"isAttribute",(function(){return b})),t.d(e,"isText",(function(){return w})),t.d(e,"isComment",(function(){return x}));var r=function(n){var e=typeof n;return null!=n&&("object"===e||"function"===e)},o=Object.prototype.toString,i=function(n){return null==n?void 0===n?"[object Undefined]":"[object Null]":o.call(n)},a=function(n){if(null===n||"object"!=typeof n||"[object Object]"!=i(n))return!1;if(null===Object.getPrototypeOf(n))return!0;for(var e=n;null!==Object.getPrototypeOf(e);)e=Object.getPrototypeOf(e);return Object.getPrototypeOf(n)===e},l=function(n,e){return null!==e&&"object"==typeof e&&n.indexOf(e.nodeType)>-1&&!a(e)},c=r,u=function(n){return void 0===n},s=function(n){return null===n},f=function(n){return!0===n||!1===n||null!==n&&"object"==typeof n&&"[object Boolean]"===i(n)},d=function(n){return"number"==typeof n||null!==n&&"object"==typeof n&&"[object Number]"===i(n)},p=function(n){var e=typeof n;return"string"===e||"object"===e&&null!=n&&!Array.isArray(n)&&"[object String]"===i(n)},_=function(n){var e=typeof n;return"symbol"===e||"object"===e&&null!==n&&"[object Symbol]"===i(n)},h=function(n){if(!r(n))return!1;var e=i(n);return"[object Function]"===e||"[object AsyncFunction]"===e||"[object GeneratorFunction]"===e||"[object Proxy]"===e},v=function(n){return Array.isArray(n)},g=function(n){if(null===n||"object"!=typeof n)return!1;var e=i(n);return"[object Error]"===e||"[object DOMException]"===e||"string"==typeof n.message&&"string"==typeof n.name&&!a(n)},m=a,y=function(n){return l([1,9,11],n)},b=function(n){return l([2],n)},w=function(n){return l([3],n)},x=function(n){return l([8],n)}}]);
+
+"use strict";function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)||_unsupportedIterableToArray(t)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(t,e){if(!t)return;if(typeof t==="string")return _arrayLikeToArray(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);if(n==="Object"&&t.constructor)n=t.constructor.name;if(n==="Map"||n==="Set")return Array.from(t);if(n==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return _arrayLikeToArray(t,e)}function _iterableToArray(t){if(typeof Symbol!=="undefined"&&Symbol.iterator in Object(t))return Array.from(t)}function _arrayWithoutHoles(t){if(Array.isArray(t))return _arrayLikeToArray(t)}function _arrayLikeToArray(t,e){if(e==null||e>t.length)e=t.length;for(var n=0,r=new Array(e);n<e;n++){r[n]=t[n]}return r}function _typeof(t){"@babel/helpers - typeof";if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof=function t(e){return typeof e}}else{_typeof=function t(e){return e&&typeof Symbol==="function"&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e}}return _typeof(t)}(function(){"use strict";function n(t){var e=_typeof(t);return t!=null&&(e==="object"||e==="function")}var e=Object.prototype.toString;function r(t){if(t==null){return t===undefined?"[object Undefined]":"[object Null]"}return e.call(t)}function t(t){var e=_typeof(t);return e==="string"||e==="object"&&t!=null&&!Array.isArray(t)&&r(t)==="[object String]"}function i(t){if(!n(t)){return false}var e=r(t);return e==="[object Function]"||e==="[object AsyncFunction]"||e==="[object GeneratorFunction]"||e==="[object Proxy]"}function o(t){if(t===null||_typeof(t)!=="object"||r(t)!="[object Object]"){return false}if(Object.getPrototypeOf(t)===null){return true}var e=t;while(Object.getPrototypeOf(e)!==null){e=Object.getPrototypeOf(e)}return Object.getPrototypeOf(t)===e}var l=function t(e,n){return n!==null&&_typeof(n)==="object"&&e.indexOf(n.nodeType)>-1&&!o(n)};var s=t;var f=i;var a=function t(e){return Array.isArray(e)};var u=function t(e){return l([1,9,11],e)};var h={stopPropagation:function t(e){e=e||window.event;if(e.stopPropagation){e.stopPropagation()}else{e.cancelBubble=true}},preventDefault:function t(e){e=e||window.event;if(e.preventDefault){e.preventDefault()}else{e.returnValue=false}},bind:function t(e,n,r){if(window.attachEvent){e.attachEvent("on"+n,r)}else{e.addEventListener(n,r,false)}},trigger:function t(e,n){var r;if(document.createEventObject){r=document.createEventObject();e.fireEvent("on"+n,r)}else{r=document.createEvent("HTMLEvents");r.initEvent(n,true,false);e.dispatchEvent(r)}},toNode:function t(e){var n=document.createElement("div");n.innerHTML=e;var r=n.childNodes;for(var i=0;i<r.length;i++){if(u(r[i]))return r[i]}return null},appendTo:function t(e,n){var r=u(n)?n:this.toNode(n);e.appendChild(r);return r},prependTo:function t(e,n){var r=u(n)?n:this.toNode(n);e.insertBefore(r,e.childNodes[0]);return r},remove:function t(e){e.parentNode.removeChild(e)},after:function t(e,n){var r=u(n)?n:this.toNode(n);e.parentNode.insertBefore(r,e.nextSibling);return r},css:function t(e,n){for(var r in n){e.style[r]=n[r]}},attr:function t(e,n){for(var r in n){e.setAttribute(r,n[r])}},position:function t(e,n){n=n||window.event;var r=e.getBoundingClientRect();if(!n||!n.clientX)throw new Error("Event is necessary!");var i={x:n.clientX-r.left+e.scrollLeft,y:n.clientY-r.top+e.scrollTop};return i},copy:function t(e,n,r){var i=this.appendTo(document.body,"<textarea>"+e+"</textarea>");i.select();try{var o=window.document.execCommand("copy",false,null);if(o){if(f(n))n()}else{if(f(r))r()}}catch(t){if(f(r))r(t)}document.body.removeChild(i)}};function c(t){this.__helpCalcDOM.innerText=t;return this.__helpCalcDOM.offsetWidth}function _(t,e){if(arguments.length<2)e=e||this.__lineNum;var n=this._contentArray[e];if(t<=40)return 0;if(t-40>=this.$$textWidth(n))return n.length;var r=t-40,i=1;for(;i<n.length;i++){var o=Math.abs(t-40-this.$$textWidth(n.substr(0,i)));if(o>r)break;r=o}return i-1}function p(t,e){return{x:this.$$textWidth(this._contentArray[e].substr(0,t)),y:e*21}}function m(){return this.__cursor1.lineNum!=this.__cursor2.lineNum||this.__cursor1.leftNum!=this.__cursor2.leftNum}function d(t,e,n){var r=this;var i="";i+="<div style='min-width: fit-content;white-space: nowrap;line-height:21px;height:21px;'>";var o=n?"font-size:0;":"";i+="<em style='"+o+"color:"+this._colorNumber+";user-select: none;display:inline-block;font-style:normal;width:35px;text-align:right;margin-right:5px;'>"+(e+1)+"</em>";t.forEach(function(t){var e=t.content;e=e.replace(/\&/g,"&amp;");e=e.replace(/</g,"&lt;");e=e.replace(/>/g,"&gt;");i+="<span style='user-select: none;font-weight:"+r._fontWeight+";white-space: pre;color:"+t.color+"'>"+e+"</span>"});return i+"</div>"}function y(t){return{leftNum:t.__leftNum,lineNum:t.__lineNum,x:t.__cursorLeft,y:t.__cursorTop,lineHeight:21}}function v(){var e=this;this._el.innerHTML="";h.css(this._el,{"font-size":"12px",position:"relative",cursor:"text","font-family":this._fontFamily,background:this._colorBackground,overflow:"auto"});h.bind(this._el,"click",function(){setTimeout(function(){e.__focusDOM.focus()})});this.__helpCalcDOM=h.appendTo(this._el,"<span></span>");h.css(this.__helpCalcDOM,{position:"absolute","z-index":"-1","white-space":"pre",top:0,left:0,color:"rgba(0,0,0,0)","font-weight":this._fontWeight});this.__helpInputDOM=h.appendTo(this._el,"<div></div>");h.css(this.__helpInputDOM,{position:"absolute","z-index":1});h.bind(this.__helpInputDOM,"click",function(t){h.stopPropagation(t);h.preventDefault(t);e.__focusDOM.focus()});this.__focusDOM=h.appendTo(this._el,"<textarea></textarea>");h.css(this.__focusDOM,{position:"absolute",width:"6px","margin-top":"3px",height:"15px","line-height":"15px",resize:"none",overflow:"hidden",padding:"0",outline:"none",border:"none",background:"rgba(0,0,0,0)",color:this._colorCursor});h.attr(this.__focusDOM,{wrap:"off",autocorrect:"off",autocapitalize:"off",spellcheck:"false"});if(this._readonly){h.attr(this.__focusDOM,{readonly:true})}this.__showDOM=h.appendTo(this._el,"<div></div>");h.css(this.__showDOM,{padding:"10px 0"});this.__selectCanvas=h.appendTo(this._el,"<canvas></canvas>");h.css(this.__selectCanvas,{position:"absolute",left:"40px",top:"10px",opacity:"0.5"});this.$$updateCanvasSize(1,1)}function N(){h.css(this.__focusDOM,{left:40+this.$$textWidth(this._contentArray[this.__lineNum])+"px",top:10+this.__lineNum*21+"px"})}function g(){var n=this;if(this.__diff&&this.__diff.beginNum+this.__diff.endNum>10){var t=this.__showDOM.childNodes;var e=t.length;for(var r=e-this.__diff.endNum-1;r>=this.__diff.beginNum;r--){h.remove(t[r])}if(this.__diff.beginNum>0){for(var i=this.__formatData.length-1-this.__diff.endNum;i>=this.__diff.beginNum;i--){h.after(t[this.__diff.beginNum-1],this.$$toTemplate(this.__formatData[i],i,this._noLineNumber))}}else{for(var o=this.__formatData.length-this.__diff.endNum-1;o>=0;o--){h.prependTo(this.__showDOM,this.$$toTemplate(this.__formatData[o],o,this._noLineNumber))}}t=this.__showDOM.childNodes;for(var l=this.__diff.beginNum;l<this.__formatData.length;l++){t[l].getElementsByTagName("em")[0].innerText=l+1}}else if(this.__diff!="not update"){var s="";this.__formatData.forEach(function(t,e){s+=n.$$toTemplate(t,e,n._noLineNumber)});this.__showDOM.innerHTML=s}this.__diff="not update";var a=this.__showDOM.childNodes[this.__lineNum];if(!this._readonly&&this.__lineDom){this.__lineDom.style.backgroundColor="rgba(0, 0, 0, 0)";a.style.backgroundColor=this._colorEdit}this.__lineDom=a}function $(){var l=this;var s=this.__selectCanvas.getContext("2d");s.fillStyle=this._colorSelect;s.clearRect(0,0,this.__selectCanvas.scrollWidth,this.__selectCanvas.scrollHeight);var t=function t(e,n,r){var i=l.$$calcCanvasXY(e,r);var o=l.$$calcCanvasXY(n,r);if(e==n&&e==0){s.fillRect(i.x,i.y,5,21)}else{s.fillRect(i.x,i.y,o.x-i.x,21)}};if(this.__cursor1.lineNum==this.__cursor2.lineNum&&this.__cursor1.leftNum==this.__cursor2.leftNum)return;s.beginPath();if(this.__cursor1.lineNum==this.__cursor2.lineNum){t(this.__cursor1.leftNum,this.__cursor2.leftNum,this.__cursor1.lineNum)}else{var e,n;if(this.__cursor1.lineNum<this.__cursor2.lineNum){e=this.__cursor1;n=this.__cursor2}else{e=this.__cursor2;n=this.__cursor1}t(e.leftNum,this._contentArray[e.lineNum].length,e.lineNum);t(0,n.leftNum,n.lineNum);for(var r=e.lineNum+1;r<n.lineNum;r++){t(0,this._contentArray[r].length,r)}}}function b(){this.__cursorTop=this.__lineNum*21+10;this.__cursorLeft=40+this.$$textWidth(this._contentArray[this.__lineNum].substring(0,this.__leftNum));h.css(this.__focusDOM,{top:this.__cursorTop+"px",left:this.__cursorLeft+"px"})}function w(t,e){if(arguments.length<2){t=this._el.scrollWidth-40;e=this._el.scrollHeight-10}h.css(this.__selectCanvas,{width:t+"px",height:e+"px"});h.attr(this.__selectCanvas,{width:t,height:e})}function A(){this.$$updateCanvasSize(1,1);this.__cursor1={leftNum:0,lineNum:0};this.__cursor2={leftNum:0,lineNum:0}}function x(){var t=this.__cursor2,e=this.__cursor1;if(this.__cursor1.lineNum<this.__cursor2.lineNum){t=this.__cursor1;e=this.__cursor2}else if(this.__cursor1.lineNum==this.__cursor2.lineNum){if(this.__cursor1.leftNum<this.__cursor2.leftNum){t=this.__cursor1;e=this.__cursor2}}var n=this._contentArray[t.lineNum].substr(0,t.leftNum)+this._contentArray[e.lineNum].substr(e.leftNum);this._contentArray.splice(t.lineNum,e.lineNum-t.lineNum+1,n);this.__leftNum=this.__cursor1.leftNum=this.__cursor2.leftNum=t.leftNum;this.__lineNum=this.__cursor1.lineNum=this.__cursor2.lineNum=t.lineNum;this.$$cancelSelect()}var O={48:[0,")"],49:[1,"!"],50:[2,"@"],51:[3,"#"],52:[4,"$"],53:[5,"%"],54:[6,"^"],55:[7,"&"],56:[8,"*"],57:[9,"("],96:[0,0],97:1,98:2,99:3,100:4,101:5,102:6,103:7,104:8,105:9,106:"*",107:"+",109:"-",110:".",111:"/",65:["a","A"],66:["b","B"],67:["c","C"],68:["d","D"],69:["e","E"],70:["f","F"],71:["g","G"],72:["h","H"],73:["i","I"],74:["j","J"],75:["k","K"],76:["l","L"],77:["m","M"],78:["n","N"],79:["o","O"],80:["p","P"],81:["q","Q"],82:["r","R"],83:["s","S"],84:["t","T"],85:["u","U"],86:["v","V"],87:["w","W"],88:["x","X"],89:["y","Y"],90:["z","Z"],37:"left",38:"up",39:"right",40:"down",33:"page up",34:"page down",35:"end",36:"home",16:"shift",17:"ctrl",18:"alt",91:"command",92:"command",93:"command",9:"tab",20:"caps lock",32:"spacebar",8:"backspace",13:"enter",27:"esc",46:"delete",45:"insert",144:"number lock",145:"scroll lock",12:"clear",19:"pause",112:"f1",113:"f2",114:"f3",115:"f4",116:"f5",117:"f6",118:"f7",119:"f8",120:"f9",121:"f10",122:"f11",123:"f12",189:["-","_"],187:["=","+"],219:["[","{"],221:["]","}"],220:["\\","|"],186:[";",":"],222:["'",'"'],188:[",","<"],190:[".",">"],191:["/","?"],192:["`","~"]};var D=["shift","ctrl","alt"];function M(t){t=t||window.event;var e=t.keyCode||t.which;var n=O[e]||e;if(!n)return;if(n.constructor!==Array)n=[n,n];var r=n[0];var i=t.shiftKey?"shift+":"",o=t.altKey?"alt+":"",l=t.ctrlKey?"ctrl+":"";var s="",a=l+i+o;if(D.indexOf(n[0])>=0){n[0]=n[1]=""}var u=t.code=="Key"+t.key&&!i;s=a+(a==""&&u?n[1]:n[0]);if(n[0]==""){s=s.replace(/\+$/,"")}return s==""?r:s}function k(){var a=this;var e=false;var n=function t(e){var n=h.position(a._el,e);var r=Math.round((n.y-20.5)/21);if(r<0)r=0;if(r>=a._contentArray.length)r=a._contentArray.length-1;return{leftNum:a.$$bestLeftNum(n.x,r),lineNum:r}};var u=function t(){var e=a.__cursor2,n=a.__cursor1;if(a.__cursor1.lineNum<a.__cursor2.lineNum){e=a.__cursor1;n=a.__cursor2}else if(a.__cursor1.lineNum==a.__cursor2.lineNum){if(a.__cursor1.leftNum<a.__cursor2.leftNum){e=a.__cursor1;n=a.__cursor2}return a._contentArray[e.lineNum].substring(e.leftNum,n.leftNum)}var r="";r+=a._contentArray[e.lineNum].substr(e.leftNum)+"\n";for(var i=e.lineNum+1;i<n.lineNum;i++){r+=a._contentArray[i]+"\n"}r+=a._contentArray[n.lineNum].substr(0,n.leftNum);return r};h.bind(this._el,"mousedown",function(t){e=true;a.__cursor2=a.__cursor1=n(t);a.$$updateCanvasSize();a.$$updateSelectView()});h.bind(this._el,"mousemove",function(t){if(!e)return;a.__cursor2=n(t);a.$$updateSelectView()});h.bind(this._el,"mouseup",function(){return e=false});h.bind(this._el,"click",function(t){a.__helpInputDOM.innerHTML="";var e=h.position(a._el,t);var n=Math.round((e.y-20.5)/21);if(n<0||n>=a._contentArray.length)return;a.__lineNum=n;a.__leftNum=a.$$bestLeftNum(e.x);a.$$updateCursorPosition();a.$$updateView()});var c=function t(e){e=e||a.__focusDOM.value;e=a.$$filterText(e);a.__focusDOM.value="";if(a.$$selectIsNotBlank())a.$$deleteSelect();if(/^\n$/.test(e)){if(a.__leftNum>=a._contentArray[a.__lineNum].length){a._contentArray.splice(a.__lineNum+1,0,"")}else{a._contentArray.splice(a.__lineNum+1,0,a._contentArray[a.__lineNum].substring(a.__leftNum));a._contentArray[a.__lineNum]=a._contentArray[a.__lineNum].substring(0,a.__leftNum)}a.__lineNum+=1;a.__leftNum=0}else{var n=e.split(/\n/);if(a._contentArray==null){a._contentArray=n;a.__lineNum=a._contentArray.length-1;a.__leftNum=a._contentArray[a.__lineNum].length}else if(n.length<=1){a._contentArray[a.__lineNum]=a._contentArray[a.__lineNum].substring(0,a.__leftNum)+e+a._contentArray[a.__lineNum].substring(a.__leftNum);a.__leftNum+=e.length}else{var r;var i=a._contentArray[a.__lineNum].substring(0,a.__leftNum);var o=a._contentArray[a.__lineNum].substring(a.__leftNum);n[0]=i+n[0];n[n.length-1]+=o;(r=a._contentArray).splice.apply(r,[a.__lineNum,1].concat(_toConsumableArray(n)));a.__lineNum+=n.length-1;a.__leftNum=n[n.length-1].length-o.length}}a.__formatData=a.$$diff(a.$shader(a._contentArray.join("\n")));a.$$updateCursorPosition();a.$$updateView();a.__updated__()};h.bind(this.__focusDOM,"compositionstart",function(){a.__needUpdate=false;a.__focusDOM.style.color="rgba(0,0,0,0)";a.__focusDOM.style.borderLeft="1px solid "+a._colorCursor});h.bind(this.__focusDOM,"compositionend",function(){a.__needUpdate=true;a.__focusDOM.style.color=a._colorCursor;a.__focusDOM.style.borderLeft="none";c();if(a.$input!=null)a.__helpInputEvent=a.$input(a.__helpInputDOM,y(a),a._contentArray)||{}});h.bind(this.__focusDOM,"input",function(){if(a.__needUpdate){c();if(a.$input!=null)a.__helpInputEvent=a.$input(a.__helpInputDOM,y(a),a._contentArray)||{}}});var _=false;h.bind(this._el,"keyup",function(t){var e=M(t);if(e=="command")_=false});h.bind(this._el,"keydown",function(t){var e=M(t);if(e=="command")_=true;if(_&&["a","c","x"].indexOf(e)>-1){e="ctrl+"+e}if(a.__helpInputDOM.innerHTML!=""){var n=a.__helpInputEvent[e];if(f(n)){if(!n())return}else{a.__helpInputDOM.innerHTML=""}}if(a._readonly&&["ctrl+a","ctrl+c"].indexOf(e)<0)return;switch(e){case"ctrl+a":{a.__cursor1={leftNum:0,lineNum:0};a.__cursor2={lineNum:a._contentArray.length-1,leftNum:a._contentArray[a._contentArray.length-1].length};a.$$updateSelectView();break}case"ctrl+c":{if(a.$$selectIsNotBlank()){h.copy(u());a.__focusDOM.focus()}break}case"ctrl+x":{if(a.$$selectIsNotBlank()){h.copy(u());a.__focusDOM.focus();a.$$deleteSelect();a.__formatData=a.$$diff(a.$shader(a._contentArray.join("\n")));a.$$updateCursorPosition();a.$$updateView();a.$$cancelSelect();a.__updated__()}break}case"tab":{h.stopPropagation(t);h.preventDefault(t);var r="";for(var i=0;i<a._tabSpace;i++){r+=" "}if(a.$$selectIsNotBlank()){var o=a.__cursor1.lineNum,l=a.__cursor2.lineNum;if(o>l){o=a.__cursor2.lineNum;l=a.__cursor1.lineNum}for(var s=o;s<=l;s++){a._contentArray[s]=r+a._contentArray[s]}a.__cursor1.leftNum+=a._tabSpace;a.__cursor2.leftNum+=a._tabSpace;a.__leftNum+=a._tabSpace;a.__formatData=a.$$diff(a.$shader(a._contentArray.join("\n")));a.$$updateCursorPosition();a.$$updateView();a.$$updateCanvasSize();a.$$updateSelectView();a.__updated__()}else{c(r)}break}case"up":{if(a.__lineNum<=0)return;a.__lineNum-=1;a.__leftNum=a.$$bestLeftNum(a.$$textWidth(a._contentArray[a.__lineNum+1].substr(0,a.__leftNum))+40);a.$$updateCursorPosition();a.$$updateView();a.$$cancelSelect();a._el.scrollTop-=21;break}case"down":{if(a.__lineNum>=a._contentArray.length-1)return;a.__lineNum+=1;a.__leftNum=a.$$bestLeftNum(a.$$textWidth(a._contentArray[a.__lineNum-1].substr(0,a.__leftNum))+40);a.$$updateCursorPosition();a.$$updateView();a.$$cancelSelect();a._el.scrollTop+=21;break}case"left":{if(a.__leftNum<=0){if(a.__lineNum<=0)return;a.__lineNum-=1;a.__leftNum=a._contentArray[a.__lineNum].length}else{a.__leftNum-=1}a.$$updateCursorPosition();a.$$cancelSelect();break}case"right":{if(a.__leftNum>=a._contentArray[a.__lineNum].length){if(a.__lineNum>=a._contentArray.length-1)return;a.__lineNum+=1;a.__leftNum=0}else{a.__leftNum+=1}a.$$updateCursorPosition();a.$$cancelSelect();break}case"backspace":{if(a.$$selectIsNotBlank()){a.$$deleteSelect()}else{if(a.__leftNum<=0){if(a.__lineNum<=0)return;a.__lineNum-=1;a.__leftNum=a._contentArray[a.__lineNum].length;a._contentArray[a.__lineNum]+=a._contentArray[a.__lineNum+1];a._contentArray.splice(a.__lineNum+1,1)}else{a.__leftNum-=1;a._contentArray[a.__lineNum]=a._contentArray[a.__lineNum].substring(0,a.__leftNum)+a._contentArray[a.__lineNum].substring(a.__leftNum+1)}}a.__formatData=a.$$diff(a.$shader(a._contentArray.join("\n")));a.$$updateCursorPosition();a.$$updateView();a.$$cancelSelect();a.__updated__();break}}})}var S=function t(e,n){if(e.length!=n.length)return false;for(var r=0;r<e.length;r++){if(e[r].content!=n[r].content||e[r].color!=n[r].color)return false}return true};function C(t){var e=this.__formatData;if(e){var n=0;for(var r=0;r<e.length&&r<t.length;r++){if(!S(e[r],t[r])){break}n+=1}var i=0;for(var o=1;o<=e.length&&o<=t.length;o++){if(!S(e[e.length-o],t[t.length-o])){break}i+=1}var l=Math.min(e.length,t.length);if(n+i>=l){i=l-n-1;if(i<0)i=0}this.__diff={beginNum:n,endNum:i}}return t}function T(t){var e="";for(var n=0;n<this._tabSpace;n++){e+=" "}return t.replace(/\t/g,e)}function j(n,e){var r=[];var i=0;var t=function t(e){return n.substring(i,e+i>n.length?n.length:e+i)};var o="";var l="tag";var s=function t(){if(o!=""){r.push({color:{tag:e.selector,attr:e.attrKey,string:e.attrValue}[l],content:o})}o=""};while(true){if(t(2)=="/*"){s();while(t(2)!=="*/"&&i<n.length){o+=n[i++]}r.push({color:e.annotation,content:o+t(2)});i+=2;o=""}else if(["'",'"'].indexOf(t(1))>-1){var a=t(1);s();do{o+=n[i++]}while(t(1)!=a&&i<n.length);if(t(1)!=a){a=""}else{i+=1}r.push({color:e.attrValue,content:o+a});o=""}else if([":","{","}",";"].indexOf(t(1))>-1){s();r.push({color:e.insign,content:t(1)});o="";if(t(1)=="{"||t(1)==";"){l="attr"}else if(t(1)=="}"){l="tag"}else{l="string"}i+=1}else{if(i>=n.length){s();break}else{o+=n[i++]}}}return r}var E=["abstract","arguments","boolean","break","byte","case","catch","char","class","const","continue","debugger","default","delete","do","double","else","enum","eval","export","extends","false","final","finally","float","for","function","goto","if","implements","import","in","instanceof","int","interface","let","long","native","new","null","package","private","protected","public","return","short","static","super","switch","synchronized","this","throw","throws","transient","true","try","typeof","var","void","volatile","while","with","yield"];function L(n,e){var r=[];var i=0;var t=function t(e){return n.substring(i,e+i>n.length?n.length:e+i)};var o="";var l=function t(){if(o!=""){if(o[0]=="("){r.push({color:e.insign,content:"("});o=o.substr(1)}r.push({color:e.text,content:o})}o=""};while(true){if(t(2)=="/*"){l();while(t(2)!=="*/"&&i<n.length){o+=n[i++]}r.push({color:e.annotation,content:o+t(2)});i+=2;o=""}else if(t(2)=="//"){l();while(t(1)!=="\n"&&i<n.length){o+=n[i++]}r.push({color:e.annotation,content:o});o=""}else if(["'",'"',"`"].indexOf(t(1))>-1){var s=t(1);l();do{o+=n[i++]}while(t(1)!=s&&i<n.length);if(t(1)!=s){s=""}else{i+=1}r.push({color:e.string,content:o+s});o=""}else if(t(1)=="("&&(o[0]==" "||i-o.length-1>=0&&n[i-o.length-1]==" ")){r.push({color:e.funName,content:o});i+=1;o="("}else if(t(1)=="("){r.push({color:e.execName,content:o});i+=1;o="("}else if([";","{","}","(",")",".","\n","=","+",">","<","[","]","-","*","/","^","*","!"].indexOf(t(1))>-1){l();r.push({color:e.insign,content:t(1)});o="";i+=1}else if(t(1)==" "&&E.indexOf(o.trim())>-1){r.push({color:e.key,content:o+" "});o="";i+=1}else{if(i>=n.length){l();break}else{o+=n[i++]}}}return r}function I(n,r){var i=[];var o=0;var l=function t(e){return n.substring(o,e+o>n.length?n.length:e+o)};var s="";var t=function t(){if(s!=""){i.push({color:r.text,content:s})}s=""};var e=function t(){var e=" ";if(l(1)=='"')e='"';if(l(1)=="'")e="'";do{s+=n[o++]}while(l(1)!=e&&o<n.length);if(e!=" "&&o<n.length){s+=e;o+=1}i.push({color:r.attrValue,content:s});s=""};while(true){if(l(4)=="\x3c!--"){t();while(l(3)!=="--\x3e"&&o<n.length){s+=n[o++]}i.push({color:r.annotation,content:s+l(3)});o+=3;s=""}else if(l(2)=="</"){t();i.push({color:r.insign,content:"</"});o+=2;while(l(1)!==">"&&o<n.length){s+=n[o++]}if(s!=""){i.push({color:r.node,content:s});s="";if(o<n.length){i.push({color:r.insign,content:">"});o+=1}}}else if(l(1)=="<"&&l(2)!="< "){var a="";t();i.push({color:r.insign,content:"<"});o+=1;while(l(1)!=">"&&l(1)!=" "&&o<n.length){s+=n[o++]}if(s!=""){if(s=="style"||s=="script"){a="</"+s+">"}i.push({color:r.node,content:s});s="";if(o<n.length){while(o<n.length){if(l(1)==">"){t();i.push({color:r.insign,content:">"});o+=1;break}else if(l(1)!=" "){t();if(l(1)!='"'&&l(1)!="'"){while(l(1)!="="&&l(1)!=">"&&o<n.length&&l(1)!=" "){s+=n[o++]}if(s!=""){i.push({color:r.attrKey,content:s});s="";if(l(1)=="="){i.push({color:r.insign,content:"="});o+=1;if(o<n.length&&l(1)!=" "&&l(1)!=">"){e()}}}else{s+=n[o++]}}else if(l(1)=="="){i.push({color:r.insign,content:"="});o+=1}else{if(o<n.length&&l(1)!=" "&&l(1)!=">"){e()}}}else{s+=n[o++]}}}}if(a!=""){var u=o,c=s,_,f;while(l(a.length)!=a&&o<n.length){s+=n[o++]}if(o<n.length){_=a.replace(/<\//,"");f={"style>":j,"script>":L}[_](s,{"style>":r._css,"script>":r._javascript}[_]);f.forEach(function(t){i.push(t)});s=""}else{s=c;o=u}}}else{if(o>=n.length){t();break}else{s+=n[o++]}}}return i}var V=function t(e){var r=[[]],i=0;e.forEach(function(t){var e=t.content.split(/\n/),n;r[i].push({color:t.color,content:e[0]});for(n=1;n<e.length;n++){i+=1;r.push([]);r[i].push({color:t.color,content:e[n]})}});return r};var P=function t(e,n){var r;for(r in n){try{e[r]=n[r]}catch(t){throw new Error("Illegal property value！")}}return e};var W={text:"#000000",annotation:"#6a9955",insign:"#ffffff",node:"#1e50b3",attrKey:"#1e83b1",attrValue:"#ac4c1e"};var B={annotation:"#6a9955",insign:"#ffffff",selector:"#1e50b3",attrKey:"#1e83b1",attrValue:"#ac4c1e"};var z={text:"#000000",annotation:"#6a9955",insign:"#ffffff",key:"#ff0000",string:"#ac4c1e",funName:"#1e50b3",execName:"#1e83b1"};function H(t,e){e=e||{};var n,r;if(t=="html"){e._css=P(B,e.css);e._javascript=P(z,e.javascript);r=P(W,e);n=I}else if(t=="css"){r=P(B,e);n=j}else if(t=="javascript"){r=P(z,e);n=L}else{throw new Error("Language not supported:"+t+",The languages available include: html、css、javascript!")}return function(t){return V(n(t,r))}}var K=function t(e){var r=this;if(!(this instanceof t)){throw new Error("Open-Web-Editor is a constructor and should be called with the `new` keyword")}if(u(e.el)){var n=function t(){var e=[];r._contentArray.forEach(function(t){e.push([{content:t,color:r._colorText}])});return e};var i=function t(e){return e};this._el=e.el;this._el.owe_terminal="none";e.color=e.color||{};this._colorBackground=e.color.background||"#d6d6e4";this._colorText=e.color.text||"#000000";this._colorNumber=e.color.number||"#888484";this._colorEdit=e.color.edit||"#eaeaf1";this._colorCursor=e.color.cursor||"#ff0000";this._colorSelect=e.color.select||"#6c6cf1";this._fontFamily=e["font-family"]||"新宋体";this._fontWeight=e["font-weight"]||600;this._tabSpace=e.tabSpace||4;this._readonly=e.readonly||false;this._noLineNumber=e.noLineNumber||false;this._contentArray=s(e.content)?(this.$$filterText(e.content)+"").split("\n"):[""];this.$shader=f(e.shader)?e.shader:a(e.shader)?H.apply(void 0,_toConsumableArray(e.shader)):n;this.$format=f(e.format)?e.format:i;this.$input=f(e.input)?e.input:null}else{throw new Error("options.el is not a element!")}this.$$initDom();this.__needUpdate=true;this.__lineNum=this._contentArray.length-1;this.__leftNum=this._contentArray[this.__lineNum].length;this.__cursor1=this.__cursor2={leftNum:0,lineNum:0};this.__formatData=this.$$diff(this.$shader(this._contentArray.join("\n")));this.$$initView();this.$$updateView();this.$$bindEvent();this.__updated__=function(){};this.updated=function(t){r.__updated__=t};this.valueOf=function(t){if(t||t==""){r._contentArray=null;r.__focusDOM.value=t;h.trigger(r.__focusDOM,"input");r.__focusDOM.focus()}return r._contentArray.join("\n")};this.input=function(){var t=arguments.length>0&&arguments[0]!==undefined?arguments[0]:"";var e=arguments.length>1&&arguments[1]!==undefined?arguments[1]:0;var n=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;if(e!=0){if(n!=0){r._contentArray[r.__lineNum]=r._contentArray[r.__lineNum].substring(0,r.__leftNum+e)+r._contentArray[r.__lineNum].substring(r.__leftNum+e+n)}r.__leftNum+=e}r.__focusDOM.value=t;h.trigger(r.__focusDOM,"input");r.__focusDOM.focus()};this.format=function(){r._contentArray=r.$format(r._contentArray.join("\n"),r._tabSpace).split("\n");r.__lineNum=r._contentArray.length-1;r.__leftNum=r._contentArray[r.__lineNum].length;r.__formatData=r.$$diff(r.$shader(r._contentArray.join("\n")));r.$$updateView();r.$$initView()};this.copy=function(t,e){h.copy(r.valueOf(),t,e)}};K.prototype.$$textWidth=c;K.prototype.$$bestLeftNum=_;K.prototype.$$calcCanvasXY=p;K.prototype.$$selectIsNotBlank=m;K.prototype.$$filterText=T;K.prototype.$$toTemplate=d;K.prototype.$$initDom=v;K.prototype.$$initView=N;K.prototype.$$updateView=g;K.prototype.$$updateSelectView=$;K.prototype.$$updateCursorPosition=b;K.prototype.$$updateCanvasSize=w;K.prototype.$$cancelSelect=A;K.prototype.$$deleteSelect=x;K.prototype.$$bindEvent=k;K.prototype.$$diff=C;if((typeof module==="undefined"?"undefined":_typeof(module))==="object"&&_typeof(module.exports)==="object"){module.exports=K}else{window.OpenWebEditor=K}})();
+
+        __etcpack__scope_bundle__.default= module.exports;
+
+        
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/style/menu.scss
+/*****************************************************************/
+window.__etcpack__bundleSrc__['46']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "\n div.menu-view{\n\nwhite-space: nowrap;\n\nuser-select: none;\n\n}\n\n div.menu-view>div{\n\noverflow: auto;\n\ndisplay: inline-block;\n\nvertical-align: top;\n\nwhite-space: normal;\n\n}\n\n div.menu-view>div:first-child{\n\nwidth: 2.8rem;\n\npadding: .2rem;\n\n}\n\n div.menu-view>div:first-child li{\n\npadding-left: 1em;\n\n}\n\n div.menu-view>div:first-child li[active]{\n\nbackground-repeat: no-repeat;\n\nbackground-position: -4px 6px;\n\nbackground-size: 20px auto;\n\n}\n\n div.menu-view>div:first-child li[active=\"yes\"]{\n\nbackground-image: url('./image/open.png');\n\n}\n\n div.menu-view>div:first-child li[active=\"no\"]{\n\nbackground-image: url('./image/close.png');\n\n}\n\n div.menu-view>div:first-child li[active=\"no\"]>ul{\n\ndisplay: none;\n\n}\n\n div.menu-view>div:first-child h2{\n\npadding: 10px 0;\n\nfont-size: .16rem;\n\n}\n\n div.menu-view>div:first-child h3{\n\nfont-weight: 400;\n\nfont-size: .14rem;\n\ncolor: #304455;\n\ncursor: pointer;\n\ndisplay: inline-block;\n\nmargin: .07rem 0;\n\nheight: 1.2em;\n\n}\n\n div.menu-view>div:first-child h3:hover{\n\nborder-bottom: 2px solid #2396b9;\n\n}\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+/*************************** [bundle] ****************************/
+// Original file:./src/style/style.css
+/*****************************************************************/
+window.__etcpack__bundleSrc__['47']=function(){
+    var __etcpack__scope_bundle__={};
+    var __etcpack__scope_args__;
+    __etcpack__scope_bundle__.default= "html {\r\n    font-size: 100px;\r\n}\r\n\r\nbody {\r\n    font-size: .16rem;\r\n}\r\n\r\n.warn {\r\n    color: rgb(199, 191, 191) !important;\r\n    font-size: 12px !important;\r\n    font-weight: 800 !important;\r\n}\r\n\r\nh5 {\r\n    color: #f44336;\r\n    text-decoration: underline;\r\n}\r\n\r\n/* animation演示例子使用 */\r\n@keyframes move_right {\r\n    from {\r\n        left: 0px;\r\n    }\r\n\r\n    to {\r\n        left: 200px;\r\n    }\r\n}\r\n"
+  
+    return __etcpack__scope_bundle__;
+}
+
+window.__etcpack__bundleSrc__['0']();

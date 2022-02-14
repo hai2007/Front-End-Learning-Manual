@@ -1,0 +1,30 @@
+<h2 id='fixed-top'>
+    Vue3
+</h2>
+<h3 id='fixed-templte'>
+    模板
+</h3>
+<h4 id='fixed-Teleport'>
+    Teleport
+</h4>
+<p>
+    拿下面的代码举例子：
+</p>
+<pre ui-code="html">
+<div>
+    <ui-dialog></ui-dialog>
+</div>
+</pre>
+<p>
+    因为是弹框，你可能希望弹框组件直接挂载在body上，那么，你只需要：
+</p>
+<pre ui-code="html">
+<div>
+    <teleport to="body">
+        <ui-dialog></ui-dialog>
+    </teleport>
+</div>
+</pre>
+<p class="warn">
+    如果 &lt;teleport&gt; 包含 Vue 组件，则它仍将是 &lt;teleport&gt; 父组件的逻辑子组件。
+</p>

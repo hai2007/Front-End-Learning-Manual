@@ -86,6 +86,21 @@
                         </li>
                     </ul>
                 </li>
+                <li ui-bind:active='pageName=="Vue3"?"yes":"no"'>
+                    <h3 tag='Vue3' ui-on:click='openPage'>Vue3</h3>
+                    <ul>
+                        <li>
+                            <h3 tag='template' ui-toggle ui-on:click='doScroll'>模板</h3>
+                            <ul>
+                                <li>
+                                    <h3 tag='ArrayBuffer_Teleport' ui-on:click='doScroll'>
+                                        Teleport
+                                    </h3>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <a href="https://github.com/hai2007/Front-End-Learning-Manual" target="_blank">Fork Me On Github</a>
         </div>
